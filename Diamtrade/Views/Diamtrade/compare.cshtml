@@ -1,0 +1,265 @@
+﻿
+@{
+    ViewBag.Title = "compare";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!-- Bg Main Section Starts -->
+<div class="container-fluid bg-inner-diamtrade">
+    <div class="row">
+        <!-- DiamTrade First Section Starts -->
+        <div class="container-fluid bg-diamtrade-compare">
+            <div class="row">
+                <div class="container">
+                    @*<div class="row" style="display:none">
+                        <div class="col-xs-12 animated wow fadeInDown" data-wow-duration="2s">
+                            <div class="diamtrade-logo-compare-text text-center">
+                                <img src="~/images/diamtrade-logo.png" class="img-responsive img-auto img-cloud-side-logo img-diamtrade-logo-width" alt="" />
+                            </div>
+                            <p>
+                                Track, Manage & Multifold Your Organization Growth.
+                                Integrated Enterprise Solutions For Greater Mobility, Flexibility & Efficiency!
+                            </p>
+                            <p id="CompareDesc"></p>
+                        </div>
+                    </div>*@
+                    <div class="row">
+                        <div class="col-xs-12 animated wow fadeInDown" data-wow-duration="2s">
+                            <div class="compare-heading text-center" style="display:none">
+                                <span>Compare Products</span>
+                            </div>
+                            <div class="title-price text-center">
+                                <h2 id="CompareDesc">Simple Pricing, No Surprises</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 animated wow fadeInUp table-responsive" data-wow-duration="2s">
+                            <table class="table table-striped compare-table">
+                                <thead>
+                                    <tr>
+                                        <td class="right-shadow"></td>
+                                        <td class="text-center">
+                                            <a href='@Url.Action("desktop", "Products")'><img src="~/images/p-desktop.png" class="table-compare-img" alt="" /></a>
+                                        </td>
+                                        <td class="text-center left-shadow">
+                                            <a href='@Url.Action("cloud", "Products")'><img src="~/images/p-cloud.png" class="table-compare-img" alt="" /></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Features</th>
+                                        <th><a href='@Url.Action("desktop", "Products")'>Diamtrade Desktop</a></th>
+                                        <th class="left-shadow"><a href='@Url.Action("cloud", "Products")'>Diamtrade Cloud</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="copmarebody">
+                                    @*<tr>
+                                        <th class="right-shadow">Invoice Payments</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Multiple Currency Processing</th>
+                                        <td>-</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Easy Customization</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Invoice Payments</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Multiple Currency Processing</th>
+                                        <td>-</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Easy Customization</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Invoice Payments</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Multiple Currency Processing</th>
+                                        <td>-</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Easy Customization</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Invoice Payments</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Multiple Currency Processing</th>
+                                        <td>-</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Easy Customization</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Invoice Payments</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Multiple Currency Processing</th>
+                                        <td>-</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow">Easy Customization</th>
+                                        <td>Yes</td>
+                                        <td class="left-shadow">Yes</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="right-shadow"></th>
+                                        <td><a href="#">Free Trial</a></td>
+                                        <td class="left-shadow"><a href="#">Free Trial</a></td>
+                                    </tr>*@
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- DiamTrade First Section Ends -->
+        <!-- Diamtrade Key Feature Section Starts -->
+        <div class="container bg-diamtrade-feature">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="diamtrade-feature-title text-center">
+                        <span id="Product1Desc"></span>
+                    </div>
+                    <ul class="diamtrade-feature-list" id="comparekeyfeature">
+                        @*<li>
+                            <p>Country Customization for regional needs and Business Practices</p>
+                        </li>
+                        <li>
+                            <p>Partnership Concept is also possible </p>
+                        </li>
+                        <li>
+                            <p>Online trading with all major Diamond Trading platforms Like Rapnet, James Allen, IDEX, Polygon, Blue Nile, Gemit, or your own website</p>
+                        </li>
+                        <li>
+                            <p>Customized Jewelry Module as per the business logic</p>
+                        </li>
+                        <li>
+                            <p>Can lock the particular transaction and financial year to avoid manipulation</p>
+                        </li>
+                        <li>
+                            <p>9 main modules + 93 sub-modules & 231+ nodes available. No other ERP Software provides these much modules</p>
+                        </li>*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Diamtrade Key Feature Section Ends -->
+
+    </div>
+</div>
+<!-- Bg Main Section Ends -->
+@section scripts{
+    <script>
+        var ComapreID = 1;
+       EditComapre();
+        BindComparison();
+        BindComparisonFeature();
+        function EditComapre() {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditAboutUs",
+                url: "@Url.Action("EditCompare", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    $("#CompareDesc").html(response.compare[0].CompareDesc).trigger('change');
+                    $("#Product1Desc").html(response.compare[0].Product1Desc).trigger('change');
+                    //$("#Product2Desc").html(response.compare[0].Product2Desc).trigger('change');
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+
+           function BindComparison() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindComparison", "admin")",
+            data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.length> 0) {
+                        var row = "";
+                        var statusdisp = "";
+                        $.each(data, function (index, item) {
+                            
+                            row += "<tr><th class='right-shadow'>" + item.FeatureName + "</th><td>" + (item.Desktop == true ? 'Yes' : 'No') + "</td><td class='left-shadow'>" + (item.Cloud == true ? 'Yes' : 'No') + "</td></tr>"
+                        })
+                        row+="<tr><th class='right-shadow'></th><td><a href='@Url.Action("inquiry","Diamtrade")'>Request for Demo</a></td><td class='left-shadow'><a href='@Url.Action("sign_in","Diamtrade")'>Free Trial</a></td></tr>"
+                        $("#copmarebody").html(row);
+                    }
+                    else {
+                        $("#copmarebody").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+    }
+         function BindComparisonFeature() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindComparisonFeature", "admin")",
+            data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.length> 0) {
+                        var row = "";
+                        var statusdisp = "";
+                           //alert(JSON.stringify(data.depart))
+                        $.each(data, function (index, item) {
+                            //debugger;
+                            row += "<li><p>"+item.Key_FeatureDesc+"</p></li>"
+                        })
+                        $("#comparekeyfeature").html(row);
+ 
+                    }
+                    else {
+                        $("#comparekeyfeature").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+    }
+    </script>
+}

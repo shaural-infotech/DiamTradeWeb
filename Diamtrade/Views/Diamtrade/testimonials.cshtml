@@ -1,0 +1,489 @@
+﻿
+@{
+    ViewBag.Title = "testimonials";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div class="container-fluid bg-testimonial-page">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-9">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                    <div class="testimonial testimonial-first">
+                        <div class="testimonial-author text-center">
+                            <h5 id="tesmonial1_name"></h5>
+                        </div>
+                        <div class="testimonial-body">
+                            <div class="customer-img">
+                                <img alt="" id="tesmonial1_image" />
+                            </div>
+                            <div class="testimonial-disc">
+                                <p id="tesmonial1_content"></p>
+                                <a href="#" type="button" class="testimonial-more-link" data-toggle="modal" data-target="#tesmonial1_content_modal">More</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row flex align-center no-flex">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="testimonial testimonial-two">
+                                <div class="customer-img text-center">
+                                    <img class="img-auto" alt="" id="tesmonial2_image" />
+                                </div>
+                                <div class="testimonial-body">
+                                    <div class="author-name text-center">
+                                        <h5 id="tesmonial2_name"></h5>
+                                    </div>
+                                    <div class="testimonial-disc">
+                                        <p id="tesmonial2_content"></p>
+                                        <a href="#" type="button" class="testimonial-more-link" data-toggle="modal" data-target="#tesmonial2_content_modal">More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+                            <div class="testimonial testimonial-round">
+                                <div class="customer-img text-center">
+                                    <img class="img-auto" id="tesmonial3_image" alt="" />
+                                </div>
+                                <div class="testimonial-disc">
+                                    <p id="tesmonial3_content"></p>
+                                    <a href="#" type="button" class="testimonial-more-link" data-toggle="modal" data-target="#tesmonial3_content_modal">More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                    <div class="testimonial testimonial-v">
+                        <div class="testimonial-body">
+                            <div class="customer-img text-center">
+                                <img class="img-auto" id="tesmonial4_image" alt="" />
+                            </div>
+                            <div class="author-name text-center">
+                                <h5 id="tesmonial4_name"></h5>
+                            </div>
+                            <div class="testimonial-disc">
+                                <p id="tesmonial4_content"></p>
+                                <a href="#" type="button" class="testimonial-more-link" data-toggle="modal" data-target="#tesmonial4_content_modal">More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial testimonial-h">
+                <div class="testimonial-body">
+                    <div class="customer-img">
+                        <img class="img-auto" id="tesmonial5_image" alt="" />
+                    </div>
+                    <div class="author-name text-center">
+                        <h5 id="tesmonial5_name"></h5>
+                    </div>
+                    <div class="testimonial-disc">
+                        <p id="tesmonial5_content"></p>
+                        <a href="#" type="button" class="testimonial-more-link" data-toggle="modal" data-target="#tesmonial5_content_modal">More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <div class="testimonial testimonial-square">
+                <div class="testimonial-author">
+                    <h5 id="tesmonial6_name"></h5>
+                </div>
+                <div class="testimonial-body">
+                    <div class="customer-img text-center">
+                        <img class="img-auto" alt="" id="tesmonial6_image" />
+                    </div>
+                    <div class="testimonial-disc">
+                        <p id="tesmonial6_content"></p>
+                        <a href="#" type="button" class="testimonial-more-link" data-toggle="modal" data-target="#tesmonial6_content_modal">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial testimonial-s-two">
+                <div class="testimonial-body">
+                    <div class="customer-img">
+                        <img class="img-auto" alt="" id="tesmonial7_image" />
+                    </div>
+                    <div class="author-name text-center">
+                        <h5 id="tesmonial7_name"></h5>
+                    </div>
+                    <div class="testimonial-disc">
+                        <p id="tesmonial7_content"></p>
+                        <a href="#" type="button" class="testimonial-more-link" data-toggle="modal" data-target="#tesmonial7_content_modal">More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial testimonial-s-three">
+                <div class="customer-img text-center">
+                    <img class="img-auto" alt="" id="tesmonial8_image" />
+                </div>
+                <div class="testimonial-body">
+                    <div class="author-name text-center">
+                        <h5 id="tesmonial8_name"></h5>
+                    </div>
+                    <div class="testimonial-disc">
+                        <p id="tesmonial8_content"></p>
+                        <a href="#" type="button" class="testimonial-more-link" data-toggle="modal" data-target="#tesmonial8_content_modal">More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="dynamic_testimonial">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
+            <div class="testimonial testimonial-common">
+                <div class="customer-img text-center">
+                    <img src="~/images/img-2.jpg" class="img-auto" alt="" />
+                </div>
+                <div class="testimonial-body">
+                    <div class="author-name text-center">
+                        <h5>Katrina</h5>
+                    </div>
+                    <div class="testimonial-disc">
+                        <p>DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+                        <a href="#" type="button" class="testimonial-more-link" data-toggle="modal" data-target="#tesmonial_dynamic_content_modal">More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 ">
+            <div class="testimonial testimonial-common">
+                <div class="customer-img text-center">
+                    <img src="~/images/img-3.jpg" class="img-auto" alt="" />
+                </div>
+                <div class="testimonial-body">
+                    <div class="author-name text-center">
+                        <h5>Michel</h5>
+                    </div>
+                    <div class="testimonial-disc">
+                        <p>DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="testimonial testimonial-common">
+                <div class="customer-img text-center">
+                    <img src="~/images/img-1.jpg" class="img-auto" alt="" />
+                </div>
+                <div class="testimonial-body">
+                    <div class="author-name text-center">
+                        <h5>John</h5>
+                    </div>
+                    <div class="testimonial-disc">
+                        <p>DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <div class="testimonial testimonial-common">
+                <div class="customer-img text-center">
+                    <img src="~/images/img-2.jpg" class="img-auto" alt="" />
+                </div>
+                <div class="testimonial-body">
+                    <div class="author-name text-center">
+                        <h5>Katrina</h5>
+                    </div>
+                    <div class="testimonial-disc">
+                        <p>DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 1 -->
+  <div class="modal fade" id="tesmonial1_content_modal" role="dialog">
+    <div class="modal-dialog testimonial-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title author-name" id="testname_1">John</h4>
+        </div>
+        <div class="modal-body testimonial-disc">
+          <p id="testcontent_1">DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal 2 -->
+  <div class="modal fade" id="tesmonial2_content_modal" role="dialog">
+    <div class="modal-dialog testimonial-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title author-name" id="testname_2">John</h4>
+        </div>
+        <div class="modal-body testimonial-disc">
+          <p id="testcontent_2">DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="modal fade" id="tesmonial3_content_modal" role="dialog">
+    <div class="modal-dialog testimonial-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title author-name" id="testname_3">John</h4>
+        </div>
+        <div class="modal-body testimonial-disc">
+          <p id="testcontent_3">DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div class="modal fade" id="tesmonial4_content_modal" role="dialog">
+    <div class="modal-dialog testimonial-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title author-name" id="testname_4">John</h4>
+        </div>
+        <div class="modal-body testimonial-disc">
+          <p id="testcontent_4">DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div class="modal fade" id="tesmonial5_content_modal" role="dialog">
+    <div class="modal-dialog testimonial-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title author-name" id="testname_5">John</h4>
+        </div>
+        <div class="modal-body testimonial-disc">
+          <p id="testcontent_5">DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 -->
+  <div class="modal fade" id="tesmonial6_content_modal" role="dialog">
+    <div class="modal-dialog testimonial-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title author-name" id="testname_6">John</h4>
+        </div>
+        <div class="modal-body testimonial-disc">
+          <p id="testcontent_6">DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 -->
+  <div class="modal fade" id="tesmonial7_content_modal" role="dialog">
+    <div class="modal-dialog testimonial-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title author-name" id="testname_7">John</h4>
+        </div>
+        <div class="modal-body testimonial-disc">
+          <p id="testcontent_7">DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 -->
+  <div class="modal fade" id="tesmonial8_content_modal" role="dialog">
+    <div class="modal-dialog testimonial-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title author-name" id="testname_8">John</h4>
+        </div>
+        <div class="modal-body testimonial-disc">
+          <p id="testcontent_8">DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal 8 -->
+  <div class="modal fade" id="tesmonial_dynamic_content_modal" role="dialog">
+    <div class="modal-dialog testimonial-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title author-name">John</h4>
+        </div>
+        <div class="modal-body testimonial-disc">
+          <p>DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<div class="modal fade" id="dynamicmodel" role="dialog">
+      <div class="modal-dialog testimonial-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title author-name" id="testiname">John</h4>
+              </div>
+              <div class="modal-body testimonial-disc">
+                  <p id="testicontent">DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+@section scripts{
+    <script>
+        EditStaticTestimonial();
+        BindTestimonial();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+        function EditStaticTestimonial() {
+          $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditStaticTestimonial", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+
+                    $("#tesmonial1_name").html(response.name_1);
+                    $("#tesmonial2_name").html(response.name_2);
+                    $("#tesmonial3_name").html(response.name_3);
+                    $("#tesmonial4_name").html(response.name_4);
+                    $("#tesmonial5_name").html(response.name_5);
+                    $("#tesmonial6_name").html(response.name_6);
+                    $("#tesmonial7_name").html(response.name_7);
+                    $("#tesmonial8_name").html(response.name_8);
+
+
+                    $("#testname_1").html(response.name_1);
+                    $("#testname_2").html(response.name_2);
+                    $("#testname_3").html(response.name_3);
+                    $("#testname_4").html(response.name_4);
+                    $("#testname_5").html(response.name_5);
+                    $("#testname_6").html(response.name_6);
+                    $("#testname_7").html(response.name_7);
+                    $("#testname_8").html(response.name_8);
+
+
+                    $("#tesmonial1_content").html(response.Content_1.substring(0,150)+'....');
+                    $("#tesmonial2_content").html(response.Content_2.substring(0,150)+'....');
+                    $("#tesmonial3_content").html(response.Content_3.substring(0,150)+'....');
+                    $("#tesmonial4_content").html(response.Content_4.substring(0,150)+'....');
+                    $("#tesmonial5_content").html(response.Content_5.substring(0,150)+'....');
+                    $("#tesmonial6_content").html(response.Content_6.substring(0,150)+'....');
+                    $("#tesmonial7_content").html(response.Content_7.substring(0,150)+'....');
+                    $("#tesmonial8_content").html(response.Content_8.substring(0,150)+'....');
+
+                    $("#testcontent_1").html(response.Content_1);
+                    $("#testcontent_2").html(response.Content_2);
+                    $("#testcontent_3").html(response.Content_3);
+                    $("#testcontent_4").html(response.Content_4);
+                    $("#testcontent_5").html(response.Content_5);
+                    $("#testcontent_6").html(response.Content_6);
+                    $("#testcontent_7").html(response.Content_7);
+                    $("#testcontent_8").html(response.Content_8);
+
+                    $("#tesmonial1_image").attr('src', imageurl+response.img_1);
+                    $("#tesmonial2_image").attr('src', imageurl+response.img_2);
+                    $("#tesmonial3_image").attr('src', imageurl+response.img_3);
+                    $("#tesmonial4_image").attr('src', imageurl+response.img_4);
+                    $("#tesmonial5_image").attr('src', imageurl+response.img_5);
+                    $("#tesmonial6_image").attr('src', imageurl+response.img_6);
+                    $("#tesmonial7_image").attr('src', imageurl+response.img_7);
+                    $("#tesmonial8_image").attr('src', imageurl+response.img_8);
+
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+
+        function BindTestimonial() {
+            $.ajax({
+                type: "GET",
+                 url: "@Url.Action("BindTestimonial", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                      
+                    if (data.success == true) {
+                        var row = "";
+                    
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data.testimoni, function (index, item) {
+                            row += "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 '><div class='testimonial testimonial-common'><div class='customer-img text-center'><img class='img-auto' src=" + (imageurl+item.PersonImage) + " /></div><div class='testimonial-body'><div class='author-name text-center'><h5>" + item.PersonName + "</h5></div><div class='testimonial-disc'><p>" + item.TestimComments.substring(0,150)+'......'+"</p><a href='#' type='button' class='testimonial-more-link' onclick='OpenModel("+item.TestimonialID+")' >More</a></div></div></div></div>"
+                        })
+                        $("#dynamic_testimonial").html(row);
+                    }
+                    else {
+                        $("#dynamic_testimonial").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+
+        function OpenModel(id) {
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("EditDynamicTestimonial", "admin")",
+                data: { 'testiid': id },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $("#dynamicmodel").modal('show');
+                    $("#testiname").html(data.PersonName);
+                    $("#testicontent").html(data.TestimComments);
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+    </script>
+
+}

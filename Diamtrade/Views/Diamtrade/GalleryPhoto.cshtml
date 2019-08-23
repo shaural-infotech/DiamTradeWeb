@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "GalleryPhoto";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div class="site-section bg-photo-display" data-aos="fade">
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+            <div class="col-xs-12">
+                <h2 class="site-section-heading text-center">Gallery Pictures</h2>
+            </div>
+        </div>
+        <div class="row" id="lightgallery">
+            @*<div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_1.jpg">
+                <a href="#"><img src="~/images/nature_big_1.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_2.jpg">
+                <a href="#"><img src="~/images/nature_big_2.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_3.jpg">
+                <a href="#"><img src="~/images/nature_big_3.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_4.jpg">
+                <a href="#"><img src="~/images/nature_big_4.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_5.jpg">
+                <a href="#"><img src="~/images/nature_big_5.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_6.jpg">
+                <a href="#"><img src="~/images/nature_big_6.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_7.jpg">
+                <a href="#"><img src="~/images/nature_big_7.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_8.jpg">
+                <a href="#"><img src="~/images/nature_big_8.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_9.jpg">
+                <a href="#"><img src="~/images/nature_big_9.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_9.jpg">
+                <a href="#"><img src="~/images/nature_big_9.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_8.jpg">
+                <a href="#"><img src="~/images/nature_big_8.jpg" alt="IMage" class="img-fluid"></a>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2 item" data-aos="fade" data-src="images/nature_big_7.jpg">
+                <a href="#"><img src="~/images/nature_big_7.jpg" alt="IMage" class="img-fluid"></a>
+            </div>*@
+
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+                     $('#lightgallery').lightGallery();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+        var sPageURL = window.location.href;
+    var indexOfLastSlash = sPageURL.lastIndexOf("=");
+        var tabid;
+    if (indexOfLastSlash != "" && sPageURL.length - 1 != indexOfLastSlash) {
+    tabid = sPageURL.substring(indexOfLastSlash + 1);
+    BindAlbumImage(tabid);
+    }
+    else {
+    alert("error");
+        }
+
+         function BindAlbumImage(tabid) {
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("BindAlbumImage", "admin")",
+                data: { tabid: tabid },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                 
+                      var row = "";
+                         $.each(data, function (index, item) {
+                             row += "<div class='col-sm-6 col-md-4 col-lg-2 col-xl-2 item' data-aos='fade' data-src="+(imageurl+item.Tab_Image)+"><a href='#'><img src="+(imageurl+item.Tab_Image)+" alt='IMage' class='img-fluid'></a></div>"
+                         })
+                    $("#lightgallery").html(row);
+
+
+                     $('#lightgallery').lightGallery();
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+    </script>
+    
+    }

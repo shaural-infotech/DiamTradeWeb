@@ -1,0 +1,21 @@
+.img_focus:focus,.img_focusclie:focus{
+	outline:0;
+}
+.img_focusclie{
+	opacity:0.8;
+	transition:all 0.3s linear;
+}
+.img_focusclie:hover{
+	opacity:1;
+	transition:all 0.3s linear;
+}
+.actives {
+    color: #fff !important;
+    background-color:#b0006d !important;
+    border: 1px solid #b0006d !important;
+}
+.inactive {
+    background-color:#f79017;
+    border: 1px solid #f79017;
+    color:#fff;
+}

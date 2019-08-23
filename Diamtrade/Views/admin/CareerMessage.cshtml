@@ -1,0 +1,253 @@
+﻿
+@{
+    ViewBag.Title = "CareerMessage";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"></button>
+                        <h4 class="modal-title" id="H4PageTitle">View Message</h4>
+                    </div>
+                    <div class="modal-body" id="DivMessageBody">
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn default" data-dismiss="modal" onclick="return ClearControll();">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            Upload Careers
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                   Upload Careers
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="btn-group pull-right">
+                            <button id="sample_editable_1_new" style="margin-right:10px" class="btn red delete_btn" onclick="return DelMessage();">
+                                <i class="fa fa-trash-o"></i>  Delete
+                            </button>
+                            <button id="sample_editable_1_new" style="margin-right:23px" class="btn green" onclick="tableToExcel('sample_1', 'Contact Message')">
+                                <i class="fa fa-cloud-download"></i>  Export Data
+                            </button>
+                        </div>
+                        @*<div class="col-md-6">
+                                <div class="clearfix button-float pull-right button-wrap">
+                                    <button id="sample_editable_1_new" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                        <i class="fa fa-plus"></i>  Add
+                                    </button>
+                                </div>
+                            </div>*@
+
+                    </div>
+                </div>
+                <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                <div class="portlet box grey-cascade">
+
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-globe"></i>View All Career
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <table class="table table-striped table-bordered table-hover" id="sample_1">
+                            <thead>
+                                <tr>
+                                    <th class="table-checkbox">
+                                        <input type="checkbox" class="checkboxes" data-set="#sample_1 .checkboxes" />
+                                    </th>
+                                    <th>
+                                        Sr No.
+                                    </th>
+                                    <th>
+                                        Photo
+                                    </th>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Designation
+                                    </th>
+                                    <th>
+                                        Email ID
+                                    </th>
+                                    <th>
+                                        Mobile No
+                                    </th>
+                                    <th>
+                                        AttachDocumet Link
+                                    </th>
+                                    <th>
+                                        Date
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="TBInquiry"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- END EXAMPLE TABLE PORTLET-->
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            BindCareer();
+        });
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+        var ContactMsgID1;
+        function BindCareer() {
+            $.ajax({
+                type: "GET",
+                 url: "@Url.Action("BindCareerSend", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                      if (data.success == true) {
+                        var row = "";
+                        var statusdisp = "";
+                        $('#sample_1').DataTable().clear().destroy();
+                        $.each(data.career, function (index, item) {
+                            row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkmsg' class='group-checkable' value=" + item.SendCarrerID + " /></td><td>" + item.SendCarrerID + "</td><td><img src="+item.AttachPhoto+"  class='img-auto' style='width:100px'></td><td>" + item.Name + "</td><td>" + item.Designation + "</td><td>" + item.Email + "</td><td>" + item.MobileNo + "</td><td><a href="+imageurl+item.AttachDoc+" target='_blank'>Download</a></td><td>" +  item.date + "</td></tr>"
+                        })
+                        $("#TBInquiry").html(row);
+
+                        $('#sample_1').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#TBInquiry").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+      
+     
+
+       function DelMessageF(DeleteMessageID) {
+            var dataobj = JSON.stringify({
+                'SendCarrerID': DeleteMessageID
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DelCareer", "admin")",
+                data: dataobj,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == "false") {
+                        alert(response.msg);
+                         
+                    }
+                    else {
+                        alert(response.msg);
+                        BindCareer();
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                    
+                }
+            });
+        }
+        function DelMessage() {
+            swal({
+                title: "Are you sure you want to delete this Record?",
+                text: "Once deleted, you will not be able to recover this Record!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                closeOnConfirm: false, //It does close the popup when I click on close button
+                closeOnCancel: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+                .then((willDelete) => {
+                    //debugger;
+                    if (willDelete) {
+                        $('#sample_1').find('input[type="checkbox"]:checked').each(function () {
+                            var DeleteMessageID = $(this).val();
+                            DelMessageF(DeleteMessageID);
+                            //this is the current checkbox
+                            //var DelCareerID = $(this).val();
+                        });
+
+                    } else {
+                        swal("Your Record is safe!");
+                    }
+                });
+        }
+
+
+        var tableToExcel = (function () {
+            var uri = 'data:application/vnd.ms-excel;base64,'
+                , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+                , base64 = function (s) { return window.btoa(unescape(encodeURIComponent(s))) }
+                , format = function (s, c) { return s.replace(/{(\w+)}/g, function (m, p) { return c[p]; }) }
+            return function (table, name) {
+                if (!table.nodeType) table = document.getElementById(table)
+                var ctx = { worksheet: name || 'Worksheet', table: table.innerHTML }
+                window.location.href = uri + base64(format(template, ctx))
+            }
+        })()
+    </script>
+}
+
+

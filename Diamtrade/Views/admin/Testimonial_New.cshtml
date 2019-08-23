@@ -1,0 +1,1028 @@
+﻿
+@{
+    ViewBag.Title = "Testimonial_New";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+    <div class="page-content-wrapper">
+        <div class="page-content">
+
+            <!-- BEGIN PAGE HEADER-->
+            <h3 class="page-title">
+                Cloud Page Info
+            </h3>
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href='@Url.Action("dashboard","admin")'>Home</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+
+                    <li>
+                        <a href='@Url.Action("Testimonial_New","admin")'>Testimonial_New</a>
+                    </li>
+                </ul>
+                <div class="page-toolbar">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                            Actions <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href='@Url.Action("dashboard","admin")'>Back</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE HEADER-->
+            <!-- END PAGE HEADER-->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN EXTRAS PORTLET-->
+                    <div class="portlet box green">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-gift"></i>Edit Static Testimonial
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <!-- BEGIN FORM-->
+                            <form action="#" class="form-horizontal form-bordered">
+                                @*START Contact Us*@
+                                <div class="form-body">
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_1 image<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="testimnial_1image" onchange="validateImage_1()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="tstimg_1" style="width:80px" class="img-auto" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_1 Name<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="testimnial_1name" >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_1 Content<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="testimnial_1content" name="testimnial_1content"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_2 image<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="testimnial_2image" onchange="validateImage_2()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="tstimg_2" style="width:80px" class="img-auto" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_2 Name<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="testimnial_2name" >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_2 Content<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="testimnial_2content" name="testimnial_2content"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_3 image<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="testimnial_3image" onchange="validateImage_3()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="tstimg_3" style="width:80px" class="img-auto" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_3 Name<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="testimnial_3name" >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_3 Content<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="testimnial_3content" name="testimnial_3content"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_4 image<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="testimnial_4image" onchange="validateImage_4()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="tstimg_4" style="width:80px" class="img-auto" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_4 Name<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="testimnial_4name" >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_4 Content<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="testimnial_4content" name="testimnial_4content"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_5 image<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="testimnial_5image" onchange="validateImage_5()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="tstimg_5" style="width:80px" class="img-auto" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_5 Name<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="testimnial_5name" >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_5 Conrent<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="testimnial_5content" name="testimnial_5content"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_6 image<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="testimnial_6image" onchange="validateImage_6()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="tstimg_6" style="width:80px" class="img-auto" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_6 Name<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="testimnial_6name" >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_6 Content<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="testimnial_6content" name="testimnial_6content"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_7 image<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="testimnial_7image" onchange="validateImage_7()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="tstimg_7" style="width:80px" class="img-auto" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_7 Name<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="testimnial_7name" >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_7 Content<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="testimnial_7content" name="testimnial_7content"></textarea>
+                                        </div>
+                                    </div>
+                                     <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_8 image<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="testimnial_8image" onchange="validateImage_8()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="tstimg_8" style="width:80px" class="img-auto" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_8 Name<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" id="testimnial_8name" >
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group last">
+                                        <label class="control-label col-md-3">Testimonial_8 Content<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="testimnial_8content" name="testimnial_8content"></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                @*END Contact Us?*@
+
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            @*<button type="submit" class="btn green" onclick="return UpdateContact UsUs();"><i class="fa fa-check"></i> Submit</button>*@
+                                            <button type="button" class="btn green" onclick="return UpdateStaticTestimonial();"><i class="fa fa-check"></i> Submit</button>
+                                            <button type="button" class="btn default" onclick="return CancelData();">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </form>
+                            <!-- END FORM-->
+                        </div>
+                    </div>
+                    <!-- END EXTRAS PORTLET-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+@section scripts{
+<script>
+    EditStaticTestimonial();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+    function EditStaticTestimonial() {
+          $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditStaticTestimonial", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    $("#testimnial_1name").val(response.name_1);
+                    $("#tstimg_1").attr('src', imageurl+response.img_1);
+                    CKEDITOR.instances['testimnial_1content'].setData(response.Content_1);
+
+                     $("#testimnial_2name").val(response.name_2);
+                    $("#tstimg_2").attr('src', imageurl+response.img_2);
+                    CKEDITOR.instances['testimnial_2content'].setData(response.Content_2);
+
+                     $("#testimnial_3name").val(response.name_3);
+                    $("#tstimg_3").attr('src', imageurl+response.img_3);
+                    CKEDITOR.instances['testimnial_3content'].setData(response.Content_3);
+
+                     $("#testimnial_4name").val(response.name_4);
+                    $("#tstimg_4").attr('src', imageurl+response.img_4);
+                    CKEDITOR.instances['testimnial_4content'].setData(response.Content_4);
+
+                     $("#testimnial_5name").val(response.name_5);
+                    $("#tstimg_5").attr('src', imageurl+response.img_5);
+                    CKEDITOR.instances['testimnial_5content'].setData(response.Content_5);
+
+                     $("#testimnial_6name").val(response.name_6);
+                    $("#tstimg_6").attr('src', imageurl+response.img_6);
+                    CKEDITOR.instances['testimnial_6content'].setData(response.Content_6);
+
+                     $("#testimnial_7name").val(response.name_7);
+                    $("#tstimg_7").attr('src', imageurl+response.img_7);
+                    CKEDITOR.instances['testimnial_7content'].setData(response.Content_7);
+
+                     $("#testimnial_8name").val(response.name_8);
+                    $("#tstimg_8").attr('src', imageurl+response.img_8);
+                    CKEDITOR.instances['testimnial_8content'].setData(response.Content_8);
+
+
+
+ 
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+    function UpdateStaticTestimonial() {
+
+                    dataobj = JSON.stringify({
+                        'TestMID': 1,
+                        'Content_1': CKEDITOR.instances['testimnial_1content'].getData(),
+                        'Content_2': CKEDITOR.instances['testimnial_2content'].getData(),
+                        'Content_3': CKEDITOR.instances['testimnial_3content'].getData(),
+                        'Content_4': CKEDITOR.instances['testimnial_4content'].getData(),
+                        'Content_5': CKEDITOR.instances['testimnial_5content'].getData(),
+                        'Content_6': CKEDITOR.instances['testimnial_6content'].getData(),
+                        'Content_7': CKEDITOR.instances['testimnial_7content'].getData(),
+                        'Content_8': CKEDITOR.instances['testimnial_8content'].getData(),
+                        'name_1': $("#testimnial_1name").val(),
+                        'name_2': $("#testimnial_2name").val(),
+                        'name_3': $("#testimnial_3name").val(),
+                        'name_4': $("#testimnial_4name").val(),
+                        'name_5': $("#testimnial_5name").val(),
+                        'name_6': $("#testimnial_6name").val(),
+                        'name_7': $("#testimnial_7name").val(),
+                        'name_8': $("#testimnial_8name").val()
+                    });
+
+                $.ajax({
+                    type: "POST",
+                    //url: serviceurl + "UpdateContact UsUs",
+                    url: "@Url.Action("UpdateStaticTestimonial", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response == "false") {
+                            //alert("hii");
+                            //alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: "Testimonial Does Not Updated",
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                             var file1 = document.getElementById("testimnial_1image").files[0];
+                             var file2 = document.getElementById("testimnial_2image").files[0];
+                             var file3 = document.getElementById("testimnial_3image").files[0];
+                             var file4 = document.getElementById("testimnial_4image").files[0];
+                            var file5 = document.getElementById("testimnial_5image").files[0];
+                            var file6 = document.getElementById("testimnial_6image").files[0];
+                            var file7 = document.getElementById("testimnial_7image").files[0];
+                            var file8 = document.getElementById("testimnial_8image").files[0];
+                            if (file1 != null) {
+                                SaveImage_1(1);
+                            }
+                            if (file2 != null) {
+                                SaveImage_2(1);
+                            }
+                            if (file3 != null) {
+                                SaveImage_3(1);
+                            }
+                            if (file4 != null) {
+                                SaveImage_4(1);
+                            }
+                            if (file5 != null) {
+                                SaveImage_5(1);
+                            }
+                            if (file6 != null) {
+                                SaveImage_6(1);
+                            }
+                            if (file7 != null) {
+                                SaveImage_7(1);
+                            }
+                            if (file8 != null) {
+                                SaveImage_8(1);
+                            }
+                            swal({
+                                title: "success!",
+                                text: "TestiMonial Updated!",
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+
+                            ClearControll()
+                        }
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+        }
+     function SaveImage_1(id) {
+          var image_1 = ($("#testimnial_1image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadTestimonialImage_1", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_2(id) {
+          var image_2 = ($("#testimnial_2image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_2.name, image_2);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadTestimonialImage_2", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_3(id) {
+          var image_3 = ($("#testimnial_3image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_3.name, image_3);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadTestimonialImage_3", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_4(id) {
+          var image_4 = ($("#testimnial_4image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_4.name, image_4);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadTestimonialImage_4", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_5(id) {
+          var image_5 = ($("#testimnial_5image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_5.name, image_5);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadTestimonialImage_5", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_6(id) {
+          var image_6 = ($("#testimnial_6image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_6.name, image_6);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadTestimonialImage_6", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_7(id) {
+          var image_7 = ($("#testimnial_7image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_7.name, image_7);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadTestimonialImage_7", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_8(id) {
+          var image_8 = ($("#testimnial_8image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_8.name, image_8);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadTestimonialImage_8", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+        }
+
+    function validateImage_1() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("testimnial_1image").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("tstimg_1").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("testimnial_1image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_1image").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_1image").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_2() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("testimnial_2image").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("tstimg_2").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("testimnial_2image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_2image").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_2image").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_3() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("testimnial_3image").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("tstimg_3").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("testimnial_3image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_3image").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_3image").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_4() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("testimnial_4image").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("tstimg_4").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("testimnial_4image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_4image").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_4image").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_5() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("testimnial_5image").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("tstimg_5").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("testimnial_5image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_5image").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_5image").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+    function validateImage_6() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("testimnial_6image").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("tstimg_6").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("testimnial_6image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_6image").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_6image").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+    function validateImage_7() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("testimnial_7image").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("tstimg_7").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("testimnial_7image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_7image").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_7image").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+    function validateImage_8() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("testimnial_8image").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("tstimg_8").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("testimnial_8image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_8image").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("testimnial_8image").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+
+      function ClearControll() {
+        $("#testimnial_1image").val("");
+        $("#testimnial_2image").val("");
+        $("#testimnial_3image").val("");
+        $("#testimnial_4image").val("");
+        $("#testimnial_5image").val("");
+        $("#testimnial_6image").val("");
+        $("#testimnial_7image").val("");
+        $("#testimnial_8image").val("");
+       
+    }
+</script>    
+    
+    
+}

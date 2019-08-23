@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "support";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!-- Support Banner Section Starts -->
+<div class="container-fluid bg-support-banner-div">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 animated wow fadeInUp" data-wow-duration="2s">
+                    <div class="support-banner-caption">
+                        <h1 id="Content1"></h1>
+                        <h1 id="Content2"></h1>
+                        @*<h2>Personalized &</h2>
+                            <h1>Super-Quick Support</h1>
+                            <h3>Certified Technicians & Dedicated 24x7 Support</h3>*@
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 animated wow fadeInDown" data-wow-duration="2s">
+                    <div class="support-banner-img">
+                        <img  class="img-responsive img-auto" id="image_banner" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Support Banner Section Ends -->
+<!-- Need Support Section Starts -->
+
+<div class="container-fluid bg-need-support">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="support-heading text-center">
+                        <h2 id="Title1"></h2>
+                        <h3 id="SubTitle1"></h3>
+                        @*<h2>NEED TECHNICAL SUPPORT?</h2>
+                            <h3>We want to help you out! </h3>*@
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-4 col-md-6 col-md-offset-4 col-lg-6 col-lg-offset-4">
+                    <div class="support-details flex align-center">
+                        <div class="support-icon">
+                            <img src="~/images/call-icon.png" class="img-responsive" alt="" />
+                        </div>
+                        <a href="tel:8332022695">1-833-202-2695</a>
+                    </div>
+                    <div class="support-details text-center flex align-center">
+                        <div class="support-icon">
+                            <img src="~/images/skype-icon.png" class="img-responsive" alt="" />
+                        </div>
+                        <a href="#">Diamtrade.Support</a>
+                    </div>
+                    <div class="support-details text-center flex align-center">
+                        <div class="support-icon">
+                            <img src="~/images/mail-icon.png" class="img-responsive" alt="" />
+                        </div>
+                        <a href="mailto:Support@shaural.com">Support@shaural.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="support-disc text-center">
+                        @*<p>Transform your business. Get comprehensive and personalized IT Solutions & Support. We are a back-support for your business success. Plan, manage and integrate easily. Make operations easier and experience growth you want to achieve. Get in touch, today! </p>*@
+                        <p id="Content3"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="support-service-heading text-center">
+                        @*<h2>Award Winning Support Services</h2>*@
+                        <h2 id="Title2"></h2>
+                    </div>
+                    <ul class="service-service-list">
+                        <li><p id="Content4"></p></li>
+                        @*<li><p> We have years of experience & solved countless IT related issues and cases.</p></li>
+                            <li><p>We ensure our customers achieve the highest satisfaction level. That’s why we manage to serve our customers ranging from Fortune 500 Companies to Small Businesses and Individual Consumers. </p></li>
+                            <li><p>With the help of Market-Proven Support Tools & Dedicated Software, we always enrich our Technical Support Services and help our customers receive the best experience and resolution at the quickest! </p></li>*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Need Support Section Ends -->
+@section scripts{
+    <script>
+        var SupportID = 1;
+        EditSupport();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+        function EditSupport() {
+
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditSupport", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    $("#Content1").html(response.support[0].Content1).trigger('change');
+                    $("#Content2").html(response.support[0].Content2).trigger('change');
+                    $("#Title1").html(response.support[0].Title1).trigger('change');
+                    $("#Title2").html(response.support[0].Title2).trigger('change');
+                    $("#SubTitle1").html(response.support[0].SubTitle).trigger('change');
+                    $("#MobileNo").html(response.support[0].MobileNo).trigger('change');
+                    $("#SupportName").html(response.support[0].SupportName).trigger('change');
+                    $("#EmailID").html(response.support[0].EmailID).trigger('change');
+                    $("#Content3").html(response.support[0].Content3).trigger('change');
+                    $("#Content4").html(response.support[0].Content4).trigger('change');
+
+                     $("#image_banner").attr('src',imageurl+response.support[0].Image_Banner)
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+    </script>
+}

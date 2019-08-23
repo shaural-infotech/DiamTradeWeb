@@ -1,0 +1,681 @@
+﻿
+@{
+    ViewBag.Title = "GalleryImage";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true"></button>
+                        <h4 class="modal-title" id="H4PageTitle">Add GalleryImage</h4>
+                    </div>
+                    @*<div class="modal-body">
+                            Widget settings form goes here
+                        </div>*@
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3"><label for="Ddltabtype">Tab Type</label><span style="color:red;"> * </span></div>
+                                <div class="col-md-6">
+                                    <select id="Ddltabtype" class="form-control" required></select>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="clearfix" style="padding-top:20px"></div>
+                            <div class="row">
+                                <div class="col-md-3"><label for="galleryimage">Gallery Image(Size:1000*1000)</label><span style="color:red;"> * </span></div>
+                                <div class="col-md-3">
+                                    <input type="file" class="" id="galleryimage" onchange="ValidateGalleryImage()" accept="image/*">
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="pull-right image">
+                                        <img src="" id="glrimg" class="img-auto" style="width:100px">
+
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue" id="BtnSave" onclick="return validateform();">Save</button>
+                        <button type="button" class="btn default" data-dismiss="modal" onclick="return ClearControll();">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            Service
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    Gallery Image
+
+                </li>
+
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="btn-group pull-right">
+
+                            <button id="sample_editable_1_new" style="margin-right:10px" class="btn red delete_btn" onclick="return DelService();">
+                                <i class="fa fa-trash-o"></i>  Delete
+                            </button>
+
+                            <button id="sample_editable_1_new" style="margin-right:23px" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                <i class="fa fa-plus"></i>  Add
+                            </button>
+
+                        </div>
+                        @*<div class="col-md-6">
+                                <div class="clearfix button-float pull-right button-wrap">
+                                    <button id="sample_editable_1_new" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                        <i class="fa fa-plus"></i>  Add
+                                    </button>
+                                </div>
+                            </div>*@
+
+                    </div>
+                </div>
+                <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                <div class="portlet box grey-cascade">
+
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-globe"></i>View All Services
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <table class="table table-striped table-bordered table-hover" id="sample_1">
+                            <thead>
+                                <tr>
+                                    <th class="table-checkbox">
+                                        <input type="checkbox" class="checkboxes" data-set="#sample_1 .checkboxes" />
+                                    </th>
+                                    <th>
+                                        Sr No.
+                                    </th>
+                                    <th>
+                                        Gallery Tab Name
+                                    </th>
+                                    <th>
+                                        Image
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="TBService"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- END EXAMPLE TABLE PORTLET-->
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+
+            BindImages();
+            BindGalleryTab();
+         var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+        function BindGalleryTab() {
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("BindGalleryTab", "admin")",
+                data: '{}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert(JSON.stringify(response));
+                    $("#Ddltabtype").html("");
+                    //$("#DdlDepartment").append("<option value=0>Select Department</option>");
+                    for (var i = 0; i < response.length; i++) {
+                        $("#Ddltabtype").append("<option value=" + response[i].Tab_Id + ">" + response[i].TabName + "</option>");
+                    }
+                    $("#Ddltabtype").select();
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+        var Imageid1;
+        function BindImages() {
+            $.ajax({
+                type: "GET",
+                 url: "@Url.Action("BindImages", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+
+                    //  alert(JSON.stringify(data));
+                    if (data != null) {
+
+
+                        var row = "";
+                        var statusdisp = "";
+                        $('#sample_1').DataTable().clear().destroy();
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data, function (index, item) {
+                          //  //debugger;
+
+                            //row += " <tr><td class='table-checkbox'><input type='checkbox'  class='group-checkable' value='1' /></td><td>" + item.ServiceTypeID + "</td><td>" + item.ServiceType + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return OPenConf(this);'><i class='fa fa-edit' style='color:green;font-size:larger;' data-toggle='modal' data-target='#portlet-config'>Edit</i></td></tr>"
+                            row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkservice' class='group-checkable' value=" + item.i.Img_Id + " /></td><td>" + item.i.Img_Id + "</td><td>" + item.t.TabName + "</td><td><img src="+(imageurl+item.i.Tab_Image)+"  class='img-auto' style='width:100px'></td><td onclick='return OPenConf(this);'><i class='fa fa-edit btn default btn-xs green' data-toggle='modal' data-target='#portlet-config'>Edit</i></td></tr>"
+
+                        })
+                        $("#TBService").html(row);
+
+                        $('#sample_1').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#TBService").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+        function AddImages() {
+
+            if ($("#BtnSave").html() == "Save") {
+
+                var dataobj = JSON.stringify({
+                    'Tab_Id': $("#Ddltabtype").val()
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("InsertGalleryImage", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        ////debugger;
+                        if (response <=  0) {
+                            //alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.responseText,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            })
+                                //.then((willDelete) => {
+                                //    if (willDelete) {
+                                //        $("#TxtServiceType").focus();
+                                //    }
+                                //});
+                        }
+                        else {
+                            ////debugger;
+                           var image = ($("#galleryimage"))[0].files[0];
+                        if (image != null) {
+                            var fileData = new FormData();
+                            fileData.append(image.name, image);
+                            fileData.append('Id', response);
+                            $.ajax({
+                                url: "@Url.Action("UploadGalleryimage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: "image Uploaded",
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                     $("#portlet-config").modal('hide');
+                                    BindImages();
+                                    ClearControll();
+                                }
+                            })
+                        }
+
+
+
+                        }
+                        //msgDisplay();
+                       //
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        //alert(response.responseText);
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+            }
+            else {
+                var dataobj = JSON.stringify({
+                    'Img_Id':Imageid1,
+                    'Tab_Id': $("#Ddltabtype").val()
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("UpdateGalleryImage", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        //alert(JSON.stringify(response))
+                        if (response <=  0) {
+                            // alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.responseText,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                             var image = ($("#galleryimage"))[0].files[0];
+                        if (image != null) {
+                            var fileData = new FormData();
+                            fileData.append(image.name, image);
+                            fileData.append('Id', response);
+                            $.ajax({
+                                url: "@Url.Action("UploadGalleryimage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: "image Uploaded",
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                     $("#portlet-config").modal('hide');
+                            BindImages();
+                                }
+                            })
+                        }
+
+
+                            $("#portlet-config").modal('hide');
+                            BindImages();
+                        }
+                        ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        // alert(response.responseText);
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+            }
+        }
+
+        function ClearControll() {
+
+            $("#Ddltabtype").val('-- Select --');
+            $("#galleryimage").val('');
+            $("#glrimg").attr('src','');
+
+            $("#BtnSave").html("Save");
+            $("#H4PageTitle").html("Add Service Type");
+        }
+
+    function validateform() {
+        ////debugger;
+            var tabtype = $("#Ddltabtype").val();
+               //var image = ($("#galleryimage"))[0].files[0];
+
+
+            if (tabtype == null || tabtype == "" || tabtype == "-- Select --" || tabtype == "0") {
+
+                swal({
+                    title: "Warning!",
+                    text: "Tab Type can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+
+                return false;
+            }
+            else {
+                AddImages();
+            }
+        }
+
+        function OPenConf(Img_Id) {
+            var row = $(Img_Id).closest("TR");
+            var Img_Id = $("TD", row).eq(1).html();
+            Imageid1 = Img_Id;
+            EditTabImage(Img_Id);
+        }
+
+        function EditTabImage(Img_Id) {
+            $.ajax({
+                type: "GET",
+                data: { 'Img_Id': Img_Id },
+                url: "@Url.Action("EditImage", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    ClearControll();
+
+                    //alert(JSON.stringify(response));
+                    $("#Ddltabtype").val(response.Tab_Id).trigger('change');
+                    $("#glrimg").attr('src', imageurl+response.Tab_Image);
+
+
+                    $("#BtnSave").html("Update");
+                    $("#H4PageTitle").html("Edit Service");
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+
+        function DelTabimageeF(Img_Id) {
+            var dataobj = JSON.stringify({
+                'Img_Id': Img_Id
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteTabImage", "admin")",
+                data: dataobj,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == "false") {
+                        //alert(response.msg);
+                        swal({
+                            title: "Warning!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "warning",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "warning",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                    else {
+                        //alert(response.msg);
+                        swal({
+                            title: "success!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "success",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "success",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                        $("#modal-default").modal('hide');
+                        BindImages();
+                        ClearControll();
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+        function DelService() {
+            swal({
+                title: "Are you sure you want to delete this Record?",
+                text: "Once deleted, you will not be able to recover this Record!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                closeOnConfirm: false, //It does close the popup when I click on close button
+                closeOnCancel: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#sample_1').find('input[type="checkbox"]:checked').each(function () {
+                            var Img_Id = $(this).val();
+                            DelTabimageeF(Img_Id);
+                            //this is the current checkbox
+                            //var DelCareerID = $(this).val();
+                        });
+
+                    } else {
+                        swal("Your Record is safe!");
+                    }
+                });
+        }
+
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+            var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            //document.getElementById("error").style.display = ret ? "none" : "inline";
+            return ret;
+            }
+
+     function ValidateGalleryImage() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("galleryimage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("glrimg").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("galleryimage").files[0];
+         var fileimage = document.querySelector("#glrimg");
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("galleryimage").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("galleryimage").value = '';
+                    return false;
+                }
+
+
+                var height = fileimage.naturalHeight;
+                var width=fileimage.naturalWidth
+
+                if (height>1000 || width>1000) {
+                    swal({
+                        title: "Warning!",
+                        text: "You Can Upload Image Only(1000*1000)!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("galleryimage").value = '';
+                    return false;
+                }
+                return true;
+            }
+        }
+    </script>
+}
+

@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "sign_in";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!-- Sign In Section Starts -->
+<div class="container-fluid bg-signin-page">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="signin-banner-img">
+                        <img src="~/images/sign-in-banner.png" class="img-responsive img-auto" alt="" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="signin-form-div">
+                        <form class="signin-form">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="signin-form-heading text-left">
+                                        <h1>Sign in</h1>
+                                        <p>If you have a customer account, please sign in</p>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Username*" id="" />
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password*" id="" />
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 s-Links">
+                                    <div class="checkbox pull-left col-md-6 nopadding">
+                                        <label>
+                                            <input name="remeber" value="true" type="checkbox"><input name="RememberMe" value="false" type="hidden"> Remember me
+                                        </label>
+                                    </div>
+                                    <div class="pull-right forgotpassword col-md-6 text-right nopadding">
+                                        <a href="#" class="text-right" style="cursor:pointer;">Forgot password?</a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn-countinue">SIGN IN </button>
+
+                                    <button type="submit" class="btn-countinue">CANCEL</button>
+
+                                    <a href="#" class="datas">Sample Data</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="signin-banner-img register-img">
+                        <div class="text-center white-Txt">
+                            <div class="register-title">
+                                <h2>register now</h2>
+                            </div>
+                            <div class="register-desc">
+                                <p>If you had not registered before or does not have an account then create a new account now and start using software. You don’t have to pay till you are satisfied with product (Max 30 days). </p>
+                            </div>
+                            <a href="sign-up.html" class="btn-create">CREATE YOUR ACCOUNT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sign In Section Ends -->

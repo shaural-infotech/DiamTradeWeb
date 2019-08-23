@@ -1,0 +1,969 @@
+﻿
+@{
+    ViewBag.Title = "DesktopFeature";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+           Desktop Feature
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+
+                <li>
+                    <a href='@Url.Action("DesktopFeature","admin")'>Desktop Feature</a>
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- END PAGE HEADER-->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN EXTRAS PORTLET-->
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Edit Desktop Feature
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            @*<a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                                <a href="javascript:;" class="reload">
+                                </a>
+                                <a href="javascript:;" class="remove">
+                                </a>*@
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="#" class="form-horizontal form-bordered">
+                            @*START Contact Us*@
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Select Product Type<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <select id="ddlproductid" class="form-control" required onchange="BindDektopFeatureData()">
+                                            <option>-- Select Product--</option>
+                                            @*<option value="1" selected="selected">DiamTrade Desktop</option>
+                                            <option value="2">Diamtrade Cloud</option>
+                                            <option value="3">DiamTrade DiamX</option>*@
+                                            <option value="4" selected="selected">Home DiamX</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Feature 1<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="TxtFeature1" id="TxtFeature1">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_1" onchange="validateImage_1()" accept="image/*">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_1" class="img-auto" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Feature 2<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="TxtFeature2" id="TxtFeature2">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_2" onchange="validateImage_2()" accept="image/*">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_2" class="img-auto" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Feature 3<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="TxtFeature3" id="TxtFeature3">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_3" onchange="validateImage_3()" accept="image/*">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_3" class="img-auto" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Feature 4<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="TxtFeature4" id="TxtFeature4">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_4" onchange="validateImage_4()" accept="image/*">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_4" class="img-auto" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Feature 5<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="TxtFeature5" id="TxtFeature5">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_5" onchange="validateImage_5()" accept="image/*">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_5" class="img-auto" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Feature 6<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="TxtFeature6" id="TxtFeature6">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_6" onchange="validateImage_6()" accept="image/*">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_6" class="img-auto" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-body" style="display:none">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Feature 7<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="TxtFeature7" id="TxtFeature7">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_7" onchange="validateImage_7()" accept="image/*">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_7" class="img-auto" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-body" style="display:none">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Feature 8<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" name="TxtFeature8" id="TxtFeature8">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_8" onchange="validateImage_8()" accept="image/*">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_8" class="img-auto" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        @*<button type="submit" class="btn green" onclick="return UpdateContact UsUs();"><i class="fa fa-check"></i> Submit</button>*@
+                                        <button type="button" class="btn green" onclick="return validateform();"><i class="fa fa-check"></i> Submit</button>
+                                        <button type="button" class="btn default" onclick="return CancelData();">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+                <!-- END EXTRAS PORTLET-->
+            </div>
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    <script>
+        var DeskFeatID = 1;
+        EditDeskFeat();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+        //$(document).ready(function () {
+        //    EditContact UsUs();
+        //});
+        function EditDeskFeat() {
+            $.ajax({
+                type: "GET",
+                data: {'producttypeid':$("#ddlproductid").val()},
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditDeskFeature", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+
+                    $("#TxtFeature1").val(response.deskfeat[0].Feature1).trigger('change');
+                    $("#TxtFeature2").val(response.deskfeat[0].Feature2).trigger('change');
+                    $("#TxtFeature3").val(response.deskfeat[0].Feature3).trigger('change');
+                    $("#TxtFeature4").val(response.deskfeat[0].Feature4).trigger('change');
+                    $("#TxtFeature5").val(response.deskfeat[0].Feature5).trigger('change');
+                    $("#TxtFeature6").val(response.deskfeat[0].Feature6).trigger('change');
+                    $("#TxtFeature7").val(response.deskfeat[0].Feature7).trigger('change');
+                    $("#TxtFeature8").val(response.deskfeat[0].Feature8).trigger('change');
+
+                    $("#img_1").attr('src', imageurl+response.deskfeat[0].Img_1);
+                    $("#img_2").attr('src', imageurl+response.deskfeat[0].Img_2);
+                    $("#img_3").attr('src', imageurl+response.deskfeat[0].Img_3);
+                    $("#img_4").attr('src', imageurl+response.deskfeat[0].Img_4);
+                    $("#img_5").attr('src', imageurl+response.deskfeat[0].Img_5);
+                    $("#img_6").attr('src', imageurl+response.deskfeat[0].Img_6);
+                    $("#img_7").attr('src', imageurl+response.deskfeat[0].Img_7);
+                    $("#img_8").attr('src', imageurl+response.deskfeat[0].Img_8);
+
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+        
+        function validateform() {
+            if ($("#TxtFeature1").val() == null || $("#TxtFeature1").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Feature 1 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtFeature1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtFeature2").val() == null || $("#TxtFeature2").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Feature 2 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtFeature2").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtFeature3").val() == null || $("#TxtFeature3").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Feature 3 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtFeature3").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtFeature4").val() == null || $("#TxtFeature4").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Feature 4 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtFeature4").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtFeature5").val() == null || $("#TxtFeature5").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Feature 5 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtFeature5").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtFeature6").val() == null || $("#TxtFeature6").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Feature 6 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtFeature6").focus();
+                        }
+                    });
+                return false;
+            }
+            else {
+                UpdateDesktopFeature();
+            }
+        }
+
+        function UpdateDesktopFeature() {
+                    dataobj = JSON.stringify({
+                        'ProductTypeID': $("#ddlproductid").val(),
+                        'Feature1': $("#TxtFeature1").val(),
+                        'Feature2': $("#TxtFeature2").val(),
+                        'Feature3': $("#TxtFeature3").val(),
+                        'Feature4': $("#TxtFeature4").val(),
+                        'Feature5': $("#TxtFeature5").val(),
+                        'Feature6': $("#TxtFeature6").val() 
+                    });
+
+                $.ajax({
+                    type: "POST",
+                    //url: serviceurl + "UpdateContact UsUs",
+                    url: "@Url.Action("UpdateDeskFeat", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.success == "false") {
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+
+                             var file1 = document.getElementById("image_1").files[0];
+                             var file2 = document.getElementById("image_2").files[0];
+                             var file3 = document.getElementById("image_3").files[0];
+                             var file4 = document.getElementById("image_4").files[0];
+                            var file5 = document.getElementById("image_5").files[0];
+                            var file6 = document.getElementById("image_6").files[0];
+                            
+                            if (file1 != null) {
+                                SaveImage_1($("#ddlproductid").val());
+                            }
+                            if (file2 != null) {
+                                SaveImage_2($("#ddlproductid").val());
+                            }
+                            if (file3 != null) {
+                                SaveImage_3($("#ddlproductid").val());
+                            }
+                            if (file4 != null) {
+                                SaveImage_4($("#ddlproductid").val());
+                            }
+                            if (file5 != null) {
+                                SaveImage_5($("#ddlproductid").val());
+                            }
+                            if (file6 != null) {
+                                SaveImage_6($("#ddlproductid").val());
+                            }
+                            swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                            ClearControll();
+                            //$("#modal-default").modal('hide');
+                            //GetAllUser();
+                            //ClearControll();
+                        }
+                        //msgDisplay();
+                        //ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+        }
+
+        function CancelData() {
+           // alert('hi');
+            EditDeskFeat();
+        }
+
+      function ClearControll() {
+        $("#image_1").val("");
+        $("#image_2").val("");
+        $("#image_3").val("");
+        $("#image_4").val("");
+        $("#image_5").val("");
+        $("#image_6").val("");
+        $("#image_7").val("");
+        $("#image_8").val("");
+    }
+    function SaveImage_1(id) {
+          var image_1 = ($("#image_1"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadDesktopImage_1", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_2(id) {
+          var image_2 = ($("#image_2"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_2.name, image_2);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadDesktopImage_2", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_3(id) {
+          var image_3 = ($("#image_3"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_3.name, image_3);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadDesktopImage_3", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_4(id) {
+          var image_4 = ($("#image_4"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_4.name, image_4);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadDesktopImage_4", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_5(id) {
+          var image_5 = ($("#image_5"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_5.name, image_5);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadDesktopImage_5", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_6(id) {
+          var image_6 = ($("#image_6"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_6.name, image_6);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadDesktopImage_6", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_7(id) {
+          var image_7 = ($("#image_7"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_7.name, image_7);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadDesktopImage_7", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_8(id) {
+          var image_8 = ($("#image_8"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_8.name, image_8);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadDesktopImage_8", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+
+    function validateImage_1() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image_1").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img_1").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_1").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_1").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_1").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_2() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image_2").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img_2").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_2").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_2").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_2").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_3() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image_3").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img_3").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_3").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_3").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_3").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_4() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image_4").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img_4").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_4").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_4").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_4").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_5() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image_5").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img_5").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_5").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_5").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_5").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+    function validateImage_6() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image_6").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img_6").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_6").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_6").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_6").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+    
+    function BindDektopFeatureData() {
+        EditDeskFeat();
+    }
+
+    </script>
+}
+<!-- END CONTENT -->

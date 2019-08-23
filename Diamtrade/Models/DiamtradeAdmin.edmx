@@ -1,0 +1,2074 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DiamtradeAdminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Mst_AboutUS">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AboutTitle" Type="nvarchar(max)" />
+          <Property Name="AboutContent" Type="nvarchar(max)" />
+          <Property Name="AboutTitle1" Type="nvarchar(max)" />
+          <Property Name="AboutContent1" Type="nvarchar(max)" />
+          <Property Name="AboutTitle2" Type="nvarchar(max)" />
+          <Property Name="AboutContent2" Type="nvarchar(max)" />
+          <Property Name="AboutTitle3" Type="nvarchar(max)" />
+          <Property Name="AboutContent3" Type="nvarchar(max)" />
+          <Property Name="AboutTitle4" Type="nvarchar(max)" />
+          <Property Name="AboutContent4" Type="nvarchar(max)" />
+          <Property Name="Image_Banner" Type="nvarchar(max)" />
+          <Property Name="Image_Business" Type="nvarchar(max)" />
+          <Property Name="Image_Access" Type="nvarchar(max)" />
+          <Property Name="Image_Safest_Fastest" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Mst_Career">
+          <Key>
+            <PropertyRef Name="CarrersID" />
+          </Key>
+          <Property Name="CarrersID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CarrersTitle" Type="nvarchar(max)" />
+          <Property Name="SubTitle" Type="nvarchar(max)" />
+          <Property Name="Image_Banner" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="IsActive" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Mst_CareersSend">
+          <Key>
+            <PropertyRef Name="SendCarrerID" />
+          </Key>
+          <Property Name="SendCarrerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Prefix" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Educations" Type="nvarchar(max)" />
+          <Property Name="Designation" Type="nvarchar(max)" />
+          <Property Name="CoreExpert" Type="nvarchar(max)" />
+          <Property Name="Exper" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrevCompany" Type="nvarchar(max)" />
+          <Property Name="CurrentCompany" Type="nvarchar(max)" />
+          <Property Name="CurrentSalary" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExpectedSalary" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reference" Type="nvarchar(max)" />
+          <Property Name="AttachDoc" Type="nvarchar(max)" />
+          <Property Name="AttachPhoto" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Mst_CarrerMulti">
+          <Key>
+            <PropertyRef Name="CareerMultiID" />
+          </Key>
+          <Property Name="CareerMultiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Subject" Type="nvarchar(max)" />
+          <Property Name="Expe" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="CareerDesc" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="SortOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud">
+          <Key>
+            <PropertyRef Name="CloudID" />
+          </Key>
+          <Property Name="CloudID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Content1" Type="nvarchar(max)" />
+          <Property Name="Content2" Type="nvarchar(max)" />
+          <Property Name="Content3" Type="nvarchar(max)" />
+          <Property Name="Content4" Type="nvarchar(max)" />
+          <Property Name="Content5" Type="nvarchar(max)" />
+          <Property Name="ProductLogo" Type="nvarchar(max)" />
+          <Property Name="ProductImage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud_Features">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Feature_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud_Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud_Inventories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Feature_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud_KetFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Feature_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_CloudFeature">
+          <Key>
+            <PropertyRef Name="CloudFeatID" />
+          </Key>
+          <Property Name="CloudFeatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductTypeID" Type="int" />
+          <Property Name="Feature1" Type="nvarchar(max)" />
+          <Property Name="Feature2" Type="nvarchar(max)" />
+          <Property Name="Feature3" Type="nvarchar(max)" />
+          <Property Name="Feature4" Type="nvarchar(max)" />
+          <Property Name="Feature5" Type="nvarchar(max)" />
+          <Property Name="Feature6" Type="nvarchar(max)" />
+          <Property Name="Feature7" Type="nvarchar(max)" />
+          <Property Name="Feature8" Type="nvarchar(max)" />
+          <Property Name="Feature9" Type="nvarchar(max)" />
+          <Property Name="Img_1" Type="nvarchar(max)" />
+          <Property Name="Img_2" Type="nvarchar(max)" />
+          <Property Name="Img_3" Type="nvarchar(max)" />
+          <Property Name="Img_4" Type="nvarchar(max)" />
+          <Property Name="Img_5" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Compare">
+          <Key>
+            <PropertyRef Name="CompareID" />
+          </Key>
+          <Property Name="CompareID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompareDesc" Type="nvarchar(max)" />
+          <Property Name="Product1Desc" Type="nvarchar(max)" />
+          <Property Name="Product2Desc" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Compare_KeyFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Key_FeatureDesc" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_CompareMaster">
+          <Key>
+            <PropertyRef Name="Compare_Id" />
+          </Key>
+          <Property Name="Compare_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FeatureName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Desktop" Type="bit" />
+          <Property Name="Cloud" Type="bit" />
+        </EntityType>
+        <EntityType Name="Mst_ContactUs">
+          <Key>
+            <PropertyRef Name="ContactusID" />
+          </Key>
+          <Property Name="ContactusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image_Banner" Type="nvarchar(max)" />
+          <Property Name="CotactUsDesc" Type="nvarchar(max)" />
+          <Property Name="CotactTitle" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar(max)" />
+          <Property Name="SupportName" Type="nvarchar(max)" />
+          <Property Name="TeamViewerName" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_CotactMessage">
+          <Key>
+            <PropertyRef Name="ContactMessageID" />
+          </Key>
+          <Property Name="ContactMessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar(max)" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageContent" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_DemoRequest">
+          <Key>
+            <PropertyRef Name="DemoRequestID" />
+          </Key>
+          <Property Name="DemoRequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Mst_DeskFeature">
+          <Key>
+            <PropertyRef Name="DeskFeatureID" />
+          </Key>
+          <Property Name="DeskFeatureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductTypeID" Type="int" />
+          <Property Name="Feature1" Type="nvarchar(max)" />
+          <Property Name="Feature2" Type="nvarchar(max)" />
+          <Property Name="Feature3" Type="nvarchar(max)" />
+          <Property Name="Feature4" Type="nvarchar(max)" />
+          <Property Name="Feature5" Type="nvarchar(max)" />
+          <Property Name="Feature6" Type="nvarchar(max)" />
+          <Property Name="Feature7" Type="nvarchar(max)" />
+          <Property Name="Feature8" Type="nvarchar(max)" />
+          <Property Name="Img_1" Type="nvarchar(max)" />
+          <Property Name="Img_2" Type="nvarchar(max)" />
+          <Property Name="Img_3" Type="nvarchar(max)" />
+          <Property Name="Img_4" Type="nvarchar(max)" />
+          <Property Name="Img_5" Type="nvarchar(max)" />
+          <Property Name="Img_6" Type="nvarchar(max)" />
+          <Property Name="Img_7" Type="nvarchar(max)" />
+          <Property Name="Img_8" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop">
+          <Key>
+            <PropertyRef Name="DesktopID" />
+          </Key>
+          <Property Name="DesktopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Content1" Type="nvarchar(max)" />
+          <Property Name="Content2" Type="nvarchar(max)" />
+          <Property Name="Content3" Type="nvarchar(max)" />
+          <Property Name="Content4" Type="nvarchar(max)" />
+          <Property Name="Content5" Type="nvarchar(max)" />
+          <Property Name="ProductLogo" Type="nvarchar(max)" />
+          <Property Name="ProductImage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop_Features">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Feature_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop_Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop_Inventories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Feature_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop_KeyFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Feature_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Diamx">
+          <Key>
+            <PropertyRef Name="DiamxID" />
+          </Key>
+          <Property Name="DiamxID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Content1" Type="nvarchar(max)" />
+          <Property Name="Content2" Type="nvarchar(max)" />
+          <Property Name="Content3" Type="nvarchar(max)" />
+          <Property Name="Content4" Type="nvarchar(max)" />
+          <Property Name="Content5" Type="nvarchar(max)" />
+          <Property Name="ProductLogo" Type="nvarchar(max)" />
+          <Property Name="ProductImage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_DiamX_Features">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Feature_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Diamx_Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Diamx_Inventories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Feature_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Diamx_KeyFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Feature_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_Footerblock">
+          <Key>
+            <PropertyRef Name="FooterID" />
+          </Key>
+          <Property Name="FooterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FooterAddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupportNo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Mst_Home">
+          <Key>
+            <PropertyRef Name="HomePageID" />
+          </Key>
+          <Property Name="HomePageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title1" Type="nvarchar(max)" />
+          <Property Name="SubTitle1" Type="nvarchar(max)" />
+          <Property Name="Content1" Type="nvarchar(max)" />
+          <Property Name="Title2" Type="nvarchar(max)" />
+          <Property Name="Content2" Type="nvarchar(max)" />
+          <Property Name="Title3" Type="nvarchar(max)" />
+          <Property Name="Content3" Type="nvarchar(max)" />
+          <Property Name="Image_1" Type="nvarchar(max)" />
+          <Property Name="Image_2" Type="nvarchar(max)" />
+          <Property Name="Title4" Type="nvarchar(max)" />
+          <Property Name="Content4" Type="nvarchar(max)" />
+          <Property Name="Image_4" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_Inquiry">
+          <Key>
+            <PropertyRef Name="InquiryID" />
+          </Key>
+          <Property Name="InquiryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Img_Banner" Type="nvarchar(max)" />
+          <Property Name="InquiryDesc" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Mst_InquiryMessage">
+          <Key>
+            <PropertyRef Name="InquiryMessageID" />
+          </Key>
+          <Property Name="InquiryMessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar(max)" />
+          <Property Name="MobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="InquiryType" Type="nvarchar(max)" />
+          <Property Name="InquiryMessage" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Mst_KeyFeatures">
+          <Key>
+            <PropertyRef Name="KeyFeaturesID" />
+          </Key>
+          <Property Name="KeyFeaturesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FeatureTitle" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="ProductID" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_OurClientImages">
+          <Key>
+            <PropertyRef Name="ClientImageID" />
+          </Key>
+          <Property Name="ClientImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientImage" Type="nvarchar(max)" />
+          <Property Name="SortOrder" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+          <Property Name="ShortContent" Type="nvarchar(max)" />
+          <Property Name="SortOrder" Type="int" />
+          <Property Name="ProductLogo" Type="nvarchar(max)" />
+          <Property Name="ProductImage" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_Service_Features">
+          <Key>
+            <PropertyRef Name="Service_Features_Id" />
+          </Key>
+          <Property Name="Service_Features_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceType_Id" Type="int" />
+          <Property Name="Service_Feature_Title" Type="nvarchar(max)" />
+          <Property Name="Service_Freature_img" Type="nvarchar(max)" />
+          <Property Name="Service_Feature_Desc" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_ServiceContent">
+          <Key>
+            <PropertyRef Name="Service_Id" />
+          </Key>
+          <Property Name="Service_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServiceBanner" Type="nvarchar(max)" />
+          <Property Name="Service_Heading" Type="nvarchar(max)" />
+          <Property Name="Service_Desc1" Type="nvarchar(max)" />
+          <Property Name="Service_Desc2" Type="nvarchar(max)" />
+          <Property Name="Service_img1" Type="nvarchar(max)" />
+          <Property Name="Service_img2" Type="nvarchar(max)" />
+          <Property Name="Service_ing3" Type="nvarchar(max)" />
+          <Property Name="img1_Content1" Type="nvarchar(max)" />
+          <Property Name="img2_Conrent2" Type="nvarchar(max)" />
+          <Property Name="img3_Content3" Type="nvarchar(max)" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mst_Services">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar(max)" />
+          <Property Name="ServiceTypeID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="SortOrder" Type="int" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_ServicesType">
+          <Key>
+            <PropertyRef Name="ServiceTypeID" />
+          </Key>
+          <Property Name="ServiceTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceType" Type="nvarchar(max)" />
+          <Property Name="ServiceTypeImage" Type="nvarchar(max)" />
+          <Property Name="SortOrder" Type="int" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ServiceBanner" Type="nvarchar(max)" />
+          <Property Name="Service_Heading" Type="nvarchar(max)" />
+          <Property Name="Service_Desc1" Type="nvarchar(max)" />
+          <Property Name="Service_Desc2" Type="nvarchar(max)" />
+          <Property Name="Service_img1" Type="nvarchar(max)" />
+          <Property Name="Service_img2" Type="nvarchar(max)" />
+          <Property Name="Service_ing3" Type="nvarchar(max)" />
+          <Property Name="img1_Content1" Type="nvarchar(max)" />
+          <Property Name="img2_Conrent2" Type="nvarchar(max)" />
+          <Property Name="img3_Content3" Type="nvarchar(max)" />
+          <Property Name="Service_title1" Type="nvarchar(max)" />
+          <Property Name="Service_title2" Type="nvarchar(max)" />
+          <Property Name="Service_title3" Type="nvarchar(max)" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mst_Slider">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title1" Type="nvarchar(max)" />
+          <Property Name="Content1" Type="nvarchar(max)" />
+          <Property Name="Title2" Type="nvarchar(max)" />
+          <Property Name="Content2" Type="nvarchar(max)" />
+          <Property Name="Title3" Type="nvarchar(max)" />
+          <Property Name="Content3" Type="nvarchar(max)" />
+          <Property Name="Title4" Type="nvarchar(max)" />
+          <Property Name="Content4" Type="nvarchar(max)" />
+          <Property Name="Image_1" Type="nvarchar(max)" />
+          <Property Name="Image_2" Type="nvarchar(max)" />
+          <Property Name="Image_3" Type="nvarchar(max)" />
+          <Property Name="Image_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_Support">
+          <Key>
+            <PropertyRef Name="SupportID" />
+          </Key>
+          <Property Name="SupportID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Image_Banner" Type="nvarchar(max)" />
+          <Property Name="Content1" Type="nvarchar(max)" />
+          <Property Name="Content2" Type="nvarchar(max)" />
+          <Property Name="Title1" Type="nvarchar(max)" />
+          <Property Name="SubTitle" Type="nvarchar(max)" />
+          <Property Name="mobileNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupportName" Type="nvarchar(max)" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content3" Type="nvarchar(max)" />
+          <Property Name="Title2" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Content4" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_TabImage">
+          <Key>
+            <PropertyRef Name="Img_Id" />
+          </Key>
+          <Property Name="Img_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tab_Id" Type="int" />
+          <Property Name="Tab_Image" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="IsActive" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Mst_TabMaster">
+          <Key>
+            <PropertyRef Name="Tab_Id" />
+          </Key>
+          <Property Name="Tab_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TabName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SortOrder" Type="int" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="IsActive" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Mst_Testimonial">
+          <Key>
+            <PropertyRef Name="TestimonialID" />
+          </Key>
+          <Property Name="TestimonialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TestimonialMainTitle" Type="nvarchar(max)" />
+          <Property Name="TestiTitle" Type="nvarchar(max)" />
+          <Property Name="SortOrder" Type="int" />
+          <Property Name="TestimComments" Type="nvarchar(max)" />
+          <Property Name="PersonImage" Type="nvarchar(max)" />
+          <Property Name="PersonName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <EntityType Name="Mst_Testimonial_New">
+          <Key>
+            <PropertyRef Name="Testimonial_Id" />
+          </Key>
+          <Property Name="Testimonial_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Testimonial_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Testimonial_Image" Type="nvarchar(max)" />
+          <Property Name="Testimonial_Content" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="int" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Mst_TestimonialMain">
+          <Key>
+            <PropertyRef Name="TestMID" />
+          </Key>
+          <Property Name="TestMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="img_1" Type="nvarchar(max)" />
+          <Property Name="name_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content_1" Type="nvarchar(max)" />
+          <Property Name="img_2" Type="nvarchar(max)" />
+          <Property Name="name_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content_2" Type="nvarchar(max)" />
+          <Property Name="img_3" Type="nvarchar(max)" />
+          <Property Name="name_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content_3" Type="nvarchar(max)" />
+          <Property Name="img_4" Type="nvarchar(max)" />
+          <Property Name="name_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content_4" Type="nvarchar(max)" />
+          <Property Name="img_5" Type="nvarchar(max)" />
+          <Property Name="name_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content_5" Type="nvarchar(max)" />
+          <Property Name="img_6" Type="nvarchar(max)" />
+          <Property Name="name_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content_6" Type="nvarchar(max)" />
+          <Property Name="img_7" Type="nvarchar(max)" />
+          <Property Name="name_7" Type="nvarchar(max)" />
+          <Property Name="Content_7" Type="nvarchar(max)" />
+          <Property Name="img_8" Type="nvarchar(max)" />
+          <Property Name="name_8" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content_8" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Mst_User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar(max)" />
+          <Property Name="CotactNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="CreateDate" Type="date" />
+          <Property Name="CreateBy" Type="int" />
+        </EntityType>
+        <Association Name="FK_Mst_Service_Features_Mst_ServicesType">
+          <End Role="Mst_ServicesType" Type="Self.Mst_ServicesType" Multiplicity="0..1" />
+          <End Role="Mst_Service_Features" Type="Self.Mst_Service_Features" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mst_ServicesType">
+              <PropertyRef Name="ServiceTypeID" />
+            </Principal>
+            <Dependent Role="Mst_Service_Features">
+              <PropertyRef Name="ServiceType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DiamtradeAdminModelStoreContainer">
+          <EntitySet Name="Mst_AboutUS" EntityType="Self.Mst_AboutUS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Career" EntityType="Self.Mst_Career" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_CareersSend" EntityType="Self.Mst_CareersSend" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_CarrerMulti" EntityType="Self.Mst_CarrerMulti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Cloud" EntityType="Self.Mst_Cloud" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Cloud_Features" EntityType="Self.Mst_Cloud_Features" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Cloud_Gallery" EntityType="Self.Mst_Cloud_Gallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Cloud_Inventories" EntityType="Self.Mst_Cloud_Inventories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Cloud_KetFeature" EntityType="Self.Mst_Cloud_KetFeature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_CloudFeature" EntityType="Self.Mst_CloudFeature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Compare" EntityType="Self.Mst_Compare" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Compare_KeyFeature" EntityType="Self.Mst_Compare_KeyFeature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_CompareMaster" EntityType="Self.Mst_CompareMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_ContactUs" EntityType="Self.Mst_ContactUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_CotactMessage" EntityType="Self.Mst_CotactMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_DemoRequest" EntityType="Self.Mst_DemoRequest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_DeskFeature" EntityType="Self.Mst_DeskFeature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Desktop" EntityType="Self.Mst_Desktop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Desktop_Features" EntityType="Self.Mst_Desktop_Features" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Desktop_Gallery" EntityType="Self.Mst_Desktop_Gallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Desktop_Inventories" EntityType="Self.Mst_Desktop_Inventories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Desktop_KeyFeature" EntityType="Self.Mst_Desktop_KeyFeature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Diamx" EntityType="Self.Mst_Diamx" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_DiamX_Features" EntityType="Self.Mst_DiamX_Features" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Diamx_Gallery" EntityType="Self.Mst_Diamx_Gallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Diamx_Inventories" EntityType="Self.Mst_Diamx_Inventories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Diamx_KeyFeature" EntityType="Self.Mst_Diamx_KeyFeature" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Footerblock" EntityType="Self.Mst_Footerblock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Home" EntityType="Self.Mst_Home" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Inquiry" EntityType="Self.Mst_Inquiry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_InquiryMessage" EntityType="Self.Mst_InquiryMessage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_KeyFeatures" EntityType="Self.Mst_KeyFeatures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_OurClientImages" EntityType="Self.Mst_OurClientImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Product" EntityType="Self.Mst_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Service_Features" EntityType="Self.Mst_Service_Features" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_ServiceContent" EntityType="Self.Mst_ServiceContent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Services" EntityType="Self.Mst_Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_ServicesType" EntityType="Self.Mst_ServicesType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Slider" EntityType="Self.Mst_Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Support" EntityType="Self.Mst_Support" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_TabImage" EntityType="Self.Mst_TabImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_TabMaster" EntityType="Self.Mst_TabMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Testimonial" EntityType="Self.Mst_Testimonial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_Testimonial_New" EntityType="Self.Mst_Testimonial_New" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_TestimonialMain" EntityType="Self.Mst_TestimonialMain" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mst_User" EntityType="Self.Mst_User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Mst_Service_Features_Mst_ServicesType" Association="Self.FK_Mst_Service_Features_Mst_ServicesType">
+            <End Role="Mst_ServicesType" EntitySet="Mst_ServicesType" />
+            <End Role="Mst_Service_Features" EntitySet="Mst_Service_Features" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DiamtradeAdminModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DiamtradeAdminEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Mst_AboutUS" EntityType="DiamtradeAdminModel.Mst_AboutUS" />
+          <EntitySet Name="Mst_Career" EntityType="DiamtradeAdminModel.Mst_Career" />
+          <EntitySet Name="Mst_CareersSend" EntityType="DiamtradeAdminModel.Mst_CareersSend" />
+          <EntitySet Name="Mst_CarrerMulti" EntityType="DiamtradeAdminModel.Mst_CarrerMulti" />
+          <EntitySet Name="Mst_Cloud" EntityType="DiamtradeAdminModel.Mst_Cloud" />
+          <EntitySet Name="Mst_Cloud_Features" EntityType="DiamtradeAdminModel.Mst_Cloud_Features" />
+          <EntitySet Name="Mst_Cloud_Gallery" EntityType="DiamtradeAdminModel.Mst_Cloud_Gallery" />
+          <EntitySet Name="Mst_Cloud_Inventories" EntityType="DiamtradeAdminModel.Mst_Cloud_Inventories" />
+          <EntitySet Name="Mst_Cloud_KetFeature" EntityType="DiamtradeAdminModel.Mst_Cloud_KetFeature" />
+          <EntitySet Name="Mst_CloudFeature" EntityType="DiamtradeAdminModel.Mst_CloudFeature" />
+          <EntitySet Name="Mst_Compare" EntityType="DiamtradeAdminModel.Mst_Compare" />
+          <EntitySet Name="Mst_Compare_KeyFeature" EntityType="DiamtradeAdminModel.Mst_Compare_KeyFeature" />
+          <EntitySet Name="Mst_CompareMaster" EntityType="DiamtradeAdminModel.Mst_CompareMaster" />
+          <EntitySet Name="Mst_ContactUs" EntityType="DiamtradeAdminModel.Mst_ContactUs" />
+          <EntitySet Name="Mst_CotactMessage" EntityType="DiamtradeAdminModel.Mst_CotactMessage" />
+          <EntitySet Name="Mst_DemoRequest" EntityType="DiamtradeAdminModel.Mst_DemoRequest" />
+          <EntitySet Name="Mst_DeskFeature" EntityType="DiamtradeAdminModel.Mst_DeskFeature" />
+          <EntitySet Name="Mst_Desktop" EntityType="DiamtradeAdminModel.Mst_Desktop" />
+          <EntitySet Name="Mst_Desktop_Features" EntityType="DiamtradeAdminModel.Mst_Desktop_Features" />
+          <EntitySet Name="Mst_Desktop_Gallery" EntityType="DiamtradeAdminModel.Mst_Desktop_Gallery" />
+          <EntitySet Name="Mst_Desktop_Inventories" EntityType="DiamtradeAdminModel.Mst_Desktop_Inventories" />
+          <EntitySet Name="Mst_Desktop_KeyFeature" EntityType="DiamtradeAdminModel.Mst_Desktop_KeyFeature" />
+          <EntitySet Name="Mst_Diamx" EntityType="DiamtradeAdminModel.Mst_Diamx" />
+          <EntitySet Name="Mst_DiamX_Features" EntityType="DiamtradeAdminModel.Mst_DiamX_Features" />
+          <EntitySet Name="Mst_Diamx_Gallery" EntityType="DiamtradeAdminModel.Mst_Diamx_Gallery" />
+          <EntitySet Name="Mst_Diamx_Inventories" EntityType="DiamtradeAdminModel.Mst_Diamx_Inventories" />
+          <EntitySet Name="Mst_Diamx_KeyFeature" EntityType="DiamtradeAdminModel.Mst_Diamx_KeyFeature" />
+          <EntitySet Name="Mst_Footerblock" EntityType="DiamtradeAdminModel.Mst_Footerblock" />
+          <EntitySet Name="Mst_Home" EntityType="DiamtradeAdminModel.Mst_Home" />
+          <EntitySet Name="Mst_Inquiry" EntityType="DiamtradeAdminModel.Mst_Inquiry" />
+          <EntitySet Name="Mst_InquiryMessage" EntityType="DiamtradeAdminModel.Mst_InquiryMessage" />
+          <EntitySet Name="Mst_KeyFeatures" EntityType="DiamtradeAdminModel.Mst_KeyFeatures" />
+          <EntitySet Name="Mst_OurClientImages" EntityType="DiamtradeAdminModel.Mst_OurClientImages" />
+          <EntitySet Name="Mst_Product" EntityType="DiamtradeAdminModel.Mst_Product" />
+          <EntitySet Name="Mst_Service_Features" EntityType="DiamtradeAdminModel.Mst_Service_Features" />
+          <EntitySet Name="Mst_ServiceContent" EntityType="DiamtradeAdminModel.Mst_ServiceContent" />
+          <EntitySet Name="Mst_Services" EntityType="DiamtradeAdminModel.Mst_Services" />
+          <EntitySet Name="Mst_ServicesType" EntityType="DiamtradeAdminModel.Mst_ServicesType" />
+          <EntitySet Name="Mst_Slider" EntityType="DiamtradeAdminModel.Mst_Slider" />
+          <EntitySet Name="Mst_Support" EntityType="DiamtradeAdminModel.Mst_Support" />
+          <EntitySet Name="Mst_TabImage" EntityType="DiamtradeAdminModel.Mst_TabImage" />
+          <EntitySet Name="Mst_TabMaster" EntityType="DiamtradeAdminModel.Mst_TabMaster" />
+          <EntitySet Name="Mst_Testimonial" EntityType="DiamtradeAdminModel.Mst_Testimonial" />
+          <EntitySet Name="Mst_Testimonial_New" EntityType="DiamtradeAdminModel.Mst_Testimonial_New" />
+          <EntitySet Name="Mst_TestimonialMain" EntityType="DiamtradeAdminModel.Mst_TestimonialMain" />
+          <EntitySet Name="Mst_User" EntityType="DiamtradeAdminModel.Mst_User" />
+          <AssociationSet Name="FK_Mst_Service_Features_Mst_ServicesType" Association="DiamtradeAdminModel.FK_Mst_Service_Features_Mst_ServicesType">
+            <End Role="Mst_ServicesType" EntitySet="Mst_ServicesType" />
+            <End Role="Mst_Service_Features" EntitySet="Mst_Service_Features" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Mst_AboutUS">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AboutTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutTitle1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutContent1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutTitle2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutContent2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutTitle3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutContent3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutTitle4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AboutContent4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Banner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Business" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Access" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Safest_Fastest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Mst_Career">
+          <Key>
+            <PropertyRef Name="CarrersID" />
+          </Key>
+          <Property Name="CarrersID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarrersTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_Banner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="IsActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_CareersSend">
+          <Key>
+            <PropertyRef Name="SendCarrerID" />
+          </Key>
+          <Property Name="SendCarrerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Educations" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CoreExpert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Exper" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrevCompany" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentCompany" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentSalary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExpectedSalary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttachDoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttachPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Mst_CarrerMulti">
+          <Key>
+            <PropertyRef Name="CareerMultiID" />
+          </Key>
+          <Property Name="CareerMultiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Expe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CareerDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="SortOrder" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud">
+          <Key>
+            <PropertyRef Name="CloudID" />
+          </Key>
+          <Property Name="CloudID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud_Features">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud_Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud_Inventories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Cloud_KetFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_CloudFeature">
+          <Key>
+            <PropertyRef Name="CloudFeatID" />
+          </Key>
+          <Property Name="CloudFeatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductTypeID" Type="Int32" />
+          <Property Name="Feature1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature9" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Compare">
+          <Key>
+            <PropertyRef Name="CompareID" />
+          </Key>
+          <Property Name="CompareID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompareDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Product1Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Product2Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Compare_KeyFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Key_FeatureDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_CompareMaster">
+          <Key>
+            <PropertyRef Name="Compare_Id" />
+          </Key>
+          <Property Name="Compare_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FeatureName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Desktop" Type="Boolean" />
+          <Property Name="Cloud" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Mst_ContactUs">
+          <Key>
+            <PropertyRef Name="ContactusID" />
+          </Key>
+          <Property Name="ContactusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Banner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CotactUsDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CotactTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupportName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TeamViewerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_CotactMessage">
+          <Key>
+            <PropertyRef Name="ContactMessageID" />
+          </Key>
+          <Property Name="ContactMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MessageContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_DemoRequest">
+          <Key>
+            <PropertyRef Name="DemoRequestID" />
+          </Key>
+          <Property Name="DemoRequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Mst_DeskFeature">
+          <Key>
+            <PropertyRef Name="DeskFeatureID" />
+          </Key>
+          <Property Name="DeskFeatureID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductTypeID" Type="Int32" />
+          <Property Name="Feature1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Feature8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img_8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop">
+          <Key>
+            <PropertyRef Name="DesktopID" />
+          </Key>
+          <Property Name="DesktopID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop_Features">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop_Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop_Inventories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Desktop_KeyFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Diamx">
+          <Key>
+            <PropertyRef Name="DiamxID" />
+          </Key>
+          <Property Name="DiamxID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_DiamX_Features">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Diamx_Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Diamx_Inventories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Diamx_KeyFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Feature_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Footerblock">
+          <Key>
+            <PropertyRef Name="FooterID" />
+          </Key>
+          <Property Name="FooterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FooterAddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SupportNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Home">
+          <Key>
+            <PropertyRef Name="HomePageID" />
+          </Key>
+          <Property Name="HomePageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_Inquiry">
+          <Key>
+            <PropertyRef Name="InquiryID" />
+          </Key>
+          <Property Name="InquiryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Img_Banner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InquiryDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Mst_InquiryMessage">
+          <Key>
+            <PropertyRef Name="InquiryMessageID" />
+          </Key>
+          <Property Name="InquiryMessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InquiryType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InquiryMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Mst_KeyFeatures">
+          <Key>
+            <PropertyRef Name="KeyFeaturesID" />
+          </Key>
+          <Property Name="KeyFeaturesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FeatureTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_OurClientImages">
+          <Key>
+            <PropertyRef Name="ClientImageID" />
+          </Key>
+          <Property Name="ClientImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShortContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int32" />
+          <Property Name="ProductLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_Service_Features">
+          <Key>
+            <PropertyRef Name="Service_Features_Id" />
+          </Key>
+          <Property Name="Service_Features_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceType_Id" Type="Int32" />
+          <Property Name="Service_Feature_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Freature_img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Feature_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Mst_ServicesType" Relationship="DiamtradeAdminModel.FK_Mst_Service_Features_Mst_ServicesType" FromRole="Mst_Service_Features" ToRole="Mst_ServicesType" />
+        </EntityType>
+        <EntityType Name="Mst_ServiceContent">
+          <Key>
+            <PropertyRef Name="Service_Id" />
+          </Key>
+          <Property Name="Service_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Heading" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Desc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Desc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_img1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_img2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_ing3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img1_Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img2_Conrent2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img3_Content3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Mst_Services">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceTypeID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="SortOrder" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_ServicesType">
+          <Key>
+            <PropertyRef Name="ServiceTypeID" />
+          </Key>
+          <Property Name="ServiceTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceTypeImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ServiceBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Heading" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Desc1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Desc2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_img1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_img2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_ing3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img1_Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img2_Conrent2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img3_Content3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_title1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_title2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_title3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Mst_Service_Features" Relationship="DiamtradeAdminModel.FK_Mst_Service_Features_Mst_ServicesType" FromRole="Mst_ServicesType" ToRole="Mst_Service_Features" />
+        </EntityType>
+        <EntityType Name="Mst_Slider">
+          <Key>
+            <PropertyRef Name="SliderID" />
+          </Key>
+          <Property Name="SliderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_Support">
+          <Key>
+            <PropertyRef Name="SupportID" />
+          </Key>
+          <Property Name="SupportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Banner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SupportName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title2" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_TabImage">
+          <Key>
+            <PropertyRef Name="Img_Id" />
+          </Key>
+          <Property Name="Img_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tab_Id" Type="Int32" />
+          <Property Name="Tab_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="IsActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_TabMaster">
+          <Key>
+            <PropertyRef Name="Tab_Id" />
+          </Key>
+          <Property Name="Tab_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TabName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="IsActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_Testimonial">
+          <Key>
+            <PropertyRef Name="TestimonialID" />
+          </Key>
+          <Property Name="TestimonialID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TestimonialMainTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TestiTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int32" />
+          <Property Name="TestimComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Mst_Testimonial_New">
+          <Key>
+            <PropertyRef Name="Testimonial_Id" />
+          </Key>
+          <Property Name="Testimonial_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Testimonial_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Testimonial_Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Testimonial_Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="Int32" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Mst_TestimonialMain">
+          <Key>
+            <PropertyRef Name="TestMID" />
+          </Key>
+          <Property Name="TestMID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="img_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img_5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content_5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img_6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content_6" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img_7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name_7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Content_7" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="img_8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="name_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content_8" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mst_User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CotactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="CreateBy" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_Mst_Service_Features_Mst_ServicesType">
+          <End Type="DiamtradeAdminModel.Mst_ServicesType" Role="Mst_ServicesType" Multiplicity="0..1" />
+          <End Type="DiamtradeAdminModel.Mst_Service_Features" Role="Mst_Service_Features" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mst_ServicesType">
+              <PropertyRef Name="ServiceTypeID" />
+            </Principal>
+            <Dependent Role="Mst_Service_Features">
+              <PropertyRef Name="ServiceType_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DiamtradeAdminModelStoreContainer" CdmEntityContainer="DiamtradeAdminEntities">
+          <EntitySetMapping Name="Mst_AboutUS">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_AboutUS">
+              <MappingFragment StoreEntitySet="Mst_AboutUS">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Image_Safest_Fastest" ColumnName="Image_Safest_Fastest" />
+                <ScalarProperty Name="Image_Access" ColumnName="Image_Access" />
+                <ScalarProperty Name="Image_Business" ColumnName="Image_Business" />
+                <ScalarProperty Name="Image_Banner" ColumnName="Image_Banner" />
+                <ScalarProperty Name="AboutContent4" ColumnName="AboutContent4" />
+                <ScalarProperty Name="AboutTitle4" ColumnName="AboutTitle4" />
+                <ScalarProperty Name="AboutContent3" ColumnName="AboutContent3" />
+                <ScalarProperty Name="AboutTitle3" ColumnName="AboutTitle3" />
+                <ScalarProperty Name="AboutContent2" ColumnName="AboutContent2" />
+                <ScalarProperty Name="AboutTitle2" ColumnName="AboutTitle2" />
+                <ScalarProperty Name="AboutContent1" ColumnName="AboutContent1" />
+                <ScalarProperty Name="AboutTitle1" ColumnName="AboutTitle1" />
+                <ScalarProperty Name="AboutContent" ColumnName="AboutContent" />
+                <ScalarProperty Name="AboutTitle" ColumnName="AboutTitle" />
+                <ScalarProperty Name="AboutID" ColumnName="AboutID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Career">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Career">
+              <MappingFragment StoreEntitySet="Mst_Career">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Image_Banner" ColumnName="Image_Banner" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="CarrersTitle" ColumnName="CarrersTitle" />
+                <ScalarProperty Name="CarrersID" ColumnName="CarrersID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_CareersSend">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_CareersSend">
+              <MappingFragment StoreEntitySet="Mst_CareersSend">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="AttachPhoto" ColumnName="AttachPhoto" />
+                <ScalarProperty Name="AttachDoc" ColumnName="AttachDoc" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="ExpectedSalary" ColumnName="ExpectedSalary" />
+                <ScalarProperty Name="CurrentSalary" ColumnName="CurrentSalary" />
+                <ScalarProperty Name="CurrentCompany" ColumnName="CurrentCompany" />
+                <ScalarProperty Name="PrevCompany" ColumnName="PrevCompany" />
+                <ScalarProperty Name="Exper" ColumnName="Exper" />
+                <ScalarProperty Name="CoreExpert" ColumnName="CoreExpert" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Educations" ColumnName="Educations" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="SendCarrerID" ColumnName="SendCarrerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_CarrerMulti">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_CarrerMulti">
+              <MappingFragment StoreEntitySet="Mst_CarrerMulti">
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CareerDesc" ColumnName="CareerDesc" />
+                <ScalarProperty Name="JobLocation" ColumnName="JobLocation" />
+                <ScalarProperty Name="Expe" ColumnName="Expe" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="CareerMultiID" ColumnName="CareerMultiID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Cloud">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Cloud">
+              <MappingFragment StoreEntitySet="Mst_Cloud">
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProductLogo" ColumnName="ProductLogo" />
+                <ScalarProperty Name="Content5" ColumnName="Content5" />
+                <ScalarProperty Name="Content4" ColumnName="Content4" />
+                <ScalarProperty Name="Content3" ColumnName="Content3" />
+                <ScalarProperty Name="Content2" ColumnName="Content2" />
+                <ScalarProperty Name="Content1" ColumnName="Content1" />
+                <ScalarProperty Name="CloudID" ColumnName="CloudID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Cloud_Features">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Cloud_Features">
+              <MappingFragment StoreEntitySet="Mst_Cloud_Features">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Cloud_Gallery">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Cloud_Gallery">
+              <MappingFragment StoreEntitySet="Mst_Cloud_Gallery">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Cloud_Inventories">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Cloud_Inventories">
+              <MappingFragment StoreEntitySet="Mst_Cloud_Inventories">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Cloud_KetFeature">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Cloud_KetFeature">
+              <MappingFragment StoreEntitySet="Mst_Cloud_KetFeature">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_CloudFeature">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_CloudFeature">
+              <MappingFragment StoreEntitySet="Mst_CloudFeature">
+                <ScalarProperty Name="Img_5" ColumnName="Img_5" />
+                <ScalarProperty Name="Img_4" ColumnName="Img_4" />
+                <ScalarProperty Name="Img_3" ColumnName="Img_3" />
+                <ScalarProperty Name="Img_2" ColumnName="Img_2" />
+                <ScalarProperty Name="Img_1" ColumnName="Img_1" />
+                <ScalarProperty Name="Feature9" ColumnName="Feature9" />
+                <ScalarProperty Name="Feature8" ColumnName="Feature8" />
+                <ScalarProperty Name="Feature7" ColumnName="Feature7" />
+                <ScalarProperty Name="Feature6" ColumnName="Feature6" />
+                <ScalarProperty Name="Feature5" ColumnName="Feature5" />
+                <ScalarProperty Name="Feature4" ColumnName="Feature4" />
+                <ScalarProperty Name="Feature3" ColumnName="Feature3" />
+                <ScalarProperty Name="Feature2" ColumnName="Feature2" />
+                <ScalarProperty Name="Feature1" ColumnName="Feature1" />
+                <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+                <ScalarProperty Name="CloudFeatID" ColumnName="CloudFeatID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Compare">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Compare">
+              <MappingFragment StoreEntitySet="Mst_Compare">
+                <ScalarProperty Name="Product2Desc" ColumnName="Product2Desc" />
+                <ScalarProperty Name="Product1Desc" ColumnName="Product1Desc" />
+                <ScalarProperty Name="CompareDesc" ColumnName="CompareDesc" />
+                <ScalarProperty Name="CompareID" ColumnName="CompareID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Compare_KeyFeature">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Compare_KeyFeature">
+              <MappingFragment StoreEntitySet="Mst_Compare_KeyFeature">
+                <ScalarProperty Name="Key_FeatureDesc" ColumnName="Key_FeatureDesc" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_CompareMaster">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_CompareMaster">
+              <MappingFragment StoreEntitySet="Mst_CompareMaster">
+                <ScalarProperty Name="Cloud" ColumnName="Cloud" />
+                <ScalarProperty Name="Desktop" ColumnName="Desktop" />
+                <ScalarProperty Name="FeatureName" ColumnName="FeatureName" />
+                <ScalarProperty Name="Compare_Id" ColumnName="Compare_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_ContactUs">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_ContactUs">
+              <MappingFragment StoreEntitySet="Mst_ContactUs">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="TeamViewerName" ColumnName="TeamViewerName" />
+                <ScalarProperty Name="SupportName" ColumnName="SupportName" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CotactTitle" ColumnName="CotactTitle" />
+                <ScalarProperty Name="CotactUsDesc" ColumnName="CotactUsDesc" />
+                <ScalarProperty Name="Image_Banner" ColumnName="Image_Banner" />
+                <ScalarProperty Name="ContactusID" ColumnName="ContactusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_CotactMessage">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_CotactMessage">
+              <MappingFragment StoreEntitySet="Mst_CotactMessage">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="MessageContent" ColumnName="MessageContent" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ContactMessageID" ColumnName="ContactMessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_DemoRequest">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_DemoRequest">
+              <MappingFragment StoreEntitySet="Mst_DemoRequest">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="DemoRequestID" ColumnName="DemoRequestID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_DeskFeature">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_DeskFeature">
+              <MappingFragment StoreEntitySet="Mst_DeskFeature">
+                <ScalarProperty Name="Img_8" ColumnName="Img_8" />
+                <ScalarProperty Name="Img_7" ColumnName="Img_7" />
+                <ScalarProperty Name="Img_6" ColumnName="Img_6" />
+                <ScalarProperty Name="Img_5" ColumnName="Img_5" />
+                <ScalarProperty Name="Img_4" ColumnName="Img_4" />
+                <ScalarProperty Name="Img_3" ColumnName="Img_3" />
+                <ScalarProperty Name="Img_2" ColumnName="Img_2" />
+                <ScalarProperty Name="Img_1" ColumnName="Img_1" />
+                <ScalarProperty Name="Feature8" ColumnName="Feature8" />
+                <ScalarProperty Name="Feature7" ColumnName="Feature7" />
+                <ScalarProperty Name="Feature6" ColumnName="Feature6" />
+                <ScalarProperty Name="Feature5" ColumnName="Feature5" />
+                <ScalarProperty Name="Feature4" ColumnName="Feature4" />
+                <ScalarProperty Name="Feature3" ColumnName="Feature3" />
+                <ScalarProperty Name="Feature2" ColumnName="Feature2" />
+                <ScalarProperty Name="Feature1" ColumnName="Feature1" />
+                <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+                <ScalarProperty Name="DeskFeatureID" ColumnName="DeskFeatureID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Desktop">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Desktop">
+              <MappingFragment StoreEntitySet="Mst_Desktop">
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProductLogo" ColumnName="ProductLogo" />
+                <ScalarProperty Name="Content5" ColumnName="Content5" />
+                <ScalarProperty Name="Content4" ColumnName="Content4" />
+                <ScalarProperty Name="Content3" ColumnName="Content3" />
+                <ScalarProperty Name="Content2" ColumnName="Content2" />
+                <ScalarProperty Name="Content1" ColumnName="Content1" />
+                <ScalarProperty Name="DesktopID" ColumnName="DesktopID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Desktop_Features">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Desktop_Features">
+              <MappingFragment StoreEntitySet="Mst_Desktop_Features">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Desktop_Gallery">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Desktop_Gallery">
+              <MappingFragment StoreEntitySet="Mst_Desktop_Gallery">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Desktop_Inventories">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Desktop_Inventories">
+              <MappingFragment StoreEntitySet="Mst_Desktop_Inventories">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Desktop_KeyFeature">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Desktop_KeyFeature">
+              <MappingFragment StoreEntitySet="Mst_Desktop_KeyFeature">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Diamx">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Diamx">
+              <MappingFragment StoreEntitySet="Mst_Diamx">
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProductLogo" ColumnName="ProductLogo" />
+                <ScalarProperty Name="Content5" ColumnName="Content5" />
+                <ScalarProperty Name="Content4" ColumnName="Content4" />
+                <ScalarProperty Name="Content3" ColumnName="Content3" />
+                <ScalarProperty Name="Content2" ColumnName="Content2" />
+                <ScalarProperty Name="Content1" ColumnName="Content1" />
+                <ScalarProperty Name="DiamxID" ColumnName="DiamxID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_DiamX_Features">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_DiamX_Features">
+              <MappingFragment StoreEntitySet="Mst_DiamX_Features">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Diamx_Gallery">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Diamx_Gallery">
+              <MappingFragment StoreEntitySet="Mst_Diamx_Gallery">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Diamx_Inventories">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Diamx_Inventories">
+              <MappingFragment StoreEntitySet="Mst_Diamx_Inventories">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Diamx_KeyFeature">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Diamx_KeyFeature">
+              <MappingFragment StoreEntitySet="Mst_Diamx_KeyFeature">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Feature_Name" ColumnName="Feature_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Footerblock">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Footerblock">
+              <MappingFragment StoreEntitySet="Mst_Footerblock">
+                <ScalarProperty Name="SupportNo" ColumnName="SupportNo" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="FooterAddress" ColumnName="FooterAddress" />
+                <ScalarProperty Name="FooterID" ColumnName="FooterID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Home">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Home">
+              <MappingFragment StoreEntitySet="Mst_Home">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Image_4" ColumnName="Image_4" />
+                <ScalarProperty Name="Content4" ColumnName="Content4" />
+                <ScalarProperty Name="Title4" ColumnName="Title4" />
+                <ScalarProperty Name="Image_2" ColumnName="Image_2" />
+                <ScalarProperty Name="Image_1" ColumnName="Image_1" />
+                <ScalarProperty Name="Content3" ColumnName="Content3" />
+                <ScalarProperty Name="Title3" ColumnName="Title3" />
+                <ScalarProperty Name="Content2" ColumnName="Content2" />
+                <ScalarProperty Name="Title2" ColumnName="Title2" />
+                <ScalarProperty Name="Content1" ColumnName="Content1" />
+                <ScalarProperty Name="SubTitle1" ColumnName="SubTitle1" />
+                <ScalarProperty Name="Title1" ColumnName="Title1" />
+                <ScalarProperty Name="HomePageID" ColumnName="HomePageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Inquiry">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Inquiry">
+              <MappingFragment StoreEntitySet="Mst_Inquiry">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="InquiryDesc" ColumnName="InquiryDesc" />
+                <ScalarProperty Name="Img_Banner" ColumnName="Img_Banner" />
+                <ScalarProperty Name="InquiryID" ColumnName="InquiryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_InquiryMessage">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_InquiryMessage">
+              <MappingFragment StoreEntitySet="Mst_InquiryMessage">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="InquiryMessage" ColumnName="InquiryMessage" />
+                <ScalarProperty Name="InquiryType" ColumnName="InquiryType" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="InquiryMessageID" ColumnName="InquiryMessageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_KeyFeatures">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_KeyFeatures">
+              <MappingFragment StoreEntitySet="Mst_KeyFeatures">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="FeatureTitle" ColumnName="FeatureTitle" />
+                <ScalarProperty Name="KeyFeaturesID" ColumnName="KeyFeaturesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_OurClientImages">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_OurClientImages">
+              <MappingFragment StoreEntitySet="Mst_OurClientImages">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="ClientImage" ColumnName="ClientImage" />
+                <ScalarProperty Name="ClientImageID" ColumnName="ClientImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Product">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Product">
+              <MappingFragment StoreEntitySet="Mst_Product">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProductLogo" ColumnName="ProductLogo" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="ShortContent" ColumnName="ShortContent" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Service_Features">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Service_Features">
+              <MappingFragment StoreEntitySet="Mst_Service_Features">
+                <ScalarProperty Name="Service_Feature_Desc" ColumnName="Service_Feature_Desc" />
+                <ScalarProperty Name="Service_Freature_img" ColumnName="Service_Freature_img" />
+                <ScalarProperty Name="Service_Feature_Title" ColumnName="Service_Feature_Title" />
+                <ScalarProperty Name="ServiceType_Id" ColumnName="ServiceType_Id" />
+                <ScalarProperty Name="Service_Features_Id" ColumnName="Service_Features_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_ServiceContent">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_ServiceContent">
+              <MappingFragment StoreEntitySet="Mst_ServiceContent">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="img3_Content3" ColumnName="img3_Content3" />
+                <ScalarProperty Name="img2_Conrent2" ColumnName="img2_Conrent2" />
+                <ScalarProperty Name="img1_Content1" ColumnName="img1_Content1" />
+                <ScalarProperty Name="Service_ing3" ColumnName="Service_ing3" />
+                <ScalarProperty Name="Service_img2" ColumnName="Service_img2" />
+                <ScalarProperty Name="Service_img1" ColumnName="Service_img1" />
+                <ScalarProperty Name="Service_Desc2" ColumnName="Service_Desc2" />
+                <ScalarProperty Name="Service_Desc1" ColumnName="Service_Desc1" />
+                <ScalarProperty Name="Service_Heading" ColumnName="Service_Heading" />
+                <ScalarProperty Name="ServiceBanner" ColumnName="ServiceBanner" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="Service_Id" ColumnName="Service_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Services">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Services">
+              <MappingFragment StoreEntitySet="Mst_Services">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_ServicesType">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_ServicesType">
+              <MappingFragment StoreEntitySet="Mst_ServicesType">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="Service_title3" ColumnName="Service_title3" />
+                <ScalarProperty Name="Service_title2" ColumnName="Service_title2" />
+                <ScalarProperty Name="Service_title1" ColumnName="Service_title1" />
+                <ScalarProperty Name="img3_Content3" ColumnName="img3_Content3" />
+                <ScalarProperty Name="img2_Conrent2" ColumnName="img2_Conrent2" />
+                <ScalarProperty Name="img1_Content1" ColumnName="img1_Content1" />
+                <ScalarProperty Name="Service_ing3" ColumnName="Service_ing3" />
+                <ScalarProperty Name="Service_img2" ColumnName="Service_img2" />
+                <ScalarProperty Name="Service_img1" ColumnName="Service_img1" />
+                <ScalarProperty Name="Service_Desc2" ColumnName="Service_Desc2" />
+                <ScalarProperty Name="Service_Desc1" ColumnName="Service_Desc1" />
+                <ScalarProperty Name="Service_Heading" ColumnName="Service_Heading" />
+                <ScalarProperty Name="ServiceBanner" ColumnName="ServiceBanner" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="ServiceTypeImage" ColumnName="ServiceTypeImage" />
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Slider">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Slider">
+              <MappingFragment StoreEntitySet="Mst_Slider">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Image_4" ColumnName="Image_4" />
+                <ScalarProperty Name="Image_3" ColumnName="Image_3" />
+                <ScalarProperty Name="Image_2" ColumnName="Image_2" />
+                <ScalarProperty Name="Image_1" ColumnName="Image_1" />
+                <ScalarProperty Name="Content4" ColumnName="Content4" />
+                <ScalarProperty Name="Title4" ColumnName="Title4" />
+                <ScalarProperty Name="Content3" ColumnName="Content3" />
+                <ScalarProperty Name="Title3" ColumnName="Title3" />
+                <ScalarProperty Name="Content2" ColumnName="Content2" />
+                <ScalarProperty Name="Title2" ColumnName="Title2" />
+                <ScalarProperty Name="Content1" ColumnName="Content1" />
+                <ScalarProperty Name="Title1" ColumnName="Title1" />
+                <ScalarProperty Name="SliderID" ColumnName="SliderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Support">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Support">
+              <MappingFragment StoreEntitySet="Mst_Support">
+                <ScalarProperty Name="Content4" ColumnName="Content4" />
+                <ScalarProperty Name="Title2" ColumnName="Title2" />
+                <ScalarProperty Name="Content3" ColumnName="Content3" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="SupportName" ColumnName="SupportName" />
+                <ScalarProperty Name="mobileNo" ColumnName="mobileNo" />
+                <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+                <ScalarProperty Name="Title1" ColumnName="Title1" />
+                <ScalarProperty Name="Content2" ColumnName="Content2" />
+                <ScalarProperty Name="Content1" ColumnName="Content1" />
+                <ScalarProperty Name="Image_Banner" ColumnName="Image_Banner" />
+                <ScalarProperty Name="SupportID" ColumnName="SupportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_TabImage">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_TabImage">
+              <MappingFragment StoreEntitySet="Mst_TabImage">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Tab_Image" ColumnName="Tab_Image" />
+                <ScalarProperty Name="Tab_Id" ColumnName="Tab_Id" />
+                <ScalarProperty Name="Img_Id" ColumnName="Img_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_TabMaster">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_TabMaster">
+              <MappingFragment StoreEntitySet="Mst_TabMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="TabName" ColumnName="TabName" />
+                <ScalarProperty Name="Tab_Id" ColumnName="Tab_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Testimonial">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Testimonial">
+              <MappingFragment StoreEntitySet="Mst_Testimonial">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PersonName" ColumnName="PersonName" />
+                <ScalarProperty Name="PersonImage" ColumnName="PersonImage" />
+                <ScalarProperty Name="TestimComments" ColumnName="TestimComments" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="TestiTitle" ColumnName="TestiTitle" />
+                <ScalarProperty Name="TestimonialMainTitle" ColumnName="TestimonialMainTitle" />
+                <ScalarProperty Name="TestimonialID" ColumnName="TestimonialID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_Testimonial_New">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_Testimonial_New">
+              <MappingFragment StoreEntitySet="Mst_Testimonial_New">
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Testimonial_Content" ColumnName="Testimonial_Content" />
+                <ScalarProperty Name="Testimonial_Image" ColumnName="Testimonial_Image" />
+                <ScalarProperty Name="Testimonial_Name" ColumnName="Testimonial_Name" />
+                <ScalarProperty Name="Testimonial_Id" ColumnName="Testimonial_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_TestimonialMain">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_TestimonialMain">
+              <MappingFragment StoreEntitySet="Mst_TestimonialMain">
+                <ScalarProperty Name="Content_8" ColumnName="Content_8" />
+                <ScalarProperty Name="name_8" ColumnName="name_8" />
+                <ScalarProperty Name="img_8" ColumnName="img_8" />
+                <ScalarProperty Name="Content_7" ColumnName="Content_7" />
+                <ScalarProperty Name="name_7" ColumnName="name_7" />
+                <ScalarProperty Name="img_7" ColumnName="img_7" />
+                <ScalarProperty Name="Content_6" ColumnName="Content_6" />
+                <ScalarProperty Name="name_6" ColumnName="name_6" />
+                <ScalarProperty Name="img_6" ColumnName="img_6" />
+                <ScalarProperty Name="Content_5" ColumnName="Content_5" />
+                <ScalarProperty Name="name_5" ColumnName="name_5" />
+                <ScalarProperty Name="img_5" ColumnName="img_5" />
+                <ScalarProperty Name="Content_4" ColumnName="Content_4" />
+                <ScalarProperty Name="name_4" ColumnName="name_4" />
+                <ScalarProperty Name="img_4" ColumnName="img_4" />
+                <ScalarProperty Name="Content_3" ColumnName="Content_3" />
+                <ScalarProperty Name="name_3" ColumnName="name_3" />
+                <ScalarProperty Name="img_3" ColumnName="img_3" />
+                <ScalarProperty Name="Content_2" ColumnName="Content_2" />
+                <ScalarProperty Name="name_2" ColumnName="name_2" />
+                <ScalarProperty Name="img_2" ColumnName="img_2" />
+                <ScalarProperty Name="Content_1" ColumnName="Content_1" />
+                <ScalarProperty Name="name_1" ColumnName="name_1" />
+                <ScalarProperty Name="img_1" ColumnName="img_1" />
+                <ScalarProperty Name="TestMID" ColumnName="TestMID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mst_User">
+            <EntityTypeMapping TypeName="DiamtradeAdminModel.Mst_User">
+              <MappingFragment StoreEntitySet="Mst_User">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CotactNo" ColumnName="CotactNo" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

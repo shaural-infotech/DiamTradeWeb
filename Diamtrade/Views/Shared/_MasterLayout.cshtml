@@ -1,0 +1,873 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta name="copyright" content="" />
+    <title>DiamTrade - Home</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="~/images/fav-icon.png" type="image/x-icon" />
+    <link rel="icon" href="~/images/fav-icon.png" type="image/x-icon" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+
+    <!-- Bootstrap-3 Minified CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="~/css/animate.min.css" />
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="~/css/slick.min.css" type="text/css" />
+    <!-- Slick Slider Theme CSS -->
+    <link rel="stylesheet" href="~/css/slick-theme.min.css" type="text/css" />
+
+
+    <!-- Gallery CSS Starts -->
+    <link href="~/css/prettyPhoto.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="~/css/magnific-popup.css" />
+        <link rel="stylesheet" href="~/css/jquery-ui.css" />*@
+    <!-- <link rel="stylesheet" href="~/css/owl.theme.default.min.css" /> -->
+    @*<link rel="stylesheet" href="~/css/lightgallery.min.css" />
+        <link rel="stylesheet" href="~/css/bootstrap-datepicker.css" />
+        <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css" />
+        <link rel="stylesheet" href="~/css/swiper.css" />
+        <link rel="stylesheet" href="~/css/aos.css" />
+        <link rel="stylesheet" href="~/css/style-gallery.css" />*@
+    <!-- Gallery CSS Ends -->
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css" type="text/css" />
+    <link href="~/css/jquery.fancybox.min.css" rel="stylesheet" />
+    <!-- Custom CSS Starts -->
+    <link rel="stylesheet" href="~/css/style.css" type="text/css" />
+
+    <!-- Media CSS Starts -->
+    <link rel="stylesheet" href="~/css/media.css" type="text/css" />
+
+</head>
+@*<body oncontextmenu="return false;">*@
+<body>
+    <!-- Header Section Starts -->
+    <div class="container bg-header">
+        <div class="row flex align-center res-flex res-align">
+            <div class="col-sm-4 col-md-4 col-lg-4 res-logo">
+                <a href="@Url.Action("Index","Diamtrade")">
+                    <img src="~/images/logo_diamtrad.png" class="img-responsive img-header-logo" alt="" />
+                </a>
+            </div>
+            <div class="col-sm-8 col-md-8 col-lg-8 res-menu">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="top-hamburger-menu">
+                            <div class="top-burger-menu">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="top-navbar-menu">
+                            <ul class="top-menu-listing">
+                                <li><a href='@Url.Action("Index","Diamtrade")'>Home</a></li>
+                                <li><a href='@Url.Action("about","Diamtrade")'>About</a></li>
+                                <li><a href='@Url.Action("testimonials","Diamtrade")'>Testimonials</a></li>
+                                <li><a href='@Url.Action("careers","Diamtrade")'>Careers</a></li>
+                                <li style="display:none"><a href='@Url.Action("support","Diamtrade")'>Support</a></li>
+                                <li><a href='@Url.Action("contactus","Diamtrade")'>Contact</a></li>
+                                <li><a href='@Url.Action("Gallery","Diamtrade")'>Gallery</a></li>
+                                @*<li><a href='@Url.Action("sign_in","Diamtrade")'>Sign In</a></li>*@
+                                <li><a href='/diamcloud/home/signin'>Sign In</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="hamburger-menu">
+                            <div class="burger-menu">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="navbar-menu">
+                            <ul class="menu-listing">
+                                <li><a href='@Url.Action("compare","Diamtrade")'>Compare</a></li>
+                                <li>
+                                    <a href="#">Products <i class="fas fa-angle-down"></i></a>
+                                    <div class="dropdown-products">
+                                        <div class="row">
+                                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                                <ul class="product-listing" id="tab-one-product">
+                                                    @*<li id="tab-one-product">
+                                                           <a href='@Url.Action("desktop","Products")'>
+                                                                    <img src="~/images/desktop-logo-menu.png" class="img-responsive menu-listing-img" alt="" /> DiamTrade Desktop
+                                                                </a>
+                                                        </li>*@
+                                                    @*<li id="tab-one-product" class="active">
+                                                                <a href='@Url.Action("desktop","Products")'>
+                                                                    <img src="~/images/desktop-logo-menu.png" class="img-responsive menu-listing-img" alt="" /> DiamTrade Desktop
+                                                                </a>
+                                                            </li>
+                                                        @*<li id="tab-one-product" class="active">
+                                                                <a href='@Url.Action("desktop","Products")'>
+                                                                    <img src="~/images/desktop-logo-menu.png" class="img-responsive menu-listing-img" alt="" /> DiamTrade Desktop
+                                                                </a>
+                                                            </li>
+                                                            <li id="tab-two-product">
+                                                                <a href='@Url.Action("cloud","Products")'>
+                                                                    <img src="~/images/cloud-logo-menu.png" class="img-responsive menu-listing-img" alt="" /> DiamTrade Cloud
+                                                                </a>
+                                                            </li>
+                                                            <li id="tab-three-product">
+                                                                <a href='@Url.Action("diamx","Products")'>
+                                                                    <img src="~/images/diamx-logo-menu.png" class="img-responsive menu-listing-img" alt="" />DiamTrade DiamX
+                                                                </a>
+                                                            </li>*@
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-8 col-md-8 col-lg-8">
+                                                <div id="tab-one-product-content-box" class="hides active">
+                                                    <div class="row">
+                                                        <div class="col-sm-8 col-md-8 col-lg-8">
+                                                            <section class="product-heading">
+                                                                @*<p>DiamTrade ( Desktop ) is a Tailer-Made Desktop Application for All Types of Diamond &amp; Jewelry Businesses. </p>
+                                                                    <p>DiamTrade ( Desktop ) is the World's First and only Desktop Application to Offer 100% Customization to Suffice All Your Business Requirements.</p>*@
+                                                                <p id="ProductDesc"></p>
+                                                                <a href='#' id="VisitPageID" class="visit-page-link" onclick="return VisitPage();">Visit Page</a>
+                                                            </section>
+                                                        </div>
+                                                        <div class="col-sm-4 col-md-4 col-lg-4">
+                                                            @*<img src="~/images/dropdown-product-4.png" class="img-responsive img-auto full-width" alt="" />*@
+                                                            <img src="~/images/dropdown-product-4.png" class="img-responsive img-auto full-width" id="ProdcImage" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @*<div id="tab-two-product-content-box" class="hides">
+                                                        <div class="row">
+                                                            <div class="col-sm-8 col-md-8 col-lg-8">
+                                                                <section class="product-heading">
+                                                                    <p>DiamTrade ( Cloud ) is for those who want to have all the features of the product but at the same time look for budget spending.</p>
+                                                                    <p>DiamTrade ( Cloud ) is an Economical Solution with Unlimited Server Space, Unlimited User and Companies.</p>
+                                                                    <a href='@Url.Action("cloud","Products")' class="visit-page-link">Visit Page</a>
+                                                                </section>
+                                                            </div>
+                                                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                                                <img src="~/images/dropdown-product-5.png" class="img-responsive img-auto full-width" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-three-product-content-box" class="hides">
+                                                        <div class="row">
+                                                            <div class="col-sm-8 col-md-8 col-lg-8">
+                                                                <section class="product-heading">
+                                                                    <p>DiamX is Free application for the Trader, wishing to trade in certified Diamonds, Globally, Without any intermediary so as to Benifit both the Buyer and Seller. </p>
+                                                                    <p>This application is meant for those Diamond Traders who wish to trade online and exploit the fullest market potential.</p>
+                                                                    <a href='@Url.Action("diamx","Products")' class="visit-page-link">Visit Page</a>
+                                                                </section>
+                                                            </div>
+                                                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                                                <img src="~/images/dropdown-product-6.png" class="img-responsive img-auto full-width" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Services <i class="fas fa-angle-down"></i></a>
+                                    <div class="dropdown-products">
+                                        <div class="row">
+                                            <div class="col-sm-4 col-md-4 col-lg-4">
+                                                <ul class="service-listing" id="tab-one-service">
+                                                    @*<li id="tab-one-service"></li>*@
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-8 col-md-8 col-lg-8">
+                                                <div id="tab-one-service-content-box" class="hides active">
+                                                    <div class="row">
+                                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                                            <section class="service-heading">
+                                                                <h3 id="servicetypename">Graphic Design</h3>
+                                                                <ul class="sub-service-listing" id="subservicemenu"></ul>
+                                                                <a class="visit-page-link bottom-link" onclick="VisiServicePage()" id="visitpage">Visit Page</a>
+                                                            </section>
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                                            <img src="~/images/graphics-design.png" class="img-responsive img-auto" id="servicemenuimage" alt="" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @*<div id="tab-two-service-content-box" class="hides">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                <section class="service-heading">
+                                                                    <h3>Web Development</h3>
+                                                                    <ul class="sub-service-listing">
+                                                                        <li><p>Web Development</p></li>
+                                                                        <li><p>PHP Development</p></li>
+                                                                        <li><p>Codeigniter Development</p></li>
+                                                                        <li><p>Wordpress Development</p></li>
+                                                                        <li><p>AngularJS Development</p></li>
+                                                                    </ul>
+                                                                    <a href='@Url.Action("web_development","services")' class="visit-page-link bottom-link">Visit Page</a>
+                                                                </section>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                <img src="~/images/web-devlopment-3.png" class="img-responsive img-auto" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-three-service-content-box" class="hides">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                <section class="service-heading">
+                                                                    <h3>Software Development</h3>
+                                                                    <ul class="sub-service-listing">
+                                                                        <li><p>Enterprise System Integration</p></li>
+                                                                        <li><p>ERP Software Service</p></li>
+                                                                    </ul>
+                                                                    <a href='@Url.Action("software_development","services")' class="visit-page-link bottom-link">Visit Page</a>
+                                                                </section>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                <img src="~/images/software-devlopmet.png" class="img-responsive img-auto" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-four-service-content-box" class="hides">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                <section class="service-heading">
+                                                                    <h3>Mobile App Development</h3>
+                                                                    <ul class="sub-service-listing">
+                                                                        <li><p>Android App Development</p></li>
+                                                                        <li><p>Iphone App Development</p></li>
+                                                                    </ul>
+                                                                    <a href="#" class="visit-page-link bottom-link">Visit Page</a>
+                                                                </section>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                <img src="~/images/mobile-devlopment-1.png" class="img-responsive img-auto" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-five-service-content-box" class="hides">
+                                                        <div class="row">
+                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                <section class="service-heading">
+                                                                    <h3>Digital Marketing</h3>
+                                                                    <ul class="sub-service-listing">
+                                                                        <li><p>SEO Services</p></li>
+                                                                        <li><p>SMO Services</p></li>
+                                                                        <li><p>PPC Services</p></li>
+                                                                    </ul>
+                                                                    <a href="#" class="visit-page-link bottom-link">Visit Page</a>
+                                                                </section>
+                                                            </div>
+                                                            <div class="col-sm-6 col-md-6 col-lg-6">
+                                                                <img src="~/images/digital-marketing.png" class="img-responsive img-auto" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href='@Url.Action("downloads","Diamtrade")'>Downloads</a></li>
+                                <li><a href='@Url.Action("inquiry","Diamtrade")'>Inquiry</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Section Ends -->
+    <div class="row">
+        @RenderBody()
+    </div>
+
+
+
+    <div class="container-fluid bg-footer-home">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <img src="~/images/hotsoft-logo.png" class="img-responsive img-hotsoft-logo" alt="" />
+                        <address class="address-display">
+                            <p id="FooterAddress"></p>
+                            <p>
+                                <i class="fas fa-phone"></i> <a href="tel:+32474247575" id="PhoneNo">+32.474.247575</a>,
+                                <a href="tel:+3216551622">+32.1655.1622</a>, <a href="tel:+919904900060" id="SupportNo">+91.99049.00060</a>
+                            </p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:info@HotSoft.be">info@HotSoft.be</a></p>
+                            <p><i class="fab fa-skype"></i> <a href="skype:DiamTrade.Support">DiamTrade.Support</a></p>
+                        </address>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <fieldset class="subscribe-fieldset">
+                            <legend>Request a Demo</legend>
+                            <div class="row">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="txtRequestDemo" placeholder="Your Email Id">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default send-mail-btn" type="button" id="btnRequestDemo">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <ul class="footer-social-listing">
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section Starts -->
+    @*<div class="container-fluid bg-footer-home">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <img src="~/images/hotsoft-logo.png" class="img-responsive img-hotsoft-logo" alt="" />
+                            <address class="address-display">
+                                <p>3, Hoveniersstraat, 2018, Antwerpen, Belgium, Europe.</p>
+                                    <p>Tel :- <a href="tel:+32474247575">+32474247575</a></p>
+                                    <p>Support :- <a href="tel:+3216551622">+3216551622</a></p>
+                                <p id="FooterAddress"></p>
+                                <p>Tel :- <a href="tel:+32474247575" id="PhoneNo"></a></p>
+                                <p>Support :- <a href="tel:+3216551622" id="SupportNo"></a></p>
+                            </address>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+
+                            <fieldset class="subscribe-fieldset">
+                                <legend>Subscribe For News Letter</legend>
+                                <input type="text" class="form-control form-subscribe" placeholder="Subscribe Here" />
+                                <div class="subscribe-icon">
+                                    <input type="submit" class="btn btn-submit" />
+                                </div>
+                            </fieldset>
+                            <ul class="footer-social-listing">
+                                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12">
+                            <ul class="footer-paging-listing">
+                                <li><a href='@Url.Action("compare","Diamtrade")'>Compare</a></li>
+                                <li><a href='@Url.Action("cloud","products")'>Products</a></li>
+                                <li><a href='@Url.Action("graphics_design","services")'>Services</a></li>
+                                <li><a href='@Url.Action("downloads","Diamtrade")'>Downloads</a></li>
+                                <li><a href='@Url.Action("inquiry","Diamtrade")'>Inquiry</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+    <!-- Footer Section Ends -->
+    <!-- Copyright Section Starts -->
+    <div class="container-fluid bg-copyrights">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-8">
+                        <p class="copyright">© 2019 <a href='@Url.Action("Index","Diamtrade")'>DiamTrade</a> All Rights Reserved.</p>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-4">
+                        <p class="designed-copyright text-right">
+                            <a href="https://www.diamtrade.com/" target="_blank">Designed &amp; Developed by :</a>
+                            <a href="https://www.diamtrade.com/" target="_blank">HotSoft</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright Section Ends -->
+    <!-- jQuery Library -->
+    <script src="~/js/jquery.min.js"></script>
+    <!-- Bootstrap-3 Minified JS -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- Owl Carousel Minified JS -->
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script type="text/javascript">
+        $('#testimonial-slider').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 2
+                }
+            }
+        })
+    </script>
+    <script type="text/javascript">
+        $('#graphics-feature-slider').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+    <script type="text/javascript">
+        $('#owl1').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $('#owl2').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 2
+                }
+            }
+        })
+    </script>
+    <script type="text/javascript">
+        $('#owl-web-service').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+    <!-- Copyright Section Ends -->
+    <!-- jQuery Library -->
+    <!-- jQuery Library -->
+    @*<script src="~/js/jquery-1.12.4.js"></script>*@
+
+    <script>
+        var sPageURL = window.location.href;
+        var indexOfLastSlash = sPageURL.lastIndexOf("/");
+        var servicename;
+        servicename = sPageURL.substring(indexOfLastSlash + 1);
+       
+        if (servicename != "Gallery") {
+            debugger;
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = "/js/jquery-1.12.4.js";
+
+            $("body").append(script);
+    }
+
+
+    </script>
+
+    @*<script src="~/js/jquery.min.js"></script>*@
+    <!-- Bootstrap-3 Minified JS -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- Owl Carousel Minified JS -->
+    <script src="~/js/owl.carousel.min.js"></script>
+    <!-- Smooth Scroll JS -->
+    <script src="~/js/smooth-scroll.js"></script>
+    <!-- Slick Slider JS -->
+    <script src="~/js/slick.min.js"></script>
+    <!-- Wow JS -->
+    <script src="~/js/wow.min.js"></script>
+    <!-- Wow Custom JS -->
+    <script src="~/js/wow-custom.js"></script>
+    <!-- Gallery JS Starts -->
+
+    <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/js/jquery.countdown.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/js/swiper.min.js"></script>
+    <script src="~/js/aos.js"></script>
+
+    <script src="~/js/picturefill.min.js"></script>
+    <script src="~/js/lightgallery-all.min.js"></script>
+    <script src="~/js/jquery.mousewheel.min.js"></script>
+    <script src="~/js/jquery.prettyPhoto.js"></script>
+    <script src="~/js/main-gallery.js"></script>
+
+    <!-- FancyBox Js -->
+    <script src="~/js/jquery.fancybox.min.js"></script>
+
+
+    @*<script>
+          $(document).ready(function(){
+            $('#lightgallery').lightGallery();
+          });
+        </script>*@
+
+    <!-- Gallery JS Ends -->
+    <!-- Custom JS -->
+    <script src="~/js/main.js"></script>
+
+    <script>
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+    function stopPrntScr() {
+
+            var inpFld = document.createElement("input");
+            inpFld.setAttribute("value", ".");
+            inpFld.setAttribute("width", "0");
+            inpFld.style.height = "0px";
+            inpFld.style.width = "0px";
+            inpFld.style.border = "0px";
+            document.body.appendChild(inpFld);
+            inpFld.select();
+            document.execCommand("copy");
+            inpFld.remove(inpFld);
+        }
+       function AccessClipboardData() {
+            try {
+                window.clipboardData.setData('text', "Access   Restricted");
+            } catch (err) {
+            }
+    }
+    setInterval("AccessClipboardData()", 300);
+        var FooterBlock = 1;
+        EditFooterBlock();
+
+        function EditFooterBlock() {
+
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditFooterBlock", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    $("#FooterAddress").html(response.footerblock[0].FooterAddress).trigger('change');
+                    $("#PhoneNo").html(response.footerblock[0].PhoneNo).trigger('change');
+                    $("#SupportNo").html(response.footerblock[0].SupportNo).trigger('change');
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+    </script>
+    <script>
+    BindProducts();
+    BindServiceType();
+        OPenConf(1);
+        //OPenConfservice("b");
+         var VisitProdID = "";
+         var servicename = "";
+         var serviceid = 0;
+        var selector = '.nav li';
+
+$(selector).on('click', function(){
+    $(selector).removeClass('active');
+    $(this).addClass('active');
+        });
+
+
+        function BindProducts()
+        {
+            $.ajax({
+                    type: "GET",
+                    data: "{}",
+                //data: dataobj,
+                    url: "@Url.Action("BindProductsMenu", "admin")",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                success: function (data) {
+                    if (data.products.length > 0) {
+                        var row = "";
+                        OPenConf(1);
+                        $.each(data.products, function (index, item) {
+                            @*row += "<div class='col-lg-3 col-xs-6'><div class='small-box bg-" + array[index] + "'><div class='inner'><h4>" + item.imst.BranchName + "</h4><h4 style='margin-left:75px;'></h4><p><b>Total Quantity :</b> " + addCommas(item.TotStock) + "</p><p><b> Total Value :</b> " + addCommas(item.TotStockAmt) + "</p><p><b>Sale Quantity :</b> " + addCommas(item.SalStock) + "</p><p><b>Sale Value :</b> " + addCommas(item.SalStockAmt) + "</p><p><b>Available Stock :</b> " + addCommas(item.AvaiStock) + "</p><p><b>Available Value : " + addCommas(item.AvaiStockAmt) + "</b></p></div><div class='icon'><i class='ion ion-bag'></i></div><a href='@Url.Action("ItemView", "Branch")?id=" + item.imst.BranchCode + " ' class='small-box-footer'>More info <i class='fa fa-arrow-circle-right'></i></a></div></div>"*@
+                             @*<li id="tab-one-product" class="active">
+                                                        <a href='@Url.Action("desktop","Products")'>
+                                                            <img src="~/images/desktop-logo-menu.png" class="img-responsive menu-listing-img" alt="" /> DiamTrade Desktop
+                                                        </a></li >*@
+
+                            //row += "<a href='#' onclick='return OPenConf(" + item.ProductID + ")'><img src='images/desktop-logo-menu.png' class='img-responsive menu-listing-img' />" + item.ProductName + "</a>"
+                            row += "<li><a href='#' onclick='return OPenConf(" + item.ProductID + ")'><img src=" + imageurl+item.ProductLogo + " class='img-responsive menu-listing-img' />" + item.ProductName + "</a></li>"
+
+                        })
+                        $("#tab-one-product").html(row);
+                    }
+                    else {
+                        $("#tab-one-product").html("");
+                    }
+                        },
+                        fail: function (msg) {
+                            alert(msg);
+                        }
+                })
+        }
+        function VisitPage() {
+            if (VisitProdID == 1) {
+                //VisitPageID
+                window.location.href = '@Url.Action("desktop", "Products")';
+            }
+            else if (VisitProdID == 2) {
+
+                 window.location.href = '@Url.Action("cloud", "Products")';
+            }
+            else if (VisitProdID == 3) {
+                 window.location.href = '@Url.Action("diamx", "Products")';
+            }
+    }
+
+    function VisiServicePage() {
+
+
+        if (servicename != "") {
+
+
+            var uri = window.location.toString();
+	            if (uri.lastIndexOf("?") != "") {
+	                var clean_uri = uri.substring(0, uri.indexOf("?"));
+	                window.history.replaceState({}, document.title, clean_uri);
+	            }
+            window.location.href = '@Url.Action("ServicePage", "services")?' + servicename;
+        }
+    }
+    function OPenConfservice(ServiceTypeID) {
+
+
+            //var row = $(ProductID).closest("TR");
+            //var ProductID = $("TD", row).eq(0).html();
+            //ProductID1 = ProductID;
+            // alert("ProID=>" + ProductID);
+            serviceid = ServiceTypeID;
+            GetServicesData(ServiceTypeID);
+
+           //VisitPage(ProductID);
+    }
+    function OPenConf(ProductID) {
+
+            //var row = $(ProductID).closest("TR");
+            //var ProductID = $("TD", row).eq(0).html();
+            //ProductID1 = ProductID;
+           // alert("ProID=>" + ProductID);
+            VisitProdID = ProductID;
+            GetProductDesc(ProductID);
+
+           //VisitPage(ProductID);
+        }
+        function GetProductDesc(ProductID) {
+            $.ajax({
+                type: "GET",
+                data: { 'ProductID': ProductID },
+                url: "@Url.Action("BindProductsDesc", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert(JSON.stringify(response));
+                    $("#ProductDesc").html(response.products[0].ShortContent).trigger('change');
+                    $("#ProdcImage").attr("src", imageurl+response.products[0].ProductImage).trigger('change');
+                    $("#VisitPageID").val(response.products[0].ProductID);
+                    //$("#Profileimg").attr("src", imgg);
+                    //VisitPage(ProductID);
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+
+     function BindServiceType() {
+            $.ajax({
+                type: "GET",
+                 url: "@Url.Action("BindServiceType", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+
+                    //  alert(JSON.stringify(data));
+                    if (data.success == true) {
+
+                        var row = "";
+                        OPenConfservice(data.servicetype[0].ServiceTypeID);
+                        $.each(data.servicetype, function (index, item) {
+                            row += "<li><a id='urlservice' onclick='return OPenConfservice(" + item.ServiceTypeID + ")'>" + item.ServiceType + "</a></li>"
+                        });
+
+                        $("#tab-one-service").html(row);
+                    }
+                    else {
+                        $("#tab-one-service").html("");
+                    }
+
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+    }
+    function GetServicesData(servicetypid) {
+         $.ajax({
+                type: "GET",
+                data: { 'servicetypid': servicetypid },
+                url: "@Url.Action("BindService", "services")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == true) {
+                        $("#visitpage").show();
+                        servicename = response.services[0].ServiceTypeName;
+                        $("#servicetypename").html(response.services[0].ServiceTypeName).trigger('change');
+                        $("#servicemenuimage").attr("src", imageurl+response.services[0].servicetypeimage).trigger('change');
+                         var row = "";
+                        $.each(response.services, function (index, item) {
+                            row += "<li><p>" + item.ServiceName + "</p></li>";
+                        });
+                        $("#subservicemenu").html(row);
+                    }
+                    else {
+                        $("#visitpage").hide();
+                            $("#subservicemenu").html("");
+                    }
+
+
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+    }
+
+    </script>
+
+    <script type="text/javascript">
+        $(function () { function stripTrailingSlash(str) { if (str != undefined && str.substr(-1) == '/') { return str.substr(0, str.length - 1); } return str; } var url = window.location.pathname; var activePage = stripTrailingSlash(url); $('.tab-one-produc li a').each(function () { var currentPage = stripTrailingSlash($(this).attr('href')); if (activePage == currentPage) { $(this).parent().addClass('active'); } }); })
+        $(function () { function stripTrailingSlash(str) { if (str != undefined && str.substr(-1) == '/') { return str.substr(0, str.length - 1); } return str; } var url = window.location.pathname; var activePage = stripTrailingSlash(url); $('.navbar-menu li a').each(function () { var currentPage = stripTrailingSlash($(this).attr('href')); if (activePage == currentPage) { $(this).parent().addClass('active'); } }); })
+        $(function () { function stripTrailingSlash(str) { if (str != undefined && str.substr(-1) == '/') { return str.substr(0, str.length - 1); } return str; } var url = window.location.pathname; var activePage = stripTrailingSlash(url); $('.dropdown-products li a').each(function () { var currentPage = stripTrailingSlash($(this).attr('href')); if (activePage == currentPage) { $(this).parent().addClass('active'); } }); })
+    </script>
+    <script>
+        $("#btnRequestDemo").on("click", function () {
+            debugger
+            if ($("#txtRequestDemo").val() != "") {
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("InsertDemoReq", "admin")",
+                    data: { strEmail: $("#txtRequestDemo").val() },
+                   // contentType: "application/json; charset=utf-8",
+                   // dataType: "json",
+                    success: function (response) {
+                        if (response > 0) {
+                            alert("Successfully send your message!");
+                            ClearControll();
+                        }
+                        else {
+
+                        }
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            }
+            else {
+                alert("Please fill form details carefully!")
+            }
+        });
+
+        function ClearControll() {
+            $("#txtRequestDemo").val("");
+        }
+
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

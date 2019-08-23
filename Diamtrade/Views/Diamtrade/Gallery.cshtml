@@ -1,0 +1,253 @@
+﻿
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+@*<div class="container-fluid bg-gallery" data-aos="fade" data-aos-delay="500">
+    <div class="swiper-container images-carousel">
+        <div class="swiper-wrapper" id="albumdata">*@
+@*<div class="swiper-slide">
+        <div class="image-wrap">
+            <div class="image-info">
+                <h2 class="mb-3 album-title">Nature</h2>
+                <a href="@Url.Action("GalleryPhoto","Diamtrade")" class="btn btn-outline-white py-2 px-4 more-pic-link">More Photos</a>
+                <p><span>16</span> Photos</p>
+            </div>
+            <img src="~/images/img_1.jpg" alt="Image" />
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image-wrap">
+            <div class="image-info">
+                <h2 class="mb-3 album-title">Portrait</h2>
+                <a href="@Url.Action("GalleryPhoto","Diamtrade")" class="btn btn-outline-white py-2 px-4 more-pic-link">More Photos</a>
+                <p><span>156</span> Photos</p>
+            </div>
+            <img src="~/images/img_2.jpg" alt="Image" />
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image-wrap">
+            <div class="image-info">
+                <h2 class="mb-3 album-title">People</h2>
+                <a href="@Url.Action("GalleryPhoto","Diamtrade")" class="btn btn-outline-white py-2 px-4 more-pic-link">More Photos</a>
+                <p><span>67</span> Photos</p>
+            </div>
+            <img src="~/images/img_3.jpg" alt="Image" />
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image-wrap">
+            <div class="image-info">
+                <h2 class="mb-3 album-title">Architecture</h2>
+                <a href="@Url.Action("GalleryPhoto","Diamtrade")" class="btn btn-outline-white py-2 px-4 more-pic-link">More Photos</a>
+                <p><span>164</span> Photos</p>
+            </div>
+            <img src="~/images/img_4.jpg" alt="Image" />
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image-wrap">
+            <div class="image-info">
+                <h2 class="mb-3 album-title">Animals</h2>
+                <a href="@Url.Action("GalleryPhoto","Diamtrade")" class="btn btn-outline-white py-2 px-4 more-pic-link">More Photos</a>
+                <p><span>456</span> Photos</p>
+            </div>
+            <img src="~/images/img_5.jpg" alt="Image" />
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image-wrap">
+            <div class="image-info">
+                <h2 class="mb-3 album-title">Sports</h2>
+                <a href="@Url.Action("GalleryPhoto","Diamtrade")" class="btn btn-outline-white py-2 px-4 more-pic-link">More Photos</a>
+                <p><span>500</span> Photos</p>
+            </div>
+            <img src="~/images/img_6.jpg" alt="Image" />
+        </div>
+    </div>
+    <div class="swiper-slide">
+        <div class="image-wrap">
+            <div class="image-info">
+                <h2 class="mb-3 album-title">Travel</h2>
+                <a href="@Url.Action("GalleryPhoto","Diamtrade")" class="btn btn-outline-white py-2 px-4 more-pic-link">More Photos</a>
+                <p><span>100</span> Photos</p>
+            </div>
+            <img src="~/images/img_7.jpg" alt="Image" />
+        </div>
+    </div>*@
+@*</div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>*@
+<div class="container-fluid">
+    <div class="row">
+        <div class="gallery-box gallery-details">
+
+                <div class="row">
+                    <ul class="gallery clearfix" id="albumdata">
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        @section scripts{
+            <script>
+                BindGallery();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+        //$(document).ready(function () {
+        //      BindGallery();
+
+        //});
+        //<li class="col-md-2">
+        //    <div class="hover ehover4">
+        //        <a href="images/Agri_ Martin Kisuu_1.jpg" rel="prettyPhoto[gallery1]">
+        //            <img src="images/Agri_ Martin Kisuu_1.jpg" />
+        //            <div class="overlay text-left">
+        //                <h2>
+        //                    <img src="images/farmer.png" class="p-img" width="30" height="30"> Martin Kisu
+        //                            <div class="clearfix"></div>
+        //                        <div class="placename"><img src="images/location.png" class="p-img" width="30" height="30"> Valsad</div>
+        //                            <div class="clearfix"></div>
+        //                            <div class="contactno"><img src="images/contact.png" class="p-img" width="30" height="30"> 9638207065</div>
+        //                                <div class="clearfix"></div>
+        //                                <div class="crop"><img src="images/crop.png" class="p-img" width="30" height="30"> Mango</div>
+        //                         </h2>
+        //                            </div>
+        //                   </a>
+        //                </div>
+        //             </li>
+              
+         function BindGallery() {
+             $.ajax({
+                type: "GET",
+                 url: "@Url.Action("BindGallery", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                 success: function (data) {
+                     ////debugger;
+                    var row = "";
+                         $.each(data, function (index, item) {
+                            // row += "<div class='swiper-slide'><div class='image-wrap'><div class='image-info'><h2 class='mb-3 album-title'>" + item.TabName + "</h2><a href='@Url.Action("GalleryPhoto","Diamtrade")?album="+item.Tab_Id+"' class='btn btn-outline-white py-2 px-4 more-pic-link'>More Photos</a><p><span>"+item.countimages+"</span>Photos</p></div><img src="+item.displayimage+" alt='Image' ></div></div>"
+                             ////debugger;
+                             row += "<li class='col-md-4'><div class='hover ehover4'><a href=" + (imageurl+item.displayimage) + " rel='prettyPhoto[" + item.Tab_Id + "]'><img class='img-responsive' style='width: 1000px;height: 300px;' src=" + (imageurl+item.displayimage) +" alt='' /><div class='image-info'><h2 class='mb-3 album-title'>"+item.TabName+"</h2><p><span>"+item.countimages+"</span> Photos</p></div></a></div></li>"
+                             
+                      $.ajax({
+                type: "GET",
+                url: "@Url.Action("BindAlbumImage", "admin")",
+                          data: { tabid: item.Tab_Id, image: item.displayimage },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                          success: function (data) {
+                              ////debugger;
+                         $.each(data, function (index, item) {
+                             row += "<li class='col-md-4' style='display:none'><div class='hover ehover4'><a href=" + item.Tab_Image + " rel='prettyPhoto[" + item.Tab_Id + "]'><img class='img-responsive' style='width: 1000px;height: 300px;' src=" + item.Tab_Image +" alt='' /></a></div></li>"
+                              })
+                              $("#albumdata").html(row);
+
+                              $(document).ready(function () {
+                                  $("area[rel^='prettyPhoto']").prettyPhoto();
+
+                                  $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000, autoplay_slideshow: true });
+                                  $(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'fast', slideshow: 10000, hideflash: true });
+
+                                  $("#custom_content a[rel^='prettyPhoto']:first").prettyPhoto({
+                                      custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
+                                      changepicturecallback: function () { initialize(); }
+                                  });
+
+                                  $("#custom_content a[rel^='prettyPhoto']:last").prettyPhoto({
+                                      custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
+                                      changepicturecallback: function () { _bsap.exec(); }
+                                  });
+                              });
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+                    })
+
+                   
+                   // BindAlbumImage();
+                   // $("#albumdata").html(row);
+                 
+                    //$(document).ready(function () {
+                    //    $("area[rel^='prettyPhoto']").prettyPhoto();
+
+                    //    $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000, autoplay_slideshow: true });
+                    //    $(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'fast', slideshow: 10000, hideflash: true });
+
+                    //    $("#custom_content a[rel^='prettyPhoto']:first").prettyPhoto({
+                    //        custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
+                    //        changepicturecallback: function () { initialize(); }
+                    //    });
+
+                    //    $("#custom_content a[rel^='prettyPhoto']:last").prettyPhoto({
+                    //        custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
+                    //        changepicturecallback: function () { _bsap.exec(); }
+                    //    });
+                    //});
+
+                  //   $('#albumdata').lightGallery();
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+                        }
+        function BindAlbumImage() {
+            $.ajax({
+                type: "GET",
+                url: "@Url.Action("BindAlbumImage", "admin")",
+                data: { tabid: 0 },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+
+                         $.each(data, function (index, item) {
+                             row += "<li class='col-md-4' style='display:none'><div class='hover ehover4'><a href=" + (imageurl+item.Tab_Image) + " rel='prettyPhoto[" + item.Tab_Id + "]'><img src=" + (imageurl+item.Tab_Image) +" /></a></div></li>"
+                         })
+                    $("#albumdata").html(row);
+
+
+
+                    $(document).ready(function () {
+                        $("area[rel^='prettyPhoto']").prettyPhoto();
+
+                        $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000, autoplay_slideshow: true });
+                        $(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'fast', slideshow: 10000, hideflash: true });
+
+                        $("#custom_content a[rel^='prettyPhoto']:first").prettyPhoto({
+                            custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
+                            changepicturecallback: function () { initialize(); }
+                        });
+
+                        $("#custom_content a[rel^='prettyPhoto']:last").prettyPhoto({
+                            custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px;height:265px !important"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
+                            changepicturecallback: function () { _bsap.exec(); }
+                        });
+                    });
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+            </script>
+
+
+        }
+

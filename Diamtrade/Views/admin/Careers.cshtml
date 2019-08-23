@@ -1,0 +1,1062 @@
+﻿
+@{
+    ViewBag.Title = "Careers";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+
+<div class="page-content-wrapper">
+    <div class="page-content">
+
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            Career
+        </h3>
+        <div id="DivViewTest">
+            <div class="page-bar" id="DivViewHeader">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href='@Url.Action("dashboard","admin")'>Home</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href='@Url.Action("Careers","admin")'>Career</a>
+                    </li>
+
+                </ul>
+                <div class="page-toolbar">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                            Actions <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href='@Url.Action("dashboard","admin")'>Back</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="DivView">
+                <form action="#" class="form-horizontal form-bordered">
+                    <div class="form-body">
+                        <div class="form-group last">
+                            <label class="control-label col-md-3">Banner Image<span class="required" aria-required="true"> * </span></label>
+                            <div class="col-md-3">
+                                <input type="file" class="form-control" id="slider1_image" onchange="validatesilder1image()" accept="image/*">
+
+                            </div>
+                            <div class="col-md-3">
+                                <img src="" id="sld1_img" style="width:80px" class="img-auto" alt="">
+                            </div>
+                        </div>
+                        <div class="form-group last" style="display:none">
+                            <label class="control-label col-md-2">Short Description 1 <span class="required" aria-required="true"> * </span></label>
+                            <div class="col-md-8">
+                                <textarea class="ckeditor form-control" id="TxtMaiTestimoni" name="TxtMaiTestimoni"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group last" style="display:none">
+                            <label class="control-label col-md-2">Short Description 2 <span class="required" aria-required="true"> * </span></label>
+                            <div class="col-md-8">
+                                <textarea class="ckeditor form-control" id="TxtMaiTestimoni2" name="TxtMaiTestimoni2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-actions">
+                        <div class="table-toolbar">
+                            <div class="row">
+                                <div class="btn-group pull-right">
+                                    <button id="sample_editable_1_new" style="margin-right:10px" class="btn info blue" onclick="return validateShortDesc(this);">
+                                        <i class="fa fa-edit"></i>  Update
+                                    </button>
+                                    <button id="sample_editable_1_new" style="margin-right:10px" class="btn red delete_btn" onclick="return DelCarreers();">
+                                        <i class="fa fa-trash-o"></i>  Delete
+                                    </button>
+                                    <button id="sample_editable_1_new" style="margin-right:23px" class="btn green" onclick="return ViewAddPage();">
+                                        <i class="fa fa-plus"></i>  Add
+                                    </button>
+                                </div>
+                                @*<div class="col-md-6">
+                            <div class="clearfix button-float pull-right button-wrap">
+                                <button id="sample_editable_1_new" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                    <i class="fa fa-plus"></i>  Add
+                                </button>
+                            </div>
+                        </div>*@
+                            </div>
+                        </div>
+                        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                        <div class="portlet box grey-cascade">
+
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-globe"></i>View All Careers
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-checkbox">
+                                                <input type="checkbox" class="checkboxes" data-set="#sample_1 .checkboxes" />
+                                            </th>
+                                            <th>
+                                                Sr No.
+                                            </th>
+                                            <th>
+                                                Title
+                                            </th>
+                                            <th>
+                                                Sort Order
+                                            </th>
+                                            <th>
+                                                Status
+                                            </th>
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="TBService"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- END EXAMPLE TABLE PORTLET-->
+                    </div>
+           </form>
+                    </div>
+            </div>
+        <!-- Start Add Career-->
+        <div id="DivTestimAdd2">
+            <div class="page-bar" id="DivViewHeader2">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href='@Url.Action("dashboard","admin")'>Home</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href='@Url.Action("Careers","admin")'>Career</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li id="AnchAddTestim">
+                        Add
+                        @*<a href="#" id="AnchAddTestim">Add</a>*@
+                        @*<i class="fa fa-angle-right"></i>*@
+                    </li>
+
+                </ul>
+                <div class="page-toolbar">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                            Actions <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li>
+                                <a href='@Url.Action("Careers","admin")'>Back</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portlet box grey-cascade">
+                <div class="portlet-title">
+                    <div class="caption" id="HeadAddTest">
+                        <i class="fa fa-globe"></i>Add Careers
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse">
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-1"><label for="inputEmail3" class="control-label">Title</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-5"><input type="text" class="form-control" id="TxtTitle" placeholder="Title" autocomplete="off" required></div>
+                            <div class="col-md-2"><label for="inputEmail3" class="control-label">Sort Order</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" id="TxtSortOrder" placeholder="Sort Order" autocomplete="off" onkeypress="return IsNumeric(event);"
+                                       ondrop="return false;" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-1"><label for="inputEmail3">Status</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-5">
+                                <select id="DdlStatus" class="form-control" required>
+                                    <option>-- Select --</option>
+                                    <option>Active</option>
+                                    <option>InActive</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2"><label for="inputEmail3">Experience</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="TxtExp" placeholder="Name" autocomplete="off" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2"><label for="inputEmail3">Job Location</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" id="TxtJobLocation" placeholder="Job Location" autocomplete="off" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group last">
+                        <div class="row">
+                            <label class="control-label col-md-1">Content<span class="required" aria-required="true"> * </span></label>
+                            <div class="col-md-9">
+                                <textarea class="ckeditor form-control" id="txtaboutcont" name="txtaboutcont"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                @*<button type="submit" class="btn green" onclick="return UpdateAboutUs();"><i class="fa fa-check"></i> Submit</button>*@
+                                @*<button type="button" class="btn green" id="BtnSave" onclick="return AddCareers();"><i class="fa fa-check"></i>Save</button>*@
+                                <button type="button" class="btn green" id="BtnSave" onclick="return validateform();">Save</button>
+                                <button type="button" class="btn default" onclick="return ClearControll();">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Add Career-->
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            EditCareerInfo();
+            BindCareer();
+            $("#DivTestimAdd2").css("display", "none");
+        });
+          var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+        function ViewAddPage() {
+            $("#DivTestimAdd2").css("display", "block");
+            $("#DivViewTest").css("display", "none");
+        }
+        function EditCareerInfo() {
+             $.ajax({
+                type: "GET",
+                 url: "@Url.Action("EditCareerInfo", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.success == true) {
+                        $.each(data.careerinfo, function (index, item) {
+                    CKEDITOR.instances['TxtMaiTestimoni'].setData(item.CarrersTitle);
+                            CKEDITOR.instances['TxtMaiTestimoni2'].setData(item.SubTitle);
+                             $("#sld1_img").attr('src', imageurl+item.Image_Banner);
+
+                        })
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+        var CareerMultiID;
+        function BindCareer() {
+            $.ajax({
+                type: "GET",
+                 url: "@Url.Action("BindCareer", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.success == true) {
+                        var row = "";
+                        var statusdisp = "";
+                        $('#sample_1').DataTable().clear().destroy();
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data.careers, function (index, item) {
+                          //  //debugger;
+                            if (item.IsActive == "True") {
+                                statusdisp = "Active";
+                            }
+                            else
+                            {
+                                statusdisp = "InActive";
+                            }
+                            //row += " <tr><td class='table-checkbox'><input type='checkbox'  class='group-checkable' value='1' /></td><td>" + item.ServiceTypeID + "</td><td>" + item.ServiceType + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return OPenConf(this);'><i class='fa fa-edit' style='color:green;font-size:larger;' data-toggle='modal' data-target='#portlet-config'>Edit</i></td></tr>"
+                            row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkcareer' class='group-checkable' value= " + item.CareerMultiID + " /></td><td>" + item.CareerMultiID + "</td><td>" + item.Subject + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return OPenConf(this);'><i class='fa fa-edit btn default btn-xs green'>Edit</i></td></tr>"
+
+
+                            //row += " <tr><td class='table-checkbox'><input type='checkbox'  class='group-checkable' value='1' />" + "</td><td>" + item.ServiceTypeID + "</td><td>" + item.ServiceType + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return OPenConf(this);><i class='fa fa-edit' data-toggle='modal' data-target='#portlet-config'>Edit</i>" + "</td></tr>"
+                        })
+                        $("#TBService").html(row);
+
+                        $('#sample_1').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#TBService").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+        function AddCareers() {
+            if ($("#BtnSave").html() == "Save") {
+                var ddlstat = $("#DdlStatus").val();
+                if (ddlstat == "Active") {
+                    ddlstat = 1;
+                }
+                else {
+                    ddlstat = 0;
+                }
+                var dataobj = JSON.stringify({
+                    'Subject': $("#TxtTitle").val(),
+                    'Expe': $("#TxtExp").val(),
+                    'JobLocation': $("#TxtJobLocation").val(),
+                    'CareerDesc': CKEDITOR.instances['txtaboutcont'].getData(),
+                    'SortOrder': $("#TxtSortOrder").val(),
+                    'IsActive': ddlstat
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("InsertCareerMulti", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.success == "false") {
+                            //alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            })
+                        }
+                        else {
+                            swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                            $("#portlet-config").modal('hide');
+                            BindCareer();
+                            $("#DivTestimAdd2").css("display", "none");
+                            $("#DivViewTest").css("display", "Block");
+                        }
+                        //msgDisplay();
+                        ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        //alert(response.responseText);
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+            }
+            else {
+                var ddlstat = $("#DdlStatus").val();
+                if (ddlstat == "Active") {
+                    ddlstat = 1;
+                }
+                else {
+                    ddlstat = 0;
+                }
+                var dataobj = JSON.stringify({
+                    'CareerMultiID': CareerMultiID,
+                    'Subject': $("#TxtTitle").val(),
+                    'Expe': $("#TxtExp").val(),
+                    'JobLocation': $("#TxtJobLocation").val(),
+                    'CareerDesc': CKEDITOR.instances['txtaboutcont'].getData(),
+                    'SortOrder': $("#TxtSortOrder").val(),
+                    'IsActive': ddlstat
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("UpdateCareers", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        //alert(JSON.stringify(response))
+                        if (response.success == "false") {
+                            // alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                            //alert(response.msg);
+                            swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                            $("#portlet-config").modal('hide');
+                            BindCareer();
+                            $("#DivTestimAdd2").css("display", "none");
+                            $("#DivViewTest").css("display", "Block");
+                        }
+                        ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        // alert(response.responseText);
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+            }
+        }
+
+        function ClearControll() {
+            $("#TxtTitle").val('').trigger('change');
+            $("#TxtSortOrder").val('').trigger('change');
+            $("#DdlStatus").val('-- Select --');
+            $("#txtaboutcont").val('').trigger('change');
+            $("#TxtExp").val('').trigger('change');
+            $("#TxtJobLocation").val('').trigger('change');
+            $("#BtnSave").html("Save");
+            $("#AnchAddTestim").html("Add");
+            $("#HeadAddTest").html("Add Career");
+            //$("#H4PageTitle").html("Add Service Type")
+        }
+
+        function UpdateShortDesc() {
+            var dataobj = JSON.stringify({
+                    'CarrersID': 1,
+                'CarrersTitle': CKEDITOR.instances['TxtMaiTestimoni'].getData(),
+                'SubTitle': CKEDITOR.instances['TxtMaiTestimoni2'].getData()
+                    //'SubTitle': $("#TxtExp").val(),
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("UpdateCareerInfo", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        //alert(JSON.stringify(response))
+                        if (response.success == "false") {
+                            // alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                            //alert(response.msg);
+                             var file1 = document.getElementById("slider1_image").files[0];
+
+                            if (file1 != null) {
+                                SaveBanner_image(1);
+                            }
+                            swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                            $("#portlet-config").modal('hide');
+                            BindCareer();
+                        }
+                        ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        // alert(response.responseText);
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+            }
+        
+
+        function validateShortDesc() {
+            var shortdesc = CKEDITOR.instances['TxtMaiTestimoni'].getData();
+            var shortdesc2 = CKEDITOR.instances['TxtMaiTestimoni2'].getData();
+            if (shortdesc == null || shortdesc == "") {
+
+                swal({
+                    title: "Warning!",
+                    text: "Short Description can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtMaiTestimoni'].focus();
+                        }
+                    });
+                return false;
+            }
+            else if (shortdesc2 == null || shortdesc2 == "") {
+
+                swal({
+                    title: "Warning!",
+                    text: "Short Description 2 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtMaiTestimoni2'].focus();
+                        }
+                    });
+                return false;
+            }
+            else {
+                UpdateShortDesc();
+            }
+        }
+        function validateform() {
+
+            var careertitle = $("#TxtTitle").val();
+            var sortorder = $("#TxtSortOrder").val();
+            var status = $("#DdlStatus").val();
+            var expe = $("#TxtExp").val();
+            var jobloc = $("#TxtJobLocation").val();
+            var aboutcont = CKEDITOR.instances['txtaboutcont'].getData();
+
+            if (careertitle == null || careertitle == "") {
+
+                swal({
+                    title: "Warning!",
+                    text: "Title can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtTitle").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (sortorder == null || sortorder == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Sort Order can't be blank.",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtSortOrder").focus();
+                        }
+                    });
+                return false;
+            }
+
+            else if (status == null || status == "" || status == "-- Select --" || status == "0") {
+                swal({
+                    title: "Warning!",
+                    text: "Status can't be blank.",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                });
+                return false;
+            }
+            if (expe == null || expe == "") {
+
+                swal({
+                    title: "Warning!",
+                    text: "Experience can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtExp").focus();
+                        }
+                    });
+                return false;
+            }
+            if (jobloc == null || jobloc == "") {
+
+                swal({
+                    title: "Warning!",
+                    text: "Job Location can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtJobLocation").focus();
+                        }
+                    });
+                return false;
+            }
+            if (aboutcont == null || aboutcont == "") {
+
+                swal({
+                    title: "Warning!",
+                    text: "Content can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtaboutcont").focus();
+                        }
+                    });
+                return false;
+            }
+            else {
+                AddCareers();
+            }
+        }
+
+        function OPenConf(CareerID) {
+            var row = $(CareerID).closest("TR");
+            var CareerID = $("TD", row).eq(1).html();
+            CareerMultiID = CareerID;
+            EditCareer(CareerID);
+        }
+        function ChangeTextWhenEdit() {
+            $("#AnchAddTestim").html("Edit");
+            $("#HeadAddTest").html("Edit Career");
+        }
+
+        function EditCareer(CareerID) {
+            $.ajax({
+                type: "GET",
+                data: { 'CareerMultiID': CareerID },
+                url: "@Url.Action("EditCareers", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+
+                    ClearControll();
+                    ViewAddPage();
+                    ChangeTextWhenEdit();
+                    //alert(JSON.stringify(response));
+                    $("#TxtTitle").val(response.careers[0].Subject).trigger('change');
+                    $("#TxtSortOrder").val(response.careers[0].SortOrder).trigger('change');
+                    $("#TxtExp").val(response.careers[0].Expe).trigger('change');
+                    $("#TxtJobLocation").val(response.careers[0].Location).trigger('change');
+
+                    CKEDITOR.instances['txtaboutcont'].setData(response.careers[0].CareerDesc);
+
+                    //$("#txtaboutcont").val(response.careers[0].CareerDesc).trigger('change');
+                    if (response.careers[0].IsActive == "True") {
+                        $("#DdlStatus").val('Active').trigger('change');
+                    }
+                    else {
+                        $("#DdlStatus").val('InActive').trigger('change');
+                    }
+
+                    $("#BtnSave").html("Update");
+                    //$("#H4PageTitle").html("Edit Service Type");
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+
+      
+
+        function DelCareersF(DelCareerID) {
+            var dataobj = JSON.stringify({
+                'CareerMultiID': DelCareerID
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteCareers", "admin")",
+                data: dataobj,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == "false") {
+                        //alert(response.msg);
+                        swal({
+                            title: "Warning!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "warning",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "warning",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                    else {
+                        //alert(response.msg);
+                        swal({
+                            title: "success!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "success",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "success",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                        $("#modal-default").modal('hide');
+                        BindCareer();
+                        ClearControll();
+                    }
+
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+        function DelCarreers() {
+            swal({
+                title: "Are you sure you want to delete this Record?",
+                text: "Once deleted, you will not be able to recover this Record!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                closeOnConfirm: false, //It does close the popup when I click on close button
+                closeOnCancel: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#sample_1').find('input[type="checkbox"]:checked').each(function () {
+                            var DelCareerID = $(this).val();
+                            DelCareersF(DelCareerID);
+                            //this is the current checkbox
+                            //var DelCareerID = $(this).val();
+                        });
+                        
+                    } else {
+                        swal("Your Record is safe!");
+                    }
+                });
+        }
+
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+            var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            //document.getElementById("error").style.display = ret ? "none" : "inline";
+            return ret;
+        }
+
+        function validateImage() {
+            // //debugger;
+            var formData = new FormData();
+
+            var file = document.getElementById("exampleInputFile").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("exampleInputFile").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("exampleInputFile").value = '';
+                    return false;
+                }
+                return true;
+            }
+
+            }
+
+     function validatesilder1image() {
+            // //debugger;
+
+            var oFReader1 = new FileReader();
+        oFReader1.readAsDataURL(document.getElementById("slider1_image").files[0]);
+
+        oFReader1.onload = function (oFREvent1) {
+            document.getElementById("sld1_img").src = oFREvent1.target.result;
+            };
+
+
+
+            var formData = new FormData();
+
+            var file = document.getElementById("slider1_image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("slider1_image").value = '';
+                    return false;
+                }
+                 if (file.size > 2048000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 2MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("slider1_image").value = '';
+                    return false;
+                }
+                return true;
+            }
+
+            }
+     function SaveBanner_image(id) {
+          var image_1 = ($("#slider1_image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadCarrerBanner_image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+            }
+    </script>
+}
+

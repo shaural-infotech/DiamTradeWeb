@@ -1,0 +1,275 @@
+﻿
+@{
+    ViewBag.Title = "FooterBlock";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            Footer Block
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+
+                <li>
+                    <a href='@Url.Action("FooterBlock","admin")'>Footer Block</a>
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- END PAGE HEADER-->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN EXTRAS PORTLET-->
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Edit Footer Block Info
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="#" class="form-horizontal form-bordered">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Address<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" name="TxtAddresss" id="TxtAddresss"></textarea>
+                                    </div>
+                                    <label class="control-label col-md-3">Phone<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="TxtPhone" id="TxtPhone" onkeypress="return IsNumeric(event);"
+                                               ondrop="return false;">
+                                    </div>
+                                    <label class="control-label col-md-3">Support<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="TxtSupport" id="TxtSupport" onkeypress="return IsNumeric(event);"
+                                               ondrop="return false;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </form>
+                        <button id="sample_editable_1_new" style="margin-right:10px" class="btn info blue" onclick="return validateform(this);">
+                            <i class="fa fa-edit"></i>  Update
+                        </button>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+                <!-- END EXTRAS PORTLET-->
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        var FooterBlock = 1;
+        EditFooterBlock();
+         var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+        function EditFooterBlock() {
+
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditFooterBlock", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    $("#TxtAddresss").val(response.footerblock[0].FooterAddress).trigger('change');
+                    $("#TxtPhone").val(response.footerblock[0].PhoneNo).trigger('change');
+                    $("#TxtSupport").val(response.footerblock[0].SupportNo).trigger('change');
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+
+
+        function validateform() {
+
+             if ($("#TxtAddresss").val() == null || $("#TxtAddresss").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Address can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtAddresss").focus();
+                        }
+                    });
+                return false;
+            }
+
+               else if ($("#TxtPhone").val() == null || $("#TxtPhone").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Phone Number can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtPhone").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtSupport").val() == null || $("#TxtSupport").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Support can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtSupport").focus();
+                        }
+                    });
+                return false;
+            }
+
+            else {
+                 UpdateFooterBlock();
+            }
+        }
+
+        function UpdateFooterBlock() {
+                    dataobj = JSON.stringify({
+                        'FooterID': 1,
+                        'FooterAddress': $("#TxtAddresss").val(),
+                        'PhoneNo': $("#TxtPhone").val(),
+                        'SupportNo': $("#TxtSupport").val(),
+                    });
+
+                $.ajax({
+                    type: "POST",
+                    //url: serviceurl + "UpdateContact UsUs",
+                    url: "@Url.Action("UpdateFooterBlock", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.success == "false") {
+                            //alert("hii");
+                            //alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                            swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                            //$("#modal-default").modal('hide');
+                            //GetAllUser();
+                            //ClearControll();
+                        }
+                        //msgDisplay();
+                        //ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+        }
+
+        function CancelData() {
+            // alert('hi');
+            EditFooterBlock();
+        }
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+
+        function IsNumeric(e) {
+            var charCode = (e.which) ? e.which : e.keyCode
+            if (charCode != 43 && charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+    </script>
+}
+<!-- END CONTENT -->

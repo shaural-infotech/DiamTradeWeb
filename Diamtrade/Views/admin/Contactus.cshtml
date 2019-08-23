@@ -1,0 +1,546 @@
+﻿
+@{
+    ViewBag.Title = "Contactus";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            Contact Us
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+
+                <li>
+                    <a href='@Url.Action("ContactUs","admin")'>Contact Us</a>
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- END PAGE HEADER-->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN EXTRAS PORTLET-->
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Edit Contact Us Info
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            @*<a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                                <a href="javascript:;" class="reload">
+                                </a>
+                                <a href="javascript:;" class="remove">
+                                </a>*@
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="#" class="form-horizontal form-bordered">
+                            @*START Contact Us*@
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Banner Image<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="slider1_image" onchange="validatesilder1image()" accept="image/*">
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="sld1_img" style="width:80px" class="img-auto" alt="">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Short Content<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" id="txtContactUscont" name="txtContactUscont"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            @*END Contact Us?*@
+
+                            @*START  WHO WE ARE?*@
+                            <hr> <h3>
+                                Diamtrade
+                            </h3>
+                            <hr />
+
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="TxtTitle" id="TxtTitle">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Address<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        @*<input type="text" class="form-control" name="TxtPhone" multiple id="TxtAddresss">*@
+                                        @*<textarea class="ckeditor form-control" name="TxtShortContent" id="txtContact Uscont1" rows="6"></textarea>*@
+                                        <textarea class="form-control" name="TxtAddresss" id="TxtAddresss"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            @*END  WHO WE ARE?*@
+                            @*START  WHO WE ARE?*@
+                            <hr> <h3>
+                                Contact Details
+                            </h3>
+                            <hr />
+
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Phone<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="TxtPhone" id="TxtPhone" onkeypress="return IsNumeric(event);"
+                                               ondrop="return false;">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Email<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="TxtEmail" id="TxtEmail">
+                                    </div>
+                                </div>
+
+                            </div>
+                            @*END  WHO WE ARE?*@
+
+                            @*START  WHO WE ARE?*@
+                            <hr> <h3>
+                                Support
+                            </h3>
+                            <hr />
+
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Support<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="TxtSupport" id="TxtSupport">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Teamviewer<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="TxtTeamViewer" id="TxtTeamViewer">
+                                    </div>
+                                </div>
+                            </div>
+                            @*END  WHO WE ARE?*@
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        @*<button type="submit" class="btn green" onclick="return UpdateContact UsUs();"><i class="fa fa-check"></i> Submit</button>*@
+                                        <button type="button" class="btn green" onclick="return validateform();"><i class="fa fa-check"></i> Submit</button>
+                                        <button type="button" class="btn default" onclick="return CancelData();">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+                <!-- END EXTRAS PORTLET-->
+            </div>
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    <script>
+        var ContactUsID = 1;
+       EditContactUs();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+        //$(document).ready(function () {
+        //    EditContact UsUs();
+        //});
+        function EditContactUs() {
+
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditContactUs", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    CKEDITOR.instances['txtContactUscont'].setData(response.contacts[0].CotactUsDesc);
+
+                    //$("#txtContactUscont").val(response.contacts[0].CotactUsDesc).trigger('change');
+                    $("#TxtTitle").val(response.contacts[0].CotactTitle).trigger('change');
+                    $("#TxtAddresss").val(response.contacts[0].Address).trigger('change');
+                    $("#TxtPhone").val(response.contacts[0].MobileNo).trigger('change');
+                    $("#TxtEmail").val(response.contacts[0].EmailID).trigger('change');
+                    $("#TxtSupport").val(response.contacts[0].SupportName).trigger('change');
+                    $("#TxtTeamViewer").val(response.contacts[0].TeamViewerName).trigger('change');
+
+                     $("#sld1_img").attr('src', imageurl+response.contacts[0].Image_Banner);
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+
+
+        function validateform() {
+            if (CKEDITOR.instances['txtContactUscont'].getData() == null || CKEDITOR.instances['txtContactUscont'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Content can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtContactUscont").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtTitle").val() == null || $("#TxtTitle").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Title can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtTitle").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtAddresss").val() == null || $("#TxtAddresss").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Address can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtAddresss").focus();
+                        }
+                    });
+                return false;
+            }
+
+               else if ($("#TxtPhone").val() == null || $("#TxtPhone").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Phone Number can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtPhone").focus();
+                        }
+                    });
+                return false;
+            }
+
+               else if ($("#TxtEmail").val() == null || $("#TxtEmail").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Email can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtEmail").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtSupport").val() == null || $("#TxtSupport").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Support can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtSupport").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtTeamViewer").val() == null || $("#TxtTeamViewer").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "TeamViwer can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtTeamViewer").focus();
+                        }
+                    });
+                return false;
+            }
+            else {
+                UpdateContactUs();
+            }
+        }
+
+        function UpdateContactUs() {
+
+                    dataobj = JSON.stringify({
+                        'ContactusID': 1,
+                        'CotactUsDesc': CKEDITOR.instances['txtContactUscont'].getData(),
+                        'CotactTitle': $("#TxtTitle").val(),
+                        'Address': $("#TxtAddresss").val(),
+                        'MobileNo': $("#TxtPhone").val(),
+                        'EmailID': $("#TxtEmail").val(),
+                        'SupportName': $("#TxtSupport").val(),
+                        'TeamViewerName': $("#TxtTeamViewer").val()
+                    });
+
+                $.ajax({
+                    type: "POST",
+                    //url: serviceurl + "UpdateContact UsUs",
+                    url: "@Url.Action("UpdateContactUs", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.success == "false") {
+                            //alert("hii");
+                            //alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                             var file1 = document.getElementById("slider1_image").files[0];
+
+                            if (file1 != null) {
+                                SaveBanner_image(1);
+                            }
+                            swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                            //$("#modal-default").modal('hide');
+                            //GetAllUser();
+                            //ClearControll();
+                        }
+                        //msgDisplay();
+                        //ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+        }
+
+        function CancelData() {
+           // alert('hi');
+            EditContactUs();
+        }
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+
+        function IsNumeric(e) {
+            var charCode = (e.which) ? e.which : e.keyCode
+            if (charCode != 43 && charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+        //function IsNumeric(e) {
+        //    var keyCode = e.which ? e.which : e.keyCode
+        //    var ret = ((keyCode != 43 && keyCode > 31) &&  (keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+
+        //    return ret;
+        //}
+
+        //function isNumberKey(evt) {
+        //    var charCode = (evt.which) ? evt.which : event.keyCode
+        //    if (charCode != 43 && charCode > 31 && (charCode < 48 || charCode > 57))
+        //        return false;
+        //    return true;
+        //}
+
+    function validatesilder1image() {
+            // //debugger;
+
+            var oFReader1 = new FileReader();
+        oFReader1.readAsDataURL(document.getElementById("slider1_image").files[0]);
+
+        oFReader1.onload = function (oFREvent1) {
+            document.getElementById("sld1_img").src = oFREvent1.target.result;
+            };
+
+
+
+            var formData = new FormData();
+
+            var file = document.getElementById("slider1_image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("slider1_image").value = '';
+                    return false;
+                }
+                 if (file.size > 2048000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 2MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("slider1_image").value = '';
+                    return false;
+                }
+                return true;
+            }
+
+            }
+     function SaveBanner_image(id) {
+          var image_1 = ($("#slider1_image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadContactUsBanner_image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+            }
+    </script>
+}
+<!-- END CONTENT -->

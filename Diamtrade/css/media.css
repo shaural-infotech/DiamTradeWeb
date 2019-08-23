@@ -1,0 +1,665 @@
+@media only screen and (min-width: 5000px) and (max-width: 5500px) {
+	
+	/*------- Slider Section Starts -------*/
+
+.carousel-caption-one { left: 35%; }
+.carousel-caption-img { right: 35%; }
+.carousel-caption-img img.img-slide { width: 100%; }
+
+	/*------- Slider Section Starts -------*/
+
+}
+
+@media only screen and (min-width: 4000px) and (max-width: 4100px) {
+	
+	/*------- Slider Section Starts -------*/
+
+.carousel-caption-one { left: 33%; }
+.carousel-caption-img { right: 33%; }
+.carousel-caption-img img.img-slide { width: 100%; }
+
+	/*------- Slider Section Starts -------*/
+
+}
+
+@media only screen and (min-width: 2500px) and (max-width: 2800px) {
+	
+	/*------- Slider Section Starts -------*/
+
+.carousel-caption-one { left: 27%; }
+.carousel-caption-img { right: 23%; }
+.carousel-caption-img img.img-slide { width: 100%; }
+
+	/*------- Slider Section Starts -------*/
+
+}
+
+@media only screen and (min-width: 2000px) and (max-width: 2100px) {
+	
+	/*------- Slider Section Starts -------*/
+
+.carousel-caption-one { left: 20%; }
+.carousel-caption-img { right: 14%; }
+.carousel-caption-img img.img-slide { width: 100%; }
+
+	/*------- Slider Section Starts -------*/
+
+}
+
+@media only screen and (min-width: 1800px) and (max-width: 1999px) {
+	
+	/*------- Slider Section Starts -------*/
+
+.carousel-caption-one { left: 10%; }
+.carousel-caption-img { right: 7%; }
+.carousel-caption-img img.img-slide { width: 100%; }
+
+	/*------- Slider Section Starts -------*/
+
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1700px) {
+	
+	/*------- Slider Section Starts -------*/
+
+.carousel-caption-one { left: 11%; }
+.carousel-caption-img { right: 5%; }
+.carousel-caption-img img.img-slide { width: 95%; }
+
+	/*------- Slider Section Starts -------*/
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+	/*------- Navigationbar Section Starts -------*/
+
+.navbar-menu { display: block !important; }
+
+	/*------- Navigationbar Section Ends -------*/
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+	/*------- Header Section Starts -------*/
+
+.box-search:hover .search-txt { width: 170px; }
+.img-header-logo { width: 80%; }
+
+	/*------- Header Section Ends -------*/
+
+	/*------- Navigationbar Section Starts -------*/
+
+.navbar-menu { display: block !important; }
+.dropdown-products { left: 33%; }
+
+	/*------- Navigationbar Section Ends -------*/
+
+	/*------- Slider Section Starts -------*/
+
+.carousel-caption-one { left: 5%; text-align: left; }
+.banner-heading-desc { text-align: left; }
+.banner-heading-desc > h1,
+.built-software-heading > h2 { font-size: 3rem; }
+.banner-heading-desc > p { margin: 0 0 15px; width: 50%; }
+.slider-get-more { text-align: left; }
+.carousel-caption-img img.img-slide { width: 30%; }
+.carousel-caption-img { bottom: 10px; right: 25px; }
+.carousel-control { top: 50%; transform: translate(0%, -50%); }
+
+	/*------- Slider Section Ends -------*/
+
+	/*------- Diatrade Key Features and Product Section Starts -------*/
+
+.bg-key-features-home { padding: 0 15px 30px; }
+.box-feature { min-height: 181px; }
+.our-product-home > h2 { margin: 0 0 30px; }
+
+	/*------- Diatrade Key Features and Product Section Ends -------*/
+
+	/*------- Our Clients Section Starts -------*/
+
+.section-heading > h2 { font-size: 2.7rem; padding: 10px 30px; }
+.slick-prev { left: -15px; }
+.slick-next { right: -15px; }
+
+	/*------- Our Clients Section Ends -------*/
+
+	/*------- Footer Section Starts -------*/
+
+.footer-social-listing > li { margin-right: 5px; }
+.footer-social-listing > li > a { font-size: 3rem; }
+.footer-address-heading > h3, 
+.footer-company-heading > h3 { font-size: 1.8rem; }
+
+/*------- Footer Section Ends -------*/
+
+	/*------- Copyrights Section Starts -------*/
+
+.copyright { margin-bottom: 15px; text-align: center; }
+.designed-copyright { text-align: center; }
+
+	/*------- Copyrights Section Ends -------*/
+
+	/*------- Desktop Page Strats -------*/
+
+.complete-erp-crm > h2 { margin-bottom: 20px; font-size: 2.4rem; }
+.complete-erp-crm > h1 { font-size: 5rem; }
+.key-feature-desktop-box { min-height: 200px; padding: 10px; margin: 0 auto 30px; }
+.feature-name-desktop p { font-size: 1rem; }
+.img-feature-desktop { width: 90px; }
+
+	/*------- Desktop Page Ends -------*/
+
+	/*------- Cloud Page Starts -------*/
+
+.cloud-tag-lines > h2 { font-size: 3.4rem; margin-bottom: 10px; }
+.cloud-tag-lines > h1 { font-size: 5rem; }
+.box-product-seller-body { height: 400px; }
+
+	/*------- Cloud Page Ends -------*/
+
+	/*------- Services Page CSS Starts -------*/
+
+.enterprise-heading span { font-size: 2.6rem; padding: 5px; margin-bottom: 20px; }
+/*.integration-img { width: 120px; transform: translate(105%,-50%); }*/
+.integration-img { width: 100px; }
+.software-feature-heading h2 { font-size: 2.6rem; }
+
+	/*------- Services Page CSS Ends -------*/
+
+		/*------- Testimonial Page CSS Starts -------*/
+
+.testimonial-v { padding: 80px 0px 35px; }
+.testimonial-v:before { top: 30%; }
+.testimonial-v .testimonial-disc { margin-top: 15px; }
+.testimonial-square:before { top: 55%; }
+.testimonial-s-two .testimonial-body { padding: 15px 15px 20px; }
+.testimonial-v .testimonial-disc { padding-bottom: 0; }
+.testimonial-square .testimonial-author > h5 { padding: 15px 15px 0px; }
+
+	/*------- Testimonial Page CSS Ends -------*/
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	/*------- Header Section Starts -------*/
+
+/*.img-header-logo { width: 100%; }*/
+.box-search:hover .search-txt { width: 150px; }
+
+	/*------- Header Section Ends -------*/
+
+	/*------- Navigationbar Section Starts -------*/
+
+.navbar-menu { display: block !important; }
+/*.dropdown-products { left: 33%; }*/
+.product-listing > li > a, .service-listing > li > a { font-size: 1.4rem; padding: 18px 10px; }
+.product-heading p { font-size: 1.4rem; }
+
+	/*------- Navigationbar Section Ends -------*/
+
+	/*------- Slider Section Starts -------*/
+
+.carousel-caption-one { left: 5%; text-align: left; }
+.banner-heading-desc { text-align: left; }
+.banner-heading-desc > h1,
+.built-software-heading > h2 { font-size: 2.4rem; }
+.banner-heading-desc > p { margin: 0 0 15px; width: 50%; }
+.slider-get-more { text-align: left; }
+.carousel-caption-img img.img-slide { width: 30%; }
+.carousel-caption-img { bottom: 10px; right: 25px; }
+.carousel-control { top: 60%; transform: translate(0%, -60%); }
+.right.carousel-control { right: -5px; }
+.left.carousel-control { left: -5px; }
+.carousel-control i { font-size: 3.4rem; }
+.no-flex { display: block; }
+
+	/*------- Slider Section Ends -------*/
+
+	/*------- Diatrade Key Features and Product Section Starts -------*/
+
+.bg-key-features-home { padding: 0 15px 30px; }
+.box-feature { min-height: 203px; }
+.our-product-home > h2 { margin: 0 0 30px; }
+
+	/*------- Diatrade Key Features and Product Section Ends -------*/
+
+	/*------- Product Disc Home Section Starts -------*/
+
+.img-diamtrade-cloud, .img-diamtrade-desktop { width: 85%; }
+.diamtrade-section-heading p { font-size: 1.8rem; }
+.diamtrade-section-heading h2 { font-size: 2.8rem; margin-bottom: 10px; }
+
+	/*------- Product Disc Home Section Ends -------*/
+
+	/*------- Our Clients Section Starts -------*/
+
+.section-heading > h2 { font-size: 2.4rem; padding: 10px 30px; }
+.slick-prev { left: -15px; }
+.slick-next { right: -15px; }
+
+	/*------- Our Clients Section Ends -------*/
+
+	/*------- Footer Section Starts -------*/
+
+.footer-address-heading,
+.footer-company-heading { margin-bottom: 30px; }
+
+	/*------- Footer Section Ends -------*/
+
+	/*------- Copyrights Section Starts -------*/
+
+.copyright { margin-bottom: 15px; text-align: center; }
+.designed-copyright { text-align: center; }
+
+	/*------- Copyrights Section Ends -------*/
+
+	/*------- Desktop Page Starts ------- */
+
+.diamtrade-desktop-logo-text + p { text-align: center; }
+.complete-erp-crm > h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+.complete-erp-crm > h1 { font-size: 4rem; }
+/*.key-feature-desktop-box { width: 165px; height: 220px; }*/
+.bg-information-skew:before { width: 110%; left: -5%; }
+.info-details { padding-left: 20px; }
+.bg-information-skew > img { right: 65px; }
+.info-details > h3 { font-size: 1.6rem; }
+.inventory-box h5 { min-height: 85px; }
+.owl-prev span { left: 15px; }
+.owl-next span { right: -35px; }
+
+	/*------- Desktop Page Ends ------- */
+
+	/*------- Cloud Page Starts -------*/
+
+.cloud-tag-lines > h2 { font-size: 2.6rem; margin-bottom: 5px; }
+.cloud-tag-lines > h1 { font-size: 5rem; }
+.box-product-seller-body { height: 465px; }
+
+	/*------- Cloud Page Ends -------*/
+
+	/*------- Career Page Starts -------*/
+
+.career-form-heading h2 { font-size: 2.4rem; }
+.bg-career-img { background-position: center; }
+
+	/*------- Career Page Ends -------*/
+
+	/*------- Contact Page Starts Page Starts -------*/
+
+.contact-us-form { margin: 10px 20px; }
+.gallery-box { padding: 30px; }
+
+	/*------- Contact Page Starts Page Ends -------*/
+
+	/*------- Srvices Page Starts Page Starts -------*/
+
+.integration-item { margin: 55px 0px 30px; }
+.integration-disc { min-height: 200px; }
+
+	/*------- Srvices Page Starts Page Ends -------*/
+
+	/*------- Testimonial Page Starts Page Starts -------*/
+
+.testimonial-two { padding-top: 5px; }
+.author-name > h5 { padding: 5px 0px; }
+.testimonial-round { margin: 0 auto 20px; }
+.testimonial-v { padding: 80px 0px 30px; }
+.testimonial-v:before { top: 30%; }
+.testimonial-v:after { bottom: 30%; }
+.testimonial-v .testimonial-disc { margin-top: 10px; padding-bottom: 0; }
+.testimonial-square:before { top: 60%; }
+.testimonial-square .testimonial-author > h5 { padding: 15px 15px 0px; }
+.testimonial-common .testimonial-body { min-height: 270px; }
+.testimonial-author > h5 { padding: 10px 0px; }
+
+	/*------- Testimonial Page Starts Page Ends -------*/
+
+	/*------- About Page CSS Starts -------*/
+
+/*.bg-founder-msg .no-flex { display: flex!important; }*/
+
+	/*------- About Page CSS Ends -------*/
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	/*------- Header Section Starts -------*/
+
+.header-menu { position: static; }
+.block-mob { display: block; }
+.header-social-listing { text-align: center; }
+.header-social-listing > li:last-child { margin-bottom: 0; }
+.img-header-logo { margin: 15px auto; width: 170px; }
+.search-area { text-align: center; }
+.box-search:hover .search-txt { width: 150px; }
+.dropdown-products { position: static; }
+
+	/*------- Header Section Ends -------*/
+
+	/*------- Hamburger Menu CSS Starts -------*/
+
+.hamburger-menu { background-color: #53c8be; border-radius: 0 0 50%; -webkit-border-radius: 0 0 50%; -moz-border-radius: 0 0 50%; -ms-border-radius: 0 0 50%; -o-border-radius: 0 0 50%; cursor: pointer; display: inline-block; height: 40px; width: 40px; position: relative; }
+.burger-menu span { position: absolute; height: 2px; width: 20px; background-color: #fff; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.burger-menu span:before,
+.burger-menu span:after { content: ""; background-color: #fff;left: 0; height: 2px; width: 20px; position: absolute; top: 7px; transition: 0.3s linear; }
+.burger-menu span:before { top: -7px; }
+.hamburger-menu:hover .navbar-menu,
+.hamburger-menu:focus .navbar-menu {
+	display: block;
+}
+
+	/*------- Hamburger Menu CSS Ends -------*/
+
+	/*------- Navigationbar Section Starts -------*/
+
+.header-navbar { position: static; top: 0; }
+.navbar-container-mob { padding: 0; }
+.navbar-menu { display: none; }
+.menu-listing { border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; -ms-border-radius: 0; -o-border-radius: 0; display: block; }
+.menu-listing > li { display: block; }
+.menu-listing > li > a { padding: 10px 15px; }
+.product-listing > li > a { display: flex; align-items: center; }
+.col-res-right img { width: 50%; }
+.dropdown-products { width: 100%; }
+.service-listing > li > a { padding: 10px; font-size: 1.4rem; }
+.visit-page-link { margin: 0 auto 20px; }
+/*.dropdown-products img { width: 50%; }*/
+.product-listing > li > a, .service-listing > li > auto {
+	font-size: 1.6rem;
+	padding: 10px;
+}
+.menu-product-img { width: 50%; }
+.service-menu-img { display: none; }
+.menu-product-img { display: none; }
+.dropdown-products { padding: 5px 10px; }
+.bg-header { position: relative; }
+.top-menu-listing, .menu-listing { text-align: center; }
+
+	/*------- Navigationbar Section Ends -------*/
+
+	/*------- Slider Section Starts -------*/
+
+.carousel-caption-one { left: 0; top: 15px; }
+.carousel-caption-img { bottom: 15px; right: 15px; }
+.banner-heading-desc > h1 { font-size: 1.6rem; margin-bottom: 0; }
+.banner-heading-desc > p { font-size: 1rem; margin: 10px; text-align: left; width: 50%; }
+.slider-get-more { text-align: left; margin-left: 15px; }
+.btn-get-more-banner { font-size: 1.4rem; padding: 4px 7px; }
+.carousel-indicators { bottom: 0; }
+.carousel-control { top: 70%; transform: translate(0%, -70%); }
+.carousel-control i { font-size: 3rem; }
+
+	/*------- Slider Section Ends -------*/
+
+	/*------- Home About Section Starts -------*/
+
+.built-software-heading > p:first-child { font-size: 1.6rem; }
+.box-feature { min-height: 200px; }
+
+	/*------- Home About Section Ends -------*/
+
+	/*------- Custom Built Software Section Starts -------*/
+
+.bg-built-software-home { padding: 15px; }
+.built-software-heading > h2 { font-size: 1.8rem; }
+.built-software-heading p:last-child { font-size: 1.4rem; text-align: justify; }
+
+	/*------- Custom Built Software Section Ends -------*/
+
+	/*------- Diatrade Key Features Section Starts -------*/
+
+.bg-key-features-home { padding: 15px; }
+.section-heading > h2 { font-size: 2rem; margin-bottom: 15px; padding: 10px 15px; }
+.box-feature { margin-bottom: 15px; }
+
+	/*------- Diatrade Key Features Section Ends -------*/
+
+	/*------- Our Product Section Starts -------*/
+
+.bg-product-home { padding: 15px; }
+.box-product { margin-bottom: 15px; }
+
+	/*------- Our Product Section Ends -------*/
+
+	/*------- Cloud, Desktop and DiamX Section Starts -------*/
+
+.diamtrade-section-heading > h3 { font-size: 2rem; }
+.diamtrade-section-heading > p { font-size: 1.4rem; text-align: justify; }
+.bg-cloud-home, 
+.bg-desktop-home, 
+.bg-diamx-home { padding: 15px; }
+.diamtrade-section-heading h2 { font-size: 2.4rem; }
+.img-diamtrade-cloud, .img-diamtrade-desktop { width: 80%; }
+.diamtrade-section-heading p { font-size: 1.8rem; }
+
+	/*------- Cloud, Desktop and DiamX Section Ends -------*/
+
+	/*------- Our Clients Section Starts -------*/
+
+.bg-client-home { padding: 15px; }
+.slick-prev { left: -15px; }
+.slick-next { right: -15px; }
+.slick-next:before, 
+.slick-prev:before { font-size: 2rem; }
+
+	/*------- Our Clients Section Ends -------*/
+
+	/*------- About Page CSS Starts -------*/
+
+.no-flex { display: block; }
+.section-heading-about > span { font-size: 2.4rem; }
+
+	/*------- About Page CSS Ends -------*/
+
+	/*------- Footer Section Starts -------*/
+
+.bg-footer-home { padding: 15px; }
+.footer-address-heading > h3, 
+.footer-company-heading > h3 { font-size: 2rem; }
+
+.img-hotsoft-logo { margin: 0 auto 15px; width: 200px; }
+.address-display > p,
+.address-display > p:nth-child(2),
+.address-display > p:nth-child(3),
+.footer-paging-listing > li > a { font-size: 1.4rem; }
+.address-display > p:last-child { margin-bottom: 15px; }
+.footer-social-listing { text-align: center; }
+.subscribe-fieldset { margin-bottom: 15px; padding: 0; }
+.footer-paging-listing > li:last-child { margin-bottom: 0; }
+.footer-social-listing > li > a { font-size: 2.4rem; }
+.subscribe-fieldset > legend,
+.btn-submit { font-size: 1.6rem; }
+
+	/*------- Footer Section Ends -------*/
+
+	/*------- Copyrights Section Starts -------*/
+
+.copyright { font-size: 1.4rem; margin-bottom: 10px; text-align: center; }
+.designed-copyright { text-align: center; }
+.designed-copyright > a:first-child { font-size: 1.4rem; }
+
+	/*------- Copyrights Section Ends -------*/
+
+	/*------- Desktop Page Starts -------*/
+
+.bg-desktop-particular-page { padding: 15px 30px; }
+.img-diamtrade-logo-width { width: 170px; }
+.diamtrade-desktop-logo-text { margin-bottom: 15px; }
+.bg-desktop-particular-page p { font-size: 1.4rem; }
+.desktop-img { width: 50%; }
+.complete-erp-crm > h2 { font-size: 2rem; margin-bottom: 10px; text-align: center; }
+.complete-erp-crm > h1 { font-size: 2.8rem; text-align: center; }
+.desktop-disc-para { padding: 10px 0px 0px; }
+.bg-desktop-feature { padding: 15px 30px; }
+.key-feature-desktop-box { margin: 0 auto 30px; }
+.key-feature-heading > span { margin-bottom: 20px; }
+.bg-cloud-feature { padding: 0px 30px 10px; }
+.bg-inventories { padding: 10px 30px; }
+.inventories-heading span { font-size: 2rem; margin-bottom: 30px; }
+.inventory-box > img { height: 150px; width: 150px; }
+.bg-special-para { padding: 10px 15px ; }
+.special-para-title span { font-size: 2rem; margin-bottom: 10px; }
+.special-para-disc q, .special-para-disc q p { font-size: 1.4rem; }
+.bg-product-screenshot { padding: 15px; }
+.product-ss-title span { font-size: 2rem; }
+.section-title > h2 { margin-bottom: 15px; }
+.info-details > h3 { font-size: 1.6rem; }
+.info-details > p > span { font-size: 1.4rem; }
+
+	/*------- Desktop Page Ends -------*/
+
+	/*------- Cloud Page Starts -------*/
+
+.cloud-tag-lines > h2 { font-size: 2rem; margin-bottom: 10px; }
+.cloud-tag-lines > h1 { font-size: 4rem; }
+.cloud-feature-heading > span { font-size: 2.2rem; }
+.feature-name-cloud > p { margin-bottom: 30px; }
+.diamtrade-cloud-logo-text + p,
+.cloud-disc-para > p { font-size: 1.4rem; }
+.inventory-box { width: 49%; }
+
+	/*------- Cloud Page Ends -------*/
+
+	/*------- Compare Page Starts -------*/
+
+.title-price > h2 { font-size: 2.2rem; margin-bottom: 15px; }
+.compare-table thead th { font-size: 1.8rem; }
+.compare-table tbody th { font-size: 1.5rem; }
+.compare-table tbody td { font-size: 1.4rem; }
+.diamtrade-feature-title > span { font-size: 2.2rem; margin-bottom: 15px; }
+.diamtrade-feature-list > li > p { font-size: 1.4rem; }
+
+	/*------- Compare Page Ends -------*/
+
+	/*------- Career Page Starts -------*/
+
+.bg-career-banner-div { padding: 0px 15px; }
+.career-form-heading h2 { font-size: 2.2rem; margin-bottom: 20px; }
+.panel-title { font-size: 1.8rem; }
+.job-role-list > li p { font-size: 1.4rem; }
+.bg-career-section { padding: 30px 15px; }
+
+	/*------- Career Page Ends -------*/
+
+	/*------- Contact Page Starts Page Starts -------*/
+
+.contact-us-form { margin: 10px 20px; padding: 15px; }
+.gallery-box { padding: 30px; }
+.contact-us-form-heading > h2 { font-size: 2.2rem; margin-bottom: 15px; }
+.contact-us-form .form-control { font-size: 1.4rem; padding: 10px; height: 35px; }
+
+	/*------- Contact Page Starts Page Ends -------*/
+
+	/*------- Inquiry Page Starts Page Starts -------*/
+
+.inquiry-form-new { padding: 15px; margin: 15px; }
+.inquiry-form-titile > h2 { margin-bottom: 15px; font-size: 2.2rem; }
+.inquiry-form-new .form-control { font-size: 1.4rem; height: 35px; }
+
+	/*------- Inquiry Page Starts Page Ends -------*/
+
+	/*------- Signin Page Starts Page Starts -------*/
+
+.signin-form-div { padding: 15px; }
+.signin-form-heading > p:last-child { margin-bottom: 15px; }
+.register-img { border-radius: 0px; display: grid; align-items: center; }
+
+	/*------- Signin Page Starts Page Ends -------*/
+
+	/*------- Downloads Page Starts Page Starts -------*/
+
+.company-broucher-text { width: 255px; }
+.pdf-Download img { width: 60%; }
+
+	/*------- Downloads Page Starts Page Ends -------*/
+
+	/*------- Services Page CSS Starts -------*/
+
+.enterprise-heading span { font-size: 2rem; margin-bottom: 15px; }
+.enterprise-disc p { font-size: 1.4rem; }
+.bg-enterprise-system { padding: 15px 30px; }
+.integration-img { width: 110px; }
+.integration-disc h3 { font-size: 1.8rem; margin: 50px 0px 10px; }
+.integration-disc p { font-size: 1.4rem; }
+.integration-disc { padding: 10px; min-height: 230px; }
+.owl-prev span { left: 5px; } 
+.owl-next > span { right: -45px; }
+
+	/*------- Services Page CSS Ends -------*/
+
+	/*------- Testimonial Page Starts Page Starts -------*/
+
+.testimonial-two { padding-top: 5px; }
+.author-name > h5 { padding: 5px 0px; }
+.testimonial-round { margin: 0 auto 20px; }
+.testimonial-v { padding: 80px 0px 30px; }
+.testimonial-v:before { top: 30%; }
+.testimonial-v:after { bottom: 30%; }
+.testimonial-v .testimonial-disc { margin-top: 10px; padding-bottom: 0; }
+.testimonial-square:before { top: 60%; }
+.testimonial-square .testimonial-author > h5 { padding: 15px 15px 0px; }
+.testimonial-common .testimonial-body { min-height: 170px; }
+.testimonial-author > h5 { padding: 10px 0px; }
+.testimonial-common { padding-top: 15px; }
+.modal-dialog.testimonial-dialog { width: 80%; }
+.owl-nav {
+  position: absolute;
+  top: 35%;
+  transform: translate(1%, 0%);
+  height: 50%;
+  bottom: 0;
+  left: -32px;
+  width: 100%;
+}
+
+	/*------- Testimonial Page Starts Page Ends -------*/
+
+	/*------- Gallery Page CSS Starts -------*/
+
+/*.pp_pic_holder.light_square {
+	width: 80%!important;
+}
+.pp_content { width: 100%!important; }*/
+
+	/*------- Gallery Page CSS Ends -------*/
+
+}
+
+@media only screen and (max-width: 599px) { 
+
+.owl-next > span { right: -55px; }
+
+}
+
+
+@media only screen and (max-width: 404px) { 
+
+	/*------- Services Page Starts -------*/
+
+	.key-feature-desktop-box { min-height: 200px; }
+	.feature-name-desktop p { font-size: 0.8rem; }
+
+	/*------- Services Page Ends -------*/
+
+.inventory-box { min-height: 220px; }
+
+	/*------- Testimonial Page Starts Page Starts -------*/
+
+.testimonial-first .customer-img { float: none; text-align: center; }
+.testimonial-first .testimonial-disc { padding: 20px 0px 20px 20px; }
+.testimonial-h .customer-img { float: none; text-align: center; margin-left: 0px; }
+.testimonial-h { padding: 0px 15px 0px 15px; }
+.testimonial-h .testimonial-disc > p { margin-left: 15px; padding-right: 15px; }
+.testimonial-square .customer-img > img { margin-top: -70px; }
+
+	/*------- Testimonial Page Starts Page Ends -------*/
+
+}

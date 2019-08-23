@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e950a7d072545e29ebe9ef6bac08af9" Name="Diagram1">
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_AboutUS" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Career" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_CareersSend" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_CarrerMulti" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Cloud" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Cloud_Features" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Cloud_Gallery" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Cloud_Inventories" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Cloud_KetFeature" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_CloudFeature" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Compare" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Compare_KeyFeature" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_CompareMaster" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_ContactUs" Width="1.5" PointX="8.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_CotactMessage" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_DemoRequest" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_DeskFeature" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Desktop" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Desktop_Features" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Desktop_Gallery" Width="1.5" PointX="12.75" PointY="10.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Desktop_Inventories" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Desktop_KeyFeature" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Diamx" Width="1.5" PointX="12.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_DiamX_Features" Width="1.5" PointX="14.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Diamx_Gallery" Width="1.5" PointX="14.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Diamx_Inventories" Width="1.5" PointX="14.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Diamx_KeyFeature" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Footerblock" Width="1.5" PointX="15.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Home" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Inquiry" Width="1.5" PointX="16.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_InquiryMessage" Width="1.5" PointX="4.75" PointY="16.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_KeyFeatures" Width="1.5" PointX="6.75" PointY="16.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_OurClientImages" Width="1.5" PointX="16.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Product" Width="1.5" PointX="8.75" PointY="16.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Service_Features" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_ServiceContent" Width="1.5" PointX="16.75" PointY="10.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Services" Width="1.5" PointX="16.75" PointY="15.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_ServicesType" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Slider" Width="1.5" PointX="10.75" PointY="17.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Support" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_TabImage" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_TabMaster" Width="1.5" PointX="18.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Testimonial" Width="1.5" PointX="18.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_Testimonial_New" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_TestimonialMain" Width="1.5" PointX="18.75" PointY="16.75" />
+        <EntityTypeShape EntityType="DiamtradeAdminModel.Mst_User" Width="1.5" PointX="20.75" PointY="0.75" />
+        <AssociationConnector Association="DiamtradeAdminModel.FK_Mst_Service_Features_Mst_ServicesType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

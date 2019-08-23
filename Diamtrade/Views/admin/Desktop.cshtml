@@ -1,0 +1,2714 @@
+﻿  
+@{
+    ViewBag.Title = "Desktop";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" style="width:65%; height:65%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true" onclick="OpenFeatureModel()"></button>
+                        <h4 class="modal-title" id="H4PageTitle">Add features</h4>
+                    </div>
+                    @*<div class="modal-body">
+                        Widget settings form goes here
+                    </div>*@
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3"><label for="inputEmail3" class="control-label">Product Name</label><span style="color:red;"> * </span></div>
+                                <div class="col-md-6"><input type="text" class="form-control" id="txtproductname" value="Desktop" disabled="disabled" placeholder="Service Type" autocomplete="off" required></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3"><label for="featurename" class="control-label">Feature Name</label><span style="color:red;"> * </span></div>
+                                <div class="col-md-6"><input type="text" class="form-control" id="txtfeaturename_1"  placeholder="Feature Name" autocomplete="off" required></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3"><label for="inputEmail3">Feature Image</label><span style="color:red;"> * </span></div>
+                                <div class="col-md-3">
+                                    <input type="file" class="" id="featureImg" onchange="validateServiceFeatureImage()" accept="image/*">
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="pull-right image">
+                                        <img src="" id="featureimg1" class="img-auto" style="width:100px">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue" id="BtnSaveFeature" onclick="SaveFeatureData();">Save</button>
+                        <button type="button" class="btn default" data-dismiss="modal" onclick="ClearFeatureData();">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <div class="modal fade" id="portlet-config_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" style="width:65%; height:65%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true" onclick="OpenFeatureModel_1()"></button>
+                        <h4 class="modal-title" id="H4PageTitle">Add Key features</h4>
+                    </div>
+                    @*<div class="modal-body">
+                        Widget settings form goes here
+                    </div>*@
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3"><label for="inputEmail3" class="control-label">Product Name</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-6"><input type="text" class="form-control" id="txtproductname_1" value="Desktop" disabled="disabled" placeholder="Service Type" autocomplete="off" required></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3"><label for="featurename" class="control-label">Feature Name</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-6"><input type="text" class="form-control" id="txtfeaturename_2" placeholder="Feature Name" autocomplete="off" required></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3"><label for="inputEmail3">Feature Image</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-3">
+                                <input type="file" class="" id="featureImg_1" onchange="validateServiceFeatureImage_1()" accept="image/*">
+                            </div>
+                            <div class="col-md-3">
+                                <div class="pull-right image">
+                                    <img src="" id="featureimg1_1" class="img-auto" style="width:100px">
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue" id="BtnSaveFeature_1" onclick="SaveFeatureData_1();">Save</button>
+                        <button type="button" class="btn default" data-dismiss="modal" onclick="ClearFeatureData_1();">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <div class="modal fade" id="portlet-config_2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" style="width:65%; height:65%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true" onclick="OpenFeatureModel_2()"></button>
+                        <h4 class="modal-title" id="H4PageTitle">Add features</h4>
+                    </div>
+                    @*<div class="modal-body">
+                        Widget settings form goes here
+                    </div>*@
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3"><label for="inputEmail3" class="control-label">Product Name</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-6"><input type="text" class="form-control" id="txtproductname_2" value="Desktop" disabled="disabled" placeholder="Service Type" autocomplete="off" required></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3"><label for="featurename" class="control-label">Feature Name</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-6"><input type="text" class="form-control" id="txtfeaturename_3" placeholder="Feature Name" autocomplete="off" required></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3"><label for="inputEmail3">Feature Image</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-3">
+                                <input type="file" class="" id="featureImg_2" onchange="validateServiceFeatureImage_2()" accept="image/*">
+                            </div>
+                            <div class="col-md-3">
+                                <div class="pull-right image">
+                                    <img src="" id="featureimg1_2" class="img-auto" style="width:100px">
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue" id="BtnSaveFeature_2" onclick="SaveFeatureData_2();">Save</button>
+                        <button type="button" class="btn default" data-dismiss="modal" onclick="ClearFeatureData_2();">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <div class="modal fade" id="portlet-config_3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" style="width:65%; height:65%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true" onclick="OpenFeatureModel_3()"></button>
+                        <h4 class="modal-title" id="H4PageTitle">Add Gallery Image</h4>
+                    </div>
+                    @*<div class="modal-body">
+                        Widget settings form goes here
+                    </div>*@
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3"><label for="inputEmail3" class="control-label">Product Name</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-6"><input type="text" class="form-control" id="txtproductname_3" value="Desktop" disabled="disabled" placeholder="Service Type" autocomplete="off" required></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3"><label for="inputEmail3">Feature Image</label><span style="color:red;"> * </span></div>
+                            <div class="col-md-3">
+                                <input type="file" class="" id="featureImg_3" onchange="validateServiceFeatureImage_3()" accept="image/*">
+                            </div>
+                            <div class="col-md-3">
+                                <div class="pull-right image">
+                                    <img src="" id="featureimg1_3" class="img-auto" style="width:100px">
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue" id="BtnSaveFeature_3" onclick="SaveFeatureData_3();">Save</button>
+                        <button type="button" class="btn default" data-dismiss="modal" onclick="ClearFeatureData_3();">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            Desktop Page Info
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+
+                <li>
+                    <a href='@Url.Action("Desktop","admin")'>Desktop</a>
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- END PAGE HEADER-->
+        <div class="row">
+            <div class="tabbable-custom nav-justified">
+                <!-- BEGIN EXTRAS PORTLET-->
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active">
+                        <a href="#tab_1_1_1" data-toggle="tab">
+                            Product Contents
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab_1_1_2" data-toggle="tab">
+                            Product Features
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab_1_1_3" data-toggle="tab">
+                            Special Features
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab_1_1_4" data-toggle="tab">
+                            Specialized Inventories
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab_1_1_5" data-toggle="tab">
+                            Product Gallery
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1_1_1">
+                        <div class="portlet box green">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="fa fa-gift"></i>Edit Desktop Page Info
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="portlet-body form">
+                                <!-- BEGIN FORM-->
+                                <form action="#" class="form-horizontal form-bordered">
+                                    @*START Contact Us*@
+                                    <div class="form-body">
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3">Product Logo<span class="required" aria-required="true"> * </span></label>
+                                            <div class="col-md-3">
+                                                <input type="file" class="form-control" id="exampleInputFileLogo" onchange="validateImageLogo()" accept="image/*">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img src="" id="imglogo" style="width:80px" class="img-auto" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3">Content 1<span class="required" aria-required="true"> * </span></label>
+                                            <div class="col-md-9">
+                                                <textarea class="ckeditor form-control" id="TxtContent1" name="TxtContent1"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3">Product Image<span class="required" aria-required="true"> * </span></label>
+                                            <div class="col-md-3">
+                                                <input type="file" class="form-control" id="exampleInputFileImage" onchange="validateImage()" accept="image/*">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img src="" id="img" style="width:80px" class="img-auto" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3">Short Content 1<span class="required" aria-required="true"> * </span></label>
+                                            <div class="col-md-9">
+                                                <textarea class="ckeditor form-control" id="TxtContent2" name="TxtContent2"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3">Short Content 2<span class="required" aria-required="true"> * </span></label>
+                                            <div class="col-md-9">
+                                                <textarea class="ckeditor form-control" id="TxtContent3" name="TxtContent3"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3">Content 2<span class="required" aria-required="true"> * </span></label>
+                                            <div class="col-md-9">
+                                                <textarea class="ckeditor form-control" id="TxtContent4" name="TxtContent4"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group last">
+                                            <label class="control-label col-md-3">Special Note<span class="required" aria-required="true"> * </span></label>
+                                            <div class="col-md-9">
+                                                <textarea class="ckeditor form-control" id="TxtContent5" name="TxtContent5"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*END Contact Us?*@
+
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                @*<button type="submit" class="btn green" onclick="return UpdateContact UsUs();"><i class="fa fa-check"></i> Submit</button>*@
+                                                <button type="button" class="btn green" onclick="return validateform();"><i class="fa fa-check"></i> Submit</button>
+                                                <button type="button" class="btn default" onclick="return CancelData();">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </form>
+                                <!-- END FORM-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_1_1_2">
+                        <div class="table-toolbar">
+                            <div class="row">
+                                <div class="btn-group pull-right">
+
+                                    <button id="sample_editable_2_new" style="margin-right:10px" class="btn red delete_btn" onclick="return DelServiceTypeFature();">
+                                        <i class="fa fa-trash-o"></i>  Delete Feature
+                                    </button>
+
+                                    <button id="btnAddfeature" style="margin-right:23px" class="btn green" data-toggle='modal' data-target="#portlet-config">
+                                        <i class="fa fa-plus"></i>  Add Feature
+                                    </button>
+
+                                </div>
+
+                                <table class="table table-striped table-bordered table-hover" id="servicefeature">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-checkbox">
+                                                <input type="checkbox" class="group-checkable" data-set="#servicefeature .checkboxes" />
+                                            </th>
+                                            <th>
+                                                Id
+                                            </th>
+                                            <th>
+                                                Product Name
+                                            </th>
+                                            <th>
+                                                Feature Name
+                                            </th>
+                                            <th>
+                                                Image
+                                            </th>
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_servicefeature"></tbody>
+                                </table>
+                                @*<div class="col-md-6">
+                                    <div class="clearfix button-float pull-right button-wrap">
+                                        <button id="sample_editable_1_new" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                            <i class="fa fa-plus"></i>  Add
+                                        </button>
+                                    </div>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_1_1_3">
+                        <div class="table-toolbar">
+                            <div class="row">
+                                <div class="btn-group pull-right">
+
+                                    <button id="sample_editable_2_new" style="margin-right:10px" class="btn red delete_btn" onclick="return DelServiceTypeFature_1();">
+                                        <i class="fa fa-trash-o"></i>  Delete Key Feature
+                                    </button>
+
+                                    <button id="btnAddfeature" style="margin-right:23px" class="btn green" data-toggle='modal' data-target="#portlet-config_1">
+                                        <i class="fa fa-plus"></i>  Add Key Feature
+                                    </button>
+
+                                </div>
+
+                                <table class="table table-striped table-bordered table-hover" id="keyfeature">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-checkbox">
+                                                <input type="checkbox" class="group-checkable" data-set="#keyfeature .checkboxes" />
+                                            </th>
+                                            <th>
+                                                Id
+                                            </th>
+                                            <th>
+                                                Product Name
+                                            </th>
+                                            <th>
+                                                Feature Name
+                                            </th>
+                                            <th>
+                                                Image
+                                            </th>
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_keyfeature"></tbody>
+                                </table>
+                                @*<div class="col-md-6">
+                                    <div class="clearfix button-float pull-right button-wrap">
+                                        <button id="sample_editable_1_new" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                            <i class="fa fa-plus"></i>  Add
+                                        </button>
+                                    </div>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_1_1_4">
+                        <div class="table-toolbar">
+                            <div class="row">
+                                <div class="btn-group pull-right">
+
+                                    <button id="sample_editable_2_new" style="margin-right:10px" class="btn red delete_btn" onclick="return DelServiceTypeFature_2();">
+                                        <i class="fa fa-trash-o"></i>  Delete Spcl Inventories
+                                    </button>
+
+                                    <button id="btnAddfeature" style="margin-right:23px" class="btn green" data-toggle='modal' data-target="#portlet-config_2">
+                                        <i class="fa fa-plus"></i>  Add Spcl Inventories
+                                    </button>
+
+                                </div>
+
+                                <table class="table table-striped table-bordered table-hover" id="spclinventories">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-checkbox">
+                                                <input type="checkbox" class="group-checkable" data-set="#spclinventories .checkboxes" />
+                                            </th>
+                                            <th>
+                                                Id
+                                            </th>
+                                            <th>
+                                                Product Name
+                                            </th>
+                                            <th>
+                                                Feature Name
+                                            </th>
+                                            <th>
+                                                Image
+                                            </th>
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_spclinventories"></tbody>
+                                </table>
+                                @*<div class="col-md-6">
+                                    <div class="clearfix button-float pull-right button-wrap">
+                                        <button id="sample_editable_1_new" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                            <i class="fa fa-plus"></i>  Add
+                                        </button>
+                                    </div>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_1_1_5">
+                        <div class="table-toolbar">
+                            <div class="row">
+                                <div class="btn-group pull-right">
+
+                                    <button id="sample_editable_2_new" style="margin-right:10px" class="btn red delete_btn" onclick="return DelServiceTypeFature_3();">
+                                        <i class="fa fa-trash-o"></i>  Delete Gallery Image
+                                    </button>
+
+                                    <button id="btnAddfeature" style="margin-right:23px" class="btn green" data-toggle='modal' data-target="#portlet-config_3">
+                                        <i class="fa fa-plus"></i>  Add Gallery Image
+                                    </button>
+
+                                </div>
+
+                                <table class="table table-striped table-bordered table-hover" id="productgallery">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-checkbox">
+                                                <input type="checkbox" class="group-checkable" data-set="#productgallery .checkboxes" />
+                                            </th>
+                                            <th>
+                                                Id
+                                            </th>
+                                            <th>
+                                                Product Name
+                                            </th>
+                                            <th>
+                                                Image
+                                            </th>
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_productgallery"></tbody>
+                                </table>
+                                @*<div class="col-md-6">
+                                    <div class="clearfix button-float pull-right button-wrap">
+                                        <button id="sample_editable_1_new" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                            <i class="fa fa-plus"></i>  Add
+                                        </button>
+                                    </div>
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END EXTRAS PORTLET-->
+            </div>
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    <script>
+        var DesktopID = 1;
+        EditDesktop();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+        function EditDesktop() {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditDesktop", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    ////debugger;
+                    CKEDITOR.instances['TxtContent1'].setData(response.desktop[0].Content1);
+                    CKEDITOR.instances['TxtContent2'].setData(response.desktop[0].Content2);
+                    CKEDITOR.instances['TxtContent3'].setData(response.desktop[0].Content3);
+                    CKEDITOR.instances['TxtContent4'].setData(response.desktop[0].Content4);
+                    CKEDITOR.instances['TxtContent5'].setData(response.desktop[0].Content5);
+
+
+                    //$("#exampleInputFileImage").val(response.desktop[0].ProductImage);
+                    //$("#exampleInputFileLogo").val(response.desktop[0].ProductLogo);
+
+                    $("#imglogo").attr('src', imageurl+response.desktop[0].ProductLogo);
+                    $("#img").attr('src', imageurl+response.desktop[0].ProductImage);
+
+                    BindDesktopFeature();
+                    BindDesktopFeature_1();
+                    BindDesktopFeature_2();
+                    BindDesktopFeature_3();
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+
+
+        function validateform() {
+            if (CKEDITOR.instances['TxtContent1'].getData() == null || CKEDITOR.instances['TxtContent1'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Content 1 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtContent1'].focus();
+                            //$("#TxtContent1").focus();
+                        }
+                    });
+                return false;
+            }
+           else if (CKEDITOR.instances['TxtContent2'].getData() == null || CKEDITOR.instances['TxtContent2'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Short Content 1 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtContent2'].focus();
+                            //$("#TxtContent1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['TxtContent3'].getData() == null || CKEDITOR.instances['TxtContent3'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Short Content 2 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtContent3'].focus();
+                            //$("#TxtContent1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['TxtContent4'].getData() == null || CKEDITOR.instances['TxtContent4'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Content 2 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtContent4'].focus();
+                            //$("#TxtContent1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['TxtContent5'].getData() == null || CKEDITOR.instances['TxtContent5'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Special Note can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtContent5'].focus();
+                            //$("#TxtContent1").focus();
+                        }
+                    });
+                return false;
+            }
+            else {
+                UpdateDesktop();
+            }
+        }
+
+        function UpdateDesktop() {
+                    dataobj = JSON.stringify({
+                        'DesktopID': 1,
+                        'Content1': CKEDITOR.instances['TxtContent1'].getData(),
+                        'Content2': CKEDITOR.instances['TxtContent2'].getData(),
+                        'Content3': CKEDITOR.instances['TxtContent3'].getData(),
+                        'Content4': CKEDITOR.instances['TxtContent4'].getData(),
+                        'Content5': CKEDITOR.instances['TxtContent5'].getData()
+                    });
+
+                $.ajax({
+                    type: "POST",
+                    //url: serviceurl + "UpdateContact UsUs",
+                    url: "@Url.Action("UpdateDesktop", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.msg == "Fail") {
+                            //alert("hii");
+                            //alert(response.msg);
+
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                              var fileUpload = ($("#exampleInputFileImage"))[0].files[0];
+                            var fileUploadlogo = ($("#exampleInputFileLogo"))[0].files[0];
+                            if (fileUpload != null) {
+                                SaveDesktopImage(response.id);
+                            }
+                            if (fileUploadlogo != null) {
+                            SaveDesktopLogo(response.id);
+                            }
+
+                              swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                              });
+                        }
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+        }
+
+        function CancelData() {
+            EditDesktop();
+            }
+
+    function validateImage() {
+        // //debugger;
+
+
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("exampleInputFileImage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img").src = oFREvent.target.result;
+        };
+
+        var formData = new FormData();
+
+        var file = document.getElementById("exampleInputFileImage").files[0];
+
+        if (file != "" && file != undefined) {
+            formData.append("Filedata", file);
+            var t = file.type.split('/').pop().toLowerCase();
+            if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                //alert('Please select a valid image file');
+                swal({
+                    title: "Warning!",
+                    text: "Please select a valid image file!",
+                    //text: "Please select a valid image file!",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    //html: true,
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                });
+                document.getElementById("exampleInputFileImage").value = '';
+                return false;
+            }
+            if (file.size > 1024000) {
+                //alert('Max Upload size is 1MB only');
+                swal({
+                    title: "Warning!",
+                    text: "Max Upload size is 1MB only!",
+                    //text: "Max Upload size is 1MB only!",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    //html: true,
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                });
+                document.getElementById("exampleInputFileImage").value = '';
+                return false;
+            }
+            return true;
+        }
+
+    }
+    function validateImageLogo() {
+            // //debugger;
+
+            var oFReader1 = new FileReader();
+        oFReader1.readAsDataURL(document.getElementById("exampleInputFileLogo").files[0]);
+
+        oFReader1.onload = function (oFREvent1) {
+            document.getElementById("imglogo").src = oFREvent1.target.result;
+            };
+
+
+
+            var formData = new FormData();
+
+            var file = document.getElementById("exampleInputFileLogo").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("exampleInputFileLogo").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("exampleInputFileLogo").value = '';
+                    return false;
+                }
+                return true;
+            }
+
+        }
+
+
+        function SaveDesktopImage(id) {
+          var menuimage = ($("#exampleInputFileImage"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadDeskProductImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveDesktopLogo(id) {
+        var bannerimage = ($("#exampleInputFileLogo"))[0].files[0];
+        var fileData = new FormData();
+        fileData.append(bannerimage.name, bannerimage);
+        fileData.append('Id', id);
+        $.ajax({
+            url: "@Url.Action("UploadDeskProductLogo", "admin")",
+            type: "POST",
+            contentType: false, // Not to set any content header
+            processData: false, // Not to process data
+            data: fileData,
+            success: function (result) {
+
+            }
+        })
+            }
+
+    //section for product feature
+    function validateServiceFeatureImage() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("featureImg").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("featureimg1").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("featureImg").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+    function SaveFeatureData() {
+        if ($("#BtnSaveFeature").html() == "Save") {
+            var data = JSON.stringify({
+                'ProductName': $("#txtproductname").val(),
+                'Feature_Name': $("#txtfeaturename_1").val()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("InsertDesktopProductFeature", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                            $.ajax({
+                                url: "@Url.Action("UploadDesktopProductFeatureImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                   
+
+                                    $("#portlet-config").modal('hide');
+                                     BindDesktopFeature();
+                                  ClearFeatureData();
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                            $("#portlet-config").modal('hide');
+                                     BindDesktopFeature();
+                                  ClearFeatureData();
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+        else {
+            var data = JSON.stringify({
+                'Id':desktopfeatureid,
+                'ProductName': $("#txtproductname").val(),
+                'Feature_Name': $("#txtfeaturename_1").val()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("UpdateDesktopProductFeature", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                            $.ajax({
+                                url: "@Url.Action("UploadDesktopProductFeatureImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                    $("#portlet-config").modal('hide');
+                                     BindDesktopFeature();
+                                  ClearFeatureData();
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                  $("#portlet-config").modal('hide');
+                                     BindDesktopFeature();
+                                  ClearFeatureData();
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+            }
+    function BindDesktopFeature() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindDesktopProductFeature", "admin")",
+            data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.length> 0) {
+                        var row = "";
+                        var statusdisp = "";
+                        $('#servicefeature').DataTable().clear().destroy();
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data, function (index, item) {
+                            ////debugger;
+                            row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkproduct'  class='group-checkable' value=" + item.Id + " /></td><td>" + item.Id + "</td><td>" + item.ProductName + "</td><td>" + item.Feature_Name + "</td><td><img src="+imageurl+item.Image+"  class='img-auto' style='width:100px'><td onclick='return EditDesktopFeature(" + item.Id + ");'><i class='fa fa-edit btn default btn-xs green'>Edit</i></td></tr>"
+                        })
+                        $("#tb_servicefeature").html(row);
+
+                        $('#servicefeature').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#tb_servicefeature").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+            }
+    var desktopfeatureid = 0;
+    function EditDesktopFeature(id) {
+         $.ajax({
+                type: "GET",
+                data: { 'Desktopfeatureid': id },
+                url: "@Url.Action("EditDesktopFeature", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //ClearData();
+                    //alert(JSON.stringify(response));
+
+                    $("#portlet-config").modal('show');
+                    desktopfeatureid = response.Id;
+
+                    $("#txtproductname").val(response.ProductName);
+                    $("#txtfeaturename_1").val(response.Feature_Name);
+                    $("#featureimg1").attr('src', imageurl+response.Image);
+
+                    $("#BtnSaveFeature").html("Update");
+
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+    }
+    function ClearFeatureData() {
+        $("#BtnSaveFeature").html("Save");
+      
+        $("#txtfeaturename_1").val("");
+        $("#featureimg1").attr('src', '');
+        $("#featureImg").val("");
+    }
+    function OpenFeatureModel() {
+        $("#portlet-config").modal('show');
+        ClearFeatureData();
+    }
+    function DelProductFeature(productid) {
+            var dataobj = JSON.stringify({
+                'Id': productid
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteDesktopProductFeature", "admin")",
+                data: dataobj,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == "false") {
+                        //alert(response.msg);
+                        swal({
+                            title: "Warning!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "warning",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "warning",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                    else {
+                        //alert(response.msg);
+                        swal({
+                            title: "success!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "success",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "success",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                        $("#modal-default").modal('hide');
+                        BindDesktopFeature();
+                        
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+    function DelServiceTypeFature() {
+            swal({
+                title: "Are you sure you want to delete this Record?",
+                text: "Once deleted, you will not be able to recover this Record!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                closeOnConfirm: false, //It does close the popup when I click on close button
+                closeOnCancel: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#servicefeature').find('input[type="checkbox"]:checked').each(function () {
+                            var productid = $(this).val();
+                            DelProductFeature(productid);
+                            //this is the current checkbox
+                            //var DelCareerID = $(this).val();
+                        });
+
+                    } else {
+                        swal("Your Record is safe!");
+                    }
+                });
+        }
+    //section for product feature
+
+
+    //section for special feature
+     function validateServiceFeatureImage_1() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("featureImg_1").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("featureimg1_1").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("featureImg_1").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg_1").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg_1").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+    function SaveFeatureData_1() {
+        if ($("#BtnSaveFeature_1").html() == "Save") {
+            var data = JSON.stringify({
+                'ProductName': $("#txtproductname_1").val(),
+                'Feature_Name': $("#txtfeaturename_2").val()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("InsertDesktopkeyFeature", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg_1"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                            fileData.append('ProductName', $("#txtproductname_1").val());
+                            $.ajax({
+                                url: "@Url.Action("UploadDesktopkeyFeatureImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                   
+
+                                    $("#portlet-config_1").modal('hide');
+                                     BindDesktopFeature_1();
+                                  ClearFeatureData_1();
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                            $("#portlet-config_1").modal('hide');
+                                     BindDesktopFeature_1();
+                                  ClearFeatureData_1();
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+        else {
+            var data = JSON.stringify({
+                'Id':desktopfeatureid_1,
+                'ProductName': $("#txtproductname_1").val(),
+                'Feature_Name': $("#txtfeaturename_2").val()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("UpdateDesktopkeyFeature", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg_1"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                             fileData.append('ProductName', $("#txtproductname_1").val());
+                            $.ajax({
+                                url: "@Url.Action("UploadDesktopkeyFeatureImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                    $("#portlet-config_1").modal('hide');
+                                     BindDesktopFeature_1();
+                                  ClearFeatureData_1();
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                  $("#portlet-config_1").modal('hide');
+                                     BindDesktopFeature_1();
+                                  ClearFeatureData_1();
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+            }
+    function BindDesktopFeature_1() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindDesktopkeyFeature", "admin")",
+            data: {'productname':$("#txtproductname_1").val()},
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.length> 0) {
+                        var row = "";
+                        var statusdisp = "";
+                        $('#keyfeature').DataTable().clear().destroy();
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data, function (index, item) {
+                            ////debugger;
+                            row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkproduct'  class='group-checkable' value=" + item.Id + " /></td><td>" + item.Id + "</td><td>" + item.ProductName + "</td><td>" + item.Feature_Name + "</td><td><img src="+(imageurl+item.Image)+"  class='img-auto' style='width:100px'><td onclick='return EditDesktopFeature_1(" + item.Id + ");'><i class='fa fa-edit btn default btn-xs green'>Edit</i></td></tr>"
+                        })
+                        $("#tb_keyfeature").html(row);
+
+                        $('#keyfeature').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#tb_keyfeature").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+            }
+    var desktopfeatureid_1 = 0;
+    function EditDesktopFeature_1(id) {
+         $.ajax({
+                type: "GET",
+                data: { 'Desktopfeatureid': id,'productname' :$("#txtproductname_1").val()},
+                url: "@Url.Action("EditDesktopkeyFeature", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //ClearData();
+                    //alert(JSON.stringify(response));
+
+                    $("#portlet-config_1").modal('show');
+                    desktopfeatureid_1 = response.Id;
+
+                    $("#txtproductname_1").val(response.ProductName);
+                     $("#txtfeaturename_2").val(response.Feature_Name);
+                    $("#featureimg1_1").attr('src', imageurl+response.Image);
+
+                    $("#BtnSaveFeature_1").html("Update");
+
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+    }
+    function ClearFeatureData_1() {
+        $("#BtnSaveFeature_1").html("Save");
+        $("#txtfeaturename_2").val("");
+        
+        $("#featureimg1_1").attr('src', '');
+        $("#featureImg_1").val("");
+    }
+    function OpenFeatureModel_1() {
+        $("#portlet-config_1").modal('show');
+        ClearFeatureData_1();
+    }
+    function DelProductFeature_1(productid) {
+            var dataobj = JSON.stringify({
+                'Id': productid,
+                'ProductName': $("#txtproductname_1").val()
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteDesktopkeyFeature", "admin")",
+                data: dataobj,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == "false") {
+                        //alert(response.msg);
+                        swal({
+                            title: "Warning!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "warning",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "warning",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                    else {
+                        //alert(response.msg);
+                        swal({
+                            title: "success!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "success",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "success",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                        $("#modal-default").modal('hide');
+                        BindDesktopFeature_1();
+                        
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+    function DelServiceTypeFature_1() {
+            swal({
+                title: "Are you sure you want to delete this Record?",
+                text: "Once deleted, you will not be able to recover this Record!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                closeOnConfirm: false, //It does close the popup when I click on close button
+                closeOnCancel: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#keyfeature').find('input[type="checkbox"]:checked').each(function () {
+                            var productid = $(this).val();
+                            DelProductFeature_1(productid);
+                            //this is the current checkbox
+                            //var DelCareerID = $(this).val();
+                        });
+
+                    } else {
+                        swal("Your Record is safe!");
+                    }
+                });
+        }
+    //sdction for special feature
+
+
+    //section for specialize inventories
+    function validateServiceFeatureImage_2() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("featureImg_2").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("featureimg1_2").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("featureImg_2").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg_2").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg_2").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+    function SaveFeatureData_2() {
+        if ($("#BtnSaveFeature_2").html() == "Save") {
+            var data = JSON.stringify({
+                'ProductName': $("#txtproductname_2").val(),
+                'Feature_Name': $("#txtfeaturename_3").val()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("InsertDesktopSpclInveFeature", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg_2"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                            fileData.append('ProductName', $("#txtproductname_2").val());
+                            $.ajax({
+                                url: "@Url.Action("UploadDesktopSpclInveFeatureImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                   
+
+                                    $("#portlet-config_2").modal('hide');
+                                     BindDesktopFeature_2();
+                                  ClearFeatureData_2();
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                            $("#portlet-config_2").modal('hide');
+                                     BindDesktopFeature_2();
+                                  ClearFeatureData_2();
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+        else {
+            var data = JSON.stringify({
+                'Id':desktopfeatureid_2,
+                'ProductName': $("#txtproductname_2").val(),
+                'Feature_Name': $("#txtfeaturename_3").val()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("UpdateDesktopSpclInveFeature", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg_2"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                             fileData.append('ProductName', $("#txtproductname_2").val());
+                            $.ajax({
+                                url: "@Url.Action("UploadDesktopSpclInveFeatureImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                    $("#portlet-config_2").modal('hide');
+                                     BindDesktopFeature_2();
+                                  ClearFeatureData_2();
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                  $("#portlet-config_2").modal('hide');
+                                     BindDesktopFeature_2();
+                                  ClearFeatureData_2();
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+            }
+    function BindDesktopFeature_2() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindDesktopSpclInveFeature", "admin")",
+            data: {'productname':$("#txtproductname_2").val()},
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.length> 0) {
+                        var row = "";
+                        var statusdisp = "";
+                        $('#spclinventories').DataTable().clear().destroy();
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data, function (index, item) {
+                            ////debugger;
+                            row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkproduct'  class='group-checkable' value=" + item.Id + " /></td><td>" + item.Id + "</td><td>" + item.ProductName + "</td><td>" + item.Feature_Name + "</td><td><img src="+(imageurl+item.Image)+"  class='img-auto' style='width:100px'><td onclick='return EditDesktopFeature_2(" + item.Id + ");'><i class='fa fa-edit btn default btn-xs green'>Edit</i></td></tr>"
+                        })
+                        $("#tb_spclinventories").html(row);
+
+                        $('#spclinventories').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#tb_spclinventories").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+            }
+    var desktopfeatureid_2 = 0;
+    function EditDesktopFeature_2(id) {
+         $.ajax({
+                type: "GET",
+                data: { 'Desktopfeatureid': id,'productname' :$("#txtproductname_2").val()},
+                url: "@Url.Action("EditDesktopSpclInveFeature", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //ClearData();
+                    //alert(JSON.stringify(response));
+
+                    $("#portlet-config_2").modal('show');
+                    desktopfeatureid_2 = response.Id;
+
+                    $("#txtproductname_2").val(response.ProductName);
+                     $("#txtfeaturename_3").val(response.Feature_Name);
+                    $("#featureimg1_2").attr('src', imageurl+response.Image);
+
+                    $("#BtnSaveFeature_2").html("Update");
+
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+    }
+    function ClearFeatureData_2() {
+        $("#BtnSaveFeature_2").html("Save");
+        $("#txtfeaturename_3").val("");
+       
+        $("#featureimg1_2").attr('src', '');
+        $("#featureImg_2").val("");
+    }
+    function OpenFeatureModel_2() {
+        $("#portlet-config_2").modal('show');
+        ClearFeatureData_2();
+    }
+    function DelProductFeature_2(productid) {
+            var dataobj = JSON.stringify({
+                'Id': productid,
+                'ProductName': $("#txtproductname_2").val()
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteDesktopSpclInveFeature", "admin")",
+                data: dataobj,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == "false") {
+                        //alert(response.msg);
+                        swal({
+                            title: "Warning!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "warning",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "warning",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                    else {
+                        //alert(response.msg);
+                        swal({
+                            title: "success!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "success",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "success",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                        $("#modal-default").modal('hide');
+                        BindDesktopFeature_2();
+                        
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+    function DelServiceTypeFature_2() {
+            swal({
+                title: "Are you sure you want to delete this Record?",
+                text: "Once deleted, you will not be able to recover this Record!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                closeOnConfirm: false, //It does close the popup when I click on close button
+                closeOnCancel: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#spclinventories').find('input[type="checkbox"]:checked').each(function () {
+                            var productid = $(this).val();
+                            DelProductFeature_2(productid);
+                            //this is the current checkbox
+                            //var DelCareerID = $(this).val();
+                        });
+
+                    } else {
+                        swal("Your Record is safe!");
+                    }
+                });
+        }
+    //section for specialize inventories
+
+     //section for Products gallery
+    function validateServiceFeatureImage_3() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("featureImg_3").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("featureimg1_3").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("featureImg_3").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg_3").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg_3").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+    function SaveFeatureData_3() {
+        if ($("#BtnSaveFeature_3").html() == "Save") {
+            var data = JSON.stringify({
+                'ProductName': $("#txtproductname_3").val()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("InsertDesktopGallery", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg_3"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                            fileData.append('ProductName', $("#txtproductname_3").val());
+                            $.ajax({
+                                url: "@Url.Action("UploadDesktopGalleryImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                   
+
+                                    $("#portlet-config_3").modal('hide');
+                                     BindDesktopFeature_3();
+                                  ClearFeatureData_3();
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                            $("#portlet-config_3").modal('hide');
+                                     BindDesktopFeature_3();
+                                  ClearFeatureData_3();
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+        else {
+            var data = JSON.stringify({
+                'Id':desktopfeatureid_3,
+                'ProductName': $("#txtproductname_3").val()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("UpdateDesktopGallery", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg_3"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                             fileData.append('ProductName', $("#txtproductname_3").val());
+                            $.ajax({
+                                url: "@Url.Action("UploadDesktopGalleryImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                    $("#portlet-config_3").modal('hide');
+                                     BindDesktopFeature_3();
+                                  ClearFeatureData_3();
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                  $("#portlet-config_3").modal('hide');
+                                     BindDesktopFeature_3();
+                                  ClearFeatureData_3();
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+            }
+    function BindDesktopFeature_3() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindDesktopGallery", "admin")",
+            data: {'productname':$("#txtproductname_3").val()},
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.length> 0) {
+                        var row = "";
+                        var statusdisp = "";
+                        $('#productgallery').DataTable().clear().destroy();
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data, function (index, item) {
+                            ////debugger;
+                            row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkproduct'  class='group-checkable' value=" + item.Id + " /></td><td>" + item.Id + "</td><td>" + item.ProductName + "</td><td><img src="+(imageurl+item.Image)+"  class='img-auto' style='width:100px'><td onclick='return EditDesktopFeature_3(" + item.Id + ");'><i class='fa fa-edit btn default btn-xs green'>Edit</i></td></tr>"
+                        })
+                        $("#tb_productgallery").html(row);
+
+                        $('#productgallery').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#tb_productgallery").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+            }
+    var desktopfeatureid_3 = 0;
+    function EditDesktopFeature_3(id) {
+         $.ajax({
+                type: "GET",
+                data: { 'Desktopfeatureid': id,'productname' :$("#txtproductname_3").val()},
+                url: "@Url.Action("EditDesktopGallery", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //ClearData();
+                    //alert(JSON.stringify(response));
+
+                    $("#portlet-config_3").modal('show');
+                    desktopfeatureid_3 = response.Id;
+
+                    $("#txtproductname_3").val(response.ProductName);
+
+                    $("#featureimg1_3").attr('src', imageurl+response.Image);
+
+                    $("#BtnSaveFeature_3").html("Update");
+
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+    }
+    function ClearFeatureData_3() {
+        $("#BtnSaveFeature_3").html("Save");
+       
+        $("#featureimg1_3").attr('src', '');
+        $("#featureImg_3").val("");
+    }
+    function OpenFeatureModel_3() {
+        $("#portlet-config_3").modal('show');
+        ClearFeatureData_3();
+    }
+    function DelProductFeature_3(productid) {
+            var dataobj = JSON.stringify({
+                'Id': productid,
+                'ProductName': $("#txtproductname_3").val()
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteDesktopGallery", "admin")",
+                data: dataobj,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == "false") {
+                        //alert(response.msg);
+                        swal({
+                            title: "Warning!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "warning",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "warning",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                    else {
+                        //alert(response.msg);
+                        swal({
+                            title: "success!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "success",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "success",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                        $("#modal-default").modal('hide');
+                        BindDesktopFeature_3();
+                        
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+    function DelServiceTypeFature_3() {
+            swal({
+                title: "Are you sure you want to delete this Record?",
+                text: "Once deleted, you will not be able to recover this Record!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                closeOnConfirm: false, //It does close the popup when I click on close button
+                closeOnCancel: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#productgallery').find('input[type="checkbox"]:checked').each(function () {
+                            var productid = $(this).val();
+                            DelProductFeature_3(productid);
+                            //this is the current checkbox
+                            //var DelCareerID = $(this).val();
+                        });
+
+                    } else {
+                        swal("Your Record is safe!");
+                    }
+                });
+        }
+    //section for Products gallery
+    </script>
+}
+

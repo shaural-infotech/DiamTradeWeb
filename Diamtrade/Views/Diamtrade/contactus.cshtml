@@ -1,0 +1,215 @@
+﻿
+@{
+    ViewBag.Title = "contactus";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!-- Contact Banner Section Starts -->
+    <!-- <div class="container-fluid bg-slider">
+        <div class="row">
+            <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                
+                Wrapper for slides
+                <div class="carousel-inner" id="slider_image">
+                    <img class="img-responsive img-auto" alt="" id="image_banner" />
+                </div>
+            </div>
+        </div>
+    </div> -->
+<div class="container-fluid bg-contact-banner" style="display:none">
+    <div class="row">
+        <div class="container">
+            <div class="row flex align-center">
+                <div class="col-sm-6 col-md-6 col-lg-6 animated wow fadeInDown" data-wow-duration="2s">
+                    <div class="contact-banner-text">
+                        @*<h1>The real deal is – We want you to be all covered. Share your requirement with us! </h1>*@
+                        <h1 id="CotactUsDesc"></h1>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 animated wow fadeInDown" data-wow-duration="2s">
+                    <img  class="img-responsive img-auto" alt="" id="image_banner" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Banner Section Ends -->
+
+        <!-- Contact Us Section Starts -->
+        <!-- <div class="container-fluid bg-contact-page">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-4 col-lg-4 animated wow fadeInDown" data-wow-duration="2s">
+                            <div class="contact-box text-center">
+                                <h3>Diamtrade</h3>
+                                @*<p class="o-Title"><b>Head Office</b></p>*@
+                                <p class="o-Title"><b id="CotactTitle"></b></p>
+                                @*<h4 class="line-height">
+                                        HotSoft BVBA,
+                                        3 Hoveniersstraat,2018
+                                        Antwerpen, Belgium, Europe
+                                    </h4>*@
+                                <h4 id="Address"></h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 animated wow fadeInDown" data-wow-duration="2s">
+                            <div class="contact-box text-center">
+                                <h3>Contacts</h3>
+                                <p><b>Phone:</b> <a href="tel:+32.474.24.7575" id="MobileNo"></a></p>
+                                <p><b>Email:</b> <a href="mailto:Vinaypatel@hotsoft.be" id="EmailID"></a></p>
+                                @*<p><b>Phone:</b> <a href="tel:+32.474.24.7575">+32.474.24.7575</a></p>
+                                    <p><b>Email:</b> <a href="mailto:Vinaypatel@hotsoft.be">Vinaypatel@hotsoft.be</a></p>*@
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4 col-lg-4 animated wow fadeInDown" data-wow-duration="2s">
+                            <div class="contact-box text-center">
+                                <h3>Support</h3>
+                                @*<p><i class="fab fa-skype"></i><a href="skype:DiamTrade.Support?call">&nbsp;&nbsp;Diamtrade.Support</a></p>
+                                    <p><i class="fas fa-download"></i><a href="http://download.teamviewer.com/download/version_9x/TeamViewer_Setup.exe" target="_blank" title="Download Teamviewer Version_9x for Windows">&nbsp;&nbsp;Download Teamviewer</a></p>*@
+                                <p><i class="fab fa-skype"></i><a href="skype:DiamTrade.Support?call" id="SupportName">&nbsp;&nbsp;</a></p>
+                                <p><i class="fas fa-download"></i><a href="http://download.teamviewer.com/download/version_9x/TeamViewer_Setup.exe" target="_blank" title="Download Teamviewer Version_9x for Windows" id="TeamViewerName">&nbsp;&nbsp;</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Contact Us Section Ends -->
+        <!-- Contact Form Section Starts -->
+        <div class="container-fluid">
+          <div class="row">
+            <div class="bg-contact-new">              
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 animated wow fadeInDown" data-wow-duration="2s">
+                            <form class="contact-us-form">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="contact-us-form-heading">
+                                            <h2>Drop Us a <span>Message</span></h2>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  placeholder="First Name*" id="txtfirstname" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name*" id="txtlastname" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email*" id="txtemail" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <input type="Phone" class="form-control" placeholder="Phone*" id="txtphone" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" placeholder="Your Message*" id="txtmessage"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button type="button" class="btn-send" id="btnsubmit" onclick="submitinquiry();">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- <div class="col-sm-12 col-md-6 col-lg-6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.176588547576!2d4.416545715296382!3d51.215822539801664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f70248f91e35%3A0xd6653aa735ad65b0!2sDiamtrade+Bvba!5e0!3m2!1sen!2sin!4v1559544450432!5m2!1sen!2sin" allowfullscreen></iframe>
+                        </div> -->
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Contact Form Section Ends -->
+
+@section scripts{
+    <script>
+        var ContactUsID = 1;
+       EditContactUs();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+        
+        function EditContactUs() {
+
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditContactUs", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    $("#CotactUsDesc").html(response.contacts[0].CotactUsDesc).trigger('change');
+                    $("#CotactTitle").html(response.contacts[0].CotactTitle).trigger('change');
+                    $("#Address").html(response.contacts[0].Address).trigger('change');
+                    $("#MobileNo").html(response.contacts[0].MobileNo).trigger('change');
+                    $("#EmailID").html(response.contacts[0].EmailID).trigger('change');
+                    $("#SupportName").html(response.contacts[0].SupportName).trigger('change');
+                    $("#TeamViewerName").html(response.contacts[0].TeamViewerName).trigger('change');
+
+                    $("#image_banner").attr('src', imageurl+response.contacts[0].Image_Banner);
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+    }
+    function ClearControll() {
+        $("#txtfirstname").val("");
+        $("#txtlastname").val("");
+       $("#txtphone").val("");
+         $("#txtemail").val("");
+         $("#txtmessage").val("");
+    }
+    function submitinquiry() {
+        if ($("#txtfirstname").val() != "" && $("#txtemail").val() != "") {
+            var data = JSON.stringify({
+                'FirstName': $("#txtfirstname").val(),
+                'LastName': $("#txtlastname").val(),
+                'MobileNo': $("#txtphone").val(),
+                'EmailID': $("#txtemail").val(),
+                'MessageContent': $("#txtmessage").val()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("InsertContact", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        alert("Successfully send your message!");
+                        ClearControll();
+                    }
+                    else {
+
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+        else {
+            alert("Please fill form details carefully!")
+        }
+    }
+    </script>
+}

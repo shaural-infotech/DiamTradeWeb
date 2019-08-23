@@ -1,0 +1,396 @@
+﻿
+@{
+    ViewBag.Title = "diamx";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<div class="container-fluid bg-inner-desktop">
+    <div class="row">
+        <!-- Desktop Section Starts -->
+        <div class="container-fluid bg-desktop-particular-page">
+            <div class="row">
+                <div class="container">
+                    <div class="row flex align-center">
+                        <div class="col-xs-12">
+                            <div class="diamtrade-desktop-logo-text text-center">
+                                <img class="img-responsive img-auto img-desktop-side-logo img-diamtrade-logo-width" id="product_image_logo" alt="" />
+                                <!-- <span>Desktop</span> -->
+                            </div>
+                            <p id="product_content1"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 col-md-4 col-lg-4 animated wow fadeInDown" data-wow-duration="2s">
+                            <img class="img-responsive img-auto desktop-img" alt="" id="product_image" />
+                        </div>
+                        <div class="col-sm-7 col-sm-offset-1 col-md-7 col-md-offset-1 col-lg-7 col-lg-offset-1">
+                            <div class="complete-erp-crm animated wow fadeInUp" data-wow-duration="2s">
+                                <h2 id="product_content2"></h2>
+                                <h1 id="product_content3"></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="desktop-disc-para">
+                                <p id="product_content4"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Desktop Section Ends -->
+        <!-- Diamtrade Key Features Section Starts -->
+        <div class="container-fluid bg-desktop-feature">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="key-feature-heading text-center">
+                        <span>Product Features</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="productfeature">
+
+            </div>
+        </div>
+        <!-- Diamtrade Key Features Section Ends -->
+        <!-- Special Features Section Starts -->
+        <div class="container-fluid bg-cloud-feature">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="cloud-feature-heading text-center">
+                                <span>Special Feature</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="spclfeature">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Special Features Section Ends -->
+        <!-- Specialized Inventories Section Starts -->
+        <div class="container-fluid bg-inventories">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="inventories-heading text-center">
+                                <span>Specialized Inventories</span>
+                            </div>
+                        </div>
+                        <div class="inventories-list text-center">
+                            <div class="row" id="inventories">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-special-para">
+                        <div class="special-para-title text-center">
+                            <span>Special Note</span>
+                        </div>
+                        <div class="special-para-disc text-center">
+                            <q id="product_content5"></q>
+                        </div>
+                    </div>
+                    <div class="bg-product-screenshot">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="product-ss-title text-center">
+                                    <span>Product Screenshots</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="product-ss-slider" class="owl-carousel">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Specialized Inventories Section Ends -->
+        <!-- Other Products Section Starts -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container">
+                    <div class="col-xs-12">
+                        <div class="section-title text-center">
+                            <h2>Other Products</h2>
+                        </div>
+                    </div>
+                    <div class="row animated wow fadeInUp" data-wow-duration="2s">
+                        @*<div class="col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
+                            <div class="product-other">
+                                <a href="cloud.html">
+                                    <img src="~/images/p-desktop.png" class="img-responsive img-auto" alt="" />
+                                </a>
+                            </div>
+                        </div>*@
+                        <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
+                            <div class="product-other">
+                                <a href='@Url.Action("cloud","Products")'>
+                                    <img src="~/images/p-cloud.png" class="img-responsive img-auto" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                            <div class="product-other">
+                                <a href='@Url.Action("desktop","Products")'>
+                                    <img src="~/images/p-desktop.png" class="img-responsive img-auto" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Other Products Section Ends -->
+        <!-- Information Section Starts -->
+        <div class="container-fluid bg-information" style="display:none">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="bg-information-skew">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="more-info-box text-center">
+                                            <h3>Head Office</h3>
+                                            <h4 class="line-height">
+                                                HotSoft BVBA,
+                                                3 Hoveniersstraat,2018
+                                                Antwerpen, Belgium, Europe
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="more-info-box text-center">
+                                            <h3>Contacts</h3>
+                                            <p>Phone:</p>
+                                            <a href="tel:+32.474.24.7575">+32.474.24.7575</a>
+                                            <p>Email:</p>
+                                            <a href="mailto:Vinaypatel@hotsoft.be">Vinaypatel@hotsoft.be</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="more-info-box text-center">
+                                            <h3>Support</h3>
+                                            <p><i class="fab fa-skype"></i><a href="skype:DiamTrade.Support?call">&nbsp;&nbsp;Diamtrade.Support</a></p>
+                                            <p><i class="fas fa-download"></i><a href="http://download.teamviewer.com/download/version_9x/TeamViewer_Setup.exe" target="_blank" title="Download Teamviewer Version_9x for Windows">&nbsp;&nbsp;Download Teamviewer</a></p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-sm-10 col-md-10 col-lg-10">
+                                  <div class="info-details">
+                                    <h3>Need More Information</h3>
+                                    <p>7days a Week from 9:00 to 18:00</p>
+                                    <p><span>+(32) 474247575, </span> <span> +(91) 9904900060/61/62</span></p>
+                                    <p><span>Skype: Diamtrade.Support</span></p>
+                                  </div>
+                                </div> -->
+                                </div>
+                                <img src="~/images/support-girl.png" class="img-responsive" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Information Section Ends -->
+    </div>
+</div>
+@section scripts{
+    <script>
+     EditDiamx();
+     EditDeskFeat();
+   BindDesktopFeature_1();
+        BindDesktopFeature_2();
+        BindDesktopFeature_3();
+          var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+     function EditDiamx() {
+
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditDiamx", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    $("#product_content1").html(response.diamx[0].Content1);
+                    $("#product_content2").html(response.diamx[0].Content2);
+                    $("#product_content3").html(response.diamx[0].Content3);
+                    $("#product_content4").html(response.diamx[0].Content4);
+                    $("#product_content5").html(response.diamx[0].Content5);
+
+                    $("#product_image_logo").attr('src', imageurl+response.diamx[0].ProductLogo);
+                    $("#product_image").attr('src', imageurl+response.diamx[0].ProductImage);
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+      function EditDeskFeat() {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("BindDiamxProductFeature", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+ 
+                  var row = "";
+                      $.each(response, function (index, item) {
+                            //debugger;
+                            row += "<div class='col-xs-6 col-sm-4 col-md-2 col-lg-2 animated wow fadeInDown' data-wow-duration='2s'><div class='key-feature-desktop-box'><img class='img-responsive img-auto img-feature-desktop' alt='' src="+imageurl+item.Image+"><div class='feature-name-desktop text-center'><p>"+item.Feature_Name+"</p></div></div></div>"
+                        })
+                        $("#productfeature").html(row);
+
+
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+     }
+
+         function BindDesktopFeature_1() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindDesktopkeyFeature", "admin")",
+            data: {'productname':"Diamx"},
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                         var row = "";
+                      $.each(data, function (index, item) {
+                          //debugger;
+                          row += "<div><img src=" + imageurl+item.Image + " class='img-responsive img-auto img-feature-pro' alt='' /><div class='feature-name-cloud text-center'><p>" + item.Feature_Name + "</p></div></div>"
+                        })
+                    $("#spclfeature").html(row);
+
+                      $('#spclfeature').slick({
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 1000,
+
+                        responsive: [
+                    {
+                      breakpoint: 1024,
+                      settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                      }
+                    },
+                    {
+                      breakpoint: 600,
+                      settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                      }
+                    },
+                    {
+                      breakpoint: 480,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                      }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                  ]
+                    });
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+            }
+
+
+         function BindDesktopFeature_2() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindDesktopSpclInveFeature", "admin")",
+            data: {'productname':"Diamx"},
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var row = "";
+                      $.each(data, function (index, item) {
+                          //debugger;
+                          row += "<div class='inventory-box text-center'><img src=" + imageurl+item.Image + " class='img-responsive img-auto' alt=''><h5>"+item.Feature_Name+"</h5></div>"
+                        })
+                        $("#inventories").html(row);
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+        function BindDesktopFeature_3() {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindDesktopGallery", "admin")",
+            data: {'productname':"Diamx"},
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                     var row = "";
+                      $.each(data, function (index, item) {
+                          //debugger;
+                          row += "<div class='product-ss'><a data-fancybox='images' href=" + imageurl+item.Image + "><img src=" + imageurl+item.Image + " class='img-responsive' alt=''></a></div>"
+                        })
+                    $("#product-ss-slider").html(row);
+
+                     $('#product-ss-slider').owlCarousel({
+                          loop:true,
+                          margin:30,
+                          nav:true,
+                            autoplay: true,
+                            autoplayTimeout: 1500,
+                            autoplayHoverPause: true,
+                          responsive:{
+                              0:{
+                                  items:1
+                              },
+                              600:{
+                                  items:2
+                              },
+                              1000:{
+                                  items:3
+                              }
+                            }
+                          })
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+            }
+    </script>
+
+}

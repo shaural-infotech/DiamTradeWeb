@@ -1,0 +1,566 @@
+﻿
+@{
+ViewBag.Title = "Index";
+Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<title>DiamTrade - Home</title>
+<!-- Slider With Text Animation Starts -->
+<div class="container-fluid bg-slider">
+	<div class="row">
+		<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators" id="slider_ol">
+				@*<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>*@
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" id="slider_image">
+
+			</div>
+
+			<a class="left carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="prev">
+				<i class="fas fa-chevron-left"></i>
+			</a>
+			<a class="right carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="next">
+				<i class="fas fa-chevron-right"></i>
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- Slider With Text Animation Ends -->
+<!-- Main BG Section Starts -->
+<div class="container-fluid bg-main-home">
+	<div class="row">
+		<!-- Custom Built Software Section Starts -->
+		<div class="container-fluid bg-built-software-home">
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<section class="built-software-heading text-center">
+								<p id="Title1"></p>
+								<h2 id="SubTitle1"></h2>
+								<p id="Content1"><a href='@Url.Action("about","admin")' id="ancMuchMore">Much more...<i class="fas fa-chevron-circle-right"></i></a></p>
+								@*<p>Reason To Use Diamtrade</p>
+								<h2>Fully Custom-Built Software</h2>
+								<p><span> DiamTrade</span> is a Tailor-Made Desktop Application that goes well with every<span> Diamond & Jewelry</span> Business. DiamTrade covers all faces of your organization including, but not limited to Inventory Management, Data Security, Crystal Clear Business Trading, Multi-National Currency, CRM, Administrator, MIS Reporting and <a href="about.html">Much more...<i class="fas fa-chevron-circle-right"></i></a></p>*@
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Custom Built Software Section Ends -->
+		<!-- Diatrade Product Section Starts -->
+		<div class="container-fluid bg-key-features-home">
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<section class="section-heading our-product-home text-center">
+								<h2>Our Products</h2>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-md-4 col-lg-4 animated wow fadeIn" data-wow-duration="2s">
+							<a href='@Url.Action("desktop","products")'><img src="~/images/desktop-diamtrade.png" class="img-responsive img-auto img-desktop-cloud-diamx" alt="" /></a>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 animated wow fadeIn" data-wow-duration="2s">
+							<a href='@Url.Action("cloud","products")'><img src="~/images/cloud-diamtrade.png" class="img-responsive img-auto img-desktop-cloud-diamx" alt="" /></a>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 animated wow fadeIn" data-wow-duration="2s">
+							<a href='@Url.Action("diamx","products")'><img src="~/images/diamx-diamtrade.png" class="img-responsive img-auto img-desktop-cloud-diamx" alt="" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Diatrade Product Section Ends -->
+		<!-- Cloud Section Starts -->
+		<div class="container-fluid bg-cloud-home">
+			<div class="row">
+				<div class="row flex align-center block-mob">
+					<div class="col-sm-6 col-sm-push-6 col-md-6 col-md-push-6 col-lg-8 col-lg-push-4">
+						<img class="img-responsive img-diamtrade-cloud" id="image_1" alt="" />
+					</div>
+					<div class="col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-6 col-lg-4 col-lg-pull-8">
+						<section class="diamtrade-section-heading text-center">
+							@*<h2>Diamtrade <span>Cloud</span></h2>
+							<p>Take your Business to a next level. Our DiamTrade Cloud allows Brokers to use Fully-Featured & Easy-to-Use Packages on Windows, MAC & Mobile Devices.</p>*@
+							<h2 id="Title2"></h2>
+							<p id="Content2"></p>
+							<div class="get-more-home">
+								<a href='@Url.Action("cloud","products")' class="btn btn-get-more-cloud">Get More</a>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Cloud Section Ends -->
+		<!-- Desktop Section Starts -->
+		<div class="container-fluid bg-desktop-home">
+			<div class="row">
+				<div class="row flex align-center block-mob">
+					<div class="col-sm-6 col-md-6 col-lg-8">
+						<img class="img-responsive img-diamtrade-desktop" id="image_2" alt="" />
+					</div>
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<section class="diamtrade-section-heading diamtrade-desktop-section-heading text-center">
+							@*<h2>Diamtrade <span>Desktop</span></h2>
+							<p>Get highly Powerful & Effective Tailor-Made ERP & CRM Desktop Applications for every Diamond & Jewelry Business. </p>*@
+							<h2 id="Title3"></h2>
+							<p id="Content3"></p>
+							<div class="get-more-home">
+								<a href='@Url.Action("desktop","products")' class="btn btn-get-more-desktop">Get More</a>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Diamx Section Starts -->
+		<div class="container-fluid bg-cloud-home">
+			<div class="row">
+				<div class="row flex align-center block-mob">
+					<div class="col-sm-6 col-sm-push-6 col-md-6 col-md-push-6 col-lg-8 col-lg-push-4">
+						<img class="img-responsive img-diamtrade-cloud" id="image_4" alt="" />
+					</div>
+					<div class="col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-6 col-lg-4 col-lg-pull-8">
+						<section class="diamtrade-section-heading text-center">
+							@*<h2>Diamtrade <span>Cloud</span></h2>
+							<p>Take your Business to a next level. Our DiamTrade Cloud allows Brokers to use Fully-Featured & Easy-to-Use Packages on Windows, MAC & Mobile Devices.</p>*@
+							<h2 id="Title4"></h2>
+							<p id="Content4"></p>
+							<div class="get-more-home">
+								<a href='@Url.Action("diamx","products")' class="btn btn-get-more-cloud">Get More</a>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Cloud Section Ends -->
+		<!-- Diatrade Key Features and Product Section Starts -->
+		<div class="container-fluid bg-key-features-home">
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<section class="section-heading text-center">
+								<h2>Diamtrade Services</h2>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4 col-md-4 col-lg-4 res-s animated wow fadeInDown" data-wow-duration="2s">
+							<a id="href1">
+								<div class="box-feature">
+									<img class="img-responsive img-auto img-software-home" id="img_1" alt="" />
+									<div class="feature-name text-center">
+										<p id="Feature1"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 res-s animated wow fadeInDown" data-wow-duration="2s">
+							<a id="href2">
+								<div class="box-feature">
+									<img class="img-responsive img-auto img-software-home" id="img_2" alt="" />
+									<div class="feature-name text-center">
+										<p id="Feature2"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 res-s animated wow fadeInDown" data-wow-duration="2s">
+							<a id="href3">
+								<div class="box-feature">
+									<img class="img-responsive img-auto img-software-home" id="img_3" alt="" />
+									<div class="feature-name text-center">
+										<p id="Feature3"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 res-s animated wow fadeInDown" data-wow-duration="2s">
+							<a id="href4">
+								<div class="box-feature">
+									<img class="img-responsive img-auto img-software-home" id="img_4" alt="" />
+									<div class="feature-name text-center">
+										<p id="Feature4"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 res-s animated wow fadeInDown" data-wow-duration="2s">
+							<a id="href5">
+								<div class="box-feature">
+									<img class="img-responsive img-auto img-software-home" id="img_5" alt="" />
+									<div class="feature-name text-center">
+										<p id="Feature5"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 res-s animated wow fadeInDown" data-wow-duration="2s">
+							<a id="href6">
+								<div class="box-feature">
+									<img class="img-responsive img-auto img-software-home" id="img_6" alt="" />
+									<div class="feature-name text-center">
+										<p id="Feature6"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+						@*<div class="col-sm-4 col-md-4 col-lg-4 res-s animated wow fadeInDown" data-wow-duration="2s">
+							<a href="compare.html">
+								<div class="box-feature">
+									<img class="img-responsive img-auto img-software-home" id="img_7" alt="" />
+									<div class="feature-name text-center">
+										<p id="Feature7"></p>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-sm-4 col-md-4 col-lg-4 res-s animated wow fadeInDown" data-wow-duration="2s">
+							<a href="compare.html">
+								<div class="box-feature">
+									<img class="img-responsive img-auto img-software-home" id="img_8" alt="" />
+									<div class="feature-name text-center">
+										<p id="Feature8"></p>
+									</div>
+								</div>
+							</a>
+						</div>*@
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Diatrade Key Features and Product Section Ends -->
+		<!-- We Serve Countries Map Section Starts -->
+		<div class="container-fluid bg-home-map">
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="section-heading map-serve-heading text-center">
+								<h2>Our Global Presence</h2>
+							</div>
+							<div class="bg-home-map-img animated wow fadeInUp" data-wow-duration="2s">
+								<img src="~/images/map-1.png" class="img-responsive img-auto full-width" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- We Serve Countries Map Section Ends -->
+		<!-- Desktop Section Ends -->
+		<!-- DiamX Section Starts -->
+        <!-- <div class="container-fluid bg-diamx-home">
+          <div class="row">
+            <div class="container">
+              <div class="row flex align-center block-mob">
+                <div class="col-sm-6 col-sm-push-6 col-md-6 col-md-push-6 col-lg-8 col-lg-push-4">
+                  <img src="~/images/Cash-Bank.png" class="img-responsive" alt="" />
+                </div>
+                <div class="col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-6 col-lg-4 col-lg-pull-8">
+                  <section class="diamtrade-section-heading diamtrade-diamx-section-heading text-center">
+                    <h3>Diam <span>X</span></h3>
+                    <p>All-inclusive, User Friendly Financial Accounting System.</p>
+                    <div class="get-more-home">
+                      <a href="#" class="btn btn-get-more-diamx">Get More</a>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- DiamX Section Ends -->
+        <!-- Testimonial Section Starts -->
+        <div class="container-fluid bg-tesimonial-home animated wow fadeInUp" data-wow-duration="2s">
+        	<div class="row">
+        		<div class="container">
+        			<div class="row">
+        				<div class="col-xs-12">
+        					<div class="section-heading bg-home-customer-review-heading text-center">
+        						<h2>Customer Reviews</h2>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="row">
+        				<div class="col-xs-12">
+        					<div class="testimonial-bg-div">
+        						<div id="testimonial-slider" class="owl-carousel">
+        							@*<div class="testimonial">
+        								<p class="customer-review-disc">
+        									DIamtrade took on a request to build and deploy a unique and challenging WordPress plug-in for us. It`s responded to our concerns with ideas that have allowed us to proceed with certainty beyond this proof-of-concept to a robust commercial application.
+        								</p>
+        								<img src="~/images/testimonial-bottom-img.png" class="img-auto img-responsive" alt="" />
+        								<div class="customer-pic">
+        									<img src="~/images/img-1.jpg" class="img-auto" alt="" />
+        								</div>
+        								<h3 class="customer-name text-center">Williamson</h3>
+        							</div>*@
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <!-- Testimonial Section Ends -->
+        <!-- Our Client Section Starts -->
+        <div class="container-fluid bg-client-home">
+        	<div class="row">
+        		<div class="container">
+        			<div class="row">
+        				<div class="col-xs-12">
+        					<section class="section-heading our-clients-home text-center">
+        						<h2>Associations</h2>
+        					</section>
+        				</div>
+        			</div>
+        			<div class="row">
+        				<div class="col-xs-12">
+        					<div class="client-Slides">
+        						<div><img src="~/images/Client1.png" class="img-responsive img-auto img-client-home" alt="" /></div>
+        						<div><img src="~/images/Client2.png" class="img-responsive img-auto img-client-home" alt="" /></div>
+        						<div><img src="~/images/Client3.png" class="img-responsive img-auto img-client-home" alt="" /></div>
+        						<div><img src="~/images/Client4.png" class="img-responsive img-auto img-client-home" alt="" /></div>
+        						<div><img src="~/images/Client5.png" class="img-responsive img-auto img-client-home" alt="" /></div>
+        						<div><img src="~/images/Client6.png" class="img-responsive img-auto img-client-home" alt="" /></div>
+        						<div><img src="~/images/Client7.png" class="img-responsive img-auto img-client-home" alt="" /></div>
+        						<div><img src="~/images/Client8.png" class="img-responsive img-auto img-client-home" alt="" /></div>
+        						<div><img src="~/images/Client9.png" class="img-responsive img-auto img-client-home" alt="" /></div>
+        					</div>
+        				</div>
+        			</div>
+
+        		</div>
+        	</div>
+        </div>
+        <!-- Our Client Section Ends -->
+      </div>
+    </div>
+    <!-- Main BG Section Ends -->
+    @section scripts{
+    <script>
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+    	var HomePageID = 1;
+    	EditHomePageInfo();
+    	EditDeskFeat();
+    	BindTestimonial();
+
+    	function EditHomePageInfo() {
+    		$.ajax({
+    			type: "GET",
+    			data: "{}",
+                //url: serviceurl + "EditAboutUs",
+                url: "@Url.Action("EditHomePageInfo", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    $("#Title1").html(response.aboutus[0].Title1).trigger('change');
+                    $("#SubTitle1").html(response.aboutus[0].SubTitle1).trigger('change');
+                    $("#Content1").html(response.aboutus[0].Content1).trigger('chnage');
+                    //$("#ancMuchMore").html("Much More");
+                    $("#Title2").html(response.aboutus[0].Title2).trigger('change');
+                    $("#Content2").html(response.aboutus[0].Content2).trigger('change');
+                    $("#Title3").html(response.aboutus[0].Title3).trigger('change');
+                    $("#Content3").html(response.aboutus[0].Content3).trigger('change');
+                    $("#Title4").html(response.aboutus[0].Title4).trigger('change');
+                    $("#Content4").html(response.aboutus[0].Content4).trigger('change');
+
+                    $("#image_1").attr('src', imageurl+response.aboutus[0].Image_1);
+                    $("#image_2").attr('src', imageurl+response.aboutus[0].Image_2);
+                    $("#image_4").attr('src', imageurl+response.aboutus[0].Image_4);
+                  },
+                  failure: function (response) {
+                    //alert(response.responseText);
+                  },
+                  error: function (response) {
+                    //alert(response.responseText);
+                  }
+                });
+    	}
+
+    	var SliderID = 1;
+    	EditSlider();
+
+    	function EditSlider() {
+    		$.ajax({
+    			type: "GET",
+    			data: "{}",
+                //url: serviceurl + "EditAboutUs",
+                url: "@Url.Action("EditSlider", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                	var row = "";
+                	var row1 = "";
+                    ////debugger;
+                    for (var i = 0; i < response.aboutus.length; i++) {
+                    	if (i == 0) {
+                    		row += "<div class='item active'><img class='img-responsive img-slider'  src=" + imageurl+response.aboutus[i].Image_1 + "></div>";
+                    		row1 += "<li data-target='#myCarousel' data-slide-to=" + i + " class='active'></li>"
+                    	}
+                    	else {
+                    		row += "<div class='item'><img class='img-responsive img-slider'  src=" + imageurl+response.aboutus[i].Image_1 + "></div>";
+                    		row1 += "<li data-target='#myCarousel' data-slide-to=" + i + " ></li>"
+                    	}
+                    }
+                    $("#slider_image").html(row);
+                    $("#slider_ol").html(row1);
+
+
+
+
+                    $("#STitle1").html(response.aboutus[0].Title1).trigger('change');
+                    $("#SSubTitle1").html(response.aboutus[0].Content1).trigger('change');
+                    $("#slider1_image").attr('src', imageurl+response.aboutus[0].Image_1);
+
+                    $("#STitle2").html(response.aboutus[0].Title2).trigger('change');
+                    $("#SSubTitle2").html(response.aboutus[0].Content2).trigger('change');
+                    $("#slider2_image").attr('src', imageurl+response.aboutus[0].Image_2);
+
+                    $("#STitle3").html(response.aboutus[0].Title3).trigger('change');
+                    $("#SSubTitle3").html(response.aboutus[0].Content3).trigger('change');
+                    $("#slider3_image").attr('src', imageurl+response.aboutus[0].Image_3);
+
+                    $("#STitle4").html(response.aboutus[0].Title4).trigger('change');
+                    $("#SSubTitle4").html(response.aboutus[0].Content4).trigger('change');
+                    $("#slider4_image").attr('src', imageurl+response.aboutus[0].Image_4);
+
+                  },
+                  failure: function (response) {
+                    //alert(response.responseText);
+                  },
+                  error: function (response) {
+                    //alert(response.responseText);
+                  }
+                });
+    	}
+    	function EditDeskFeat() {
+    		$.ajax({
+    			type: "GET",
+    			data: {'producttypeid':4},
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditDeskFeature", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    $("#Feature1").html(response.deskfeat[0].Feature1).trigger('change');
+                    $("#Feature2").html(response.deskfeat[0].Feature2).trigger('change');
+                    $("#Feature3").html(response.deskfeat[0].Feature3).trigger('change');
+                    $("#Feature4").html(response.deskfeat[0].Feature4).trigger('change');
+                    $("#Feature5").html(response.deskfeat[0].Feature5).trigger('change');
+                    $("#Feature6").html(response.deskfeat[0].Feature6).trigger('change');
+                    $("#Feature7").html(response.deskfeat[0].Feature7).trigger('change');
+                    $("#Feature8").html(response.deskfeat[0].Feature8).trigger('change');
+
+
+                    $("#href1").attr("href", "@Url.Action("ServicePage", "services")?" + response.deskfeat[0].Feature1);
+                    $("#href2").attr("href", "@Url.Action("ServicePage", "services")?" + response.deskfeat[0].Feature2);
+                    $("#href3").attr("href", "@Url.Action("ServicePage", "services")?" + response.deskfeat[0].Feature3);
+                    $("#href4").attr("href", "@Url.Action("ServicePage", "services")?" + response.deskfeat[0].Feature4);
+                    $("#href5").attr("href", "@Url.Action("ServicePage", "services")?" + response.deskfeat[0].Feature5);
+                    $("#href6").attr("href", "@Url.Action("ServicePage", "services")?" + response.deskfeat[0].Feature6);
+
+                    $("#img_1").attr('src', imageurl+response.deskfeat[0].Img_1);
+                    $("#img_2").attr('src', imageurl+response.deskfeat[0].Img_2);
+                    $("#img_3").attr('src', imageurl+response.deskfeat[0].Img_3);
+                    $("#img_4").attr('src', imageurl+response.deskfeat[0].Img_4);
+                    $("#img_5").attr('src', imageurl+response.deskfeat[0].Img_5);
+                    $("#img_6").attr('src', imageurl+response.deskfeat[0].Img_6);
+                    $("#img_7").attr('src', imageurl+response.deskfeat[0].Img_7);
+                    $("#img_8").attr('src', imageurl+response.deskfeat[0].Img_8);
+                  },
+                  failure: function (response) {
+                    //alert(response.responseText);
+                  },
+                  error: function (response) {
+                    //alert(response.responseText);
+                  }
+                });
+    	}
+
+    	function BindTestimonial() {
+    		$.ajax({
+    			type: "GET",
+    			url: "@Url.Action("BindTestimonial", "admin")",
+    			data: "{}",
+    			contentType: "application/json; charset=utf-8",
+    			dataType: "json",
+    			success: function (data) {
+
+    				if (data.success == true) {
+    					var row = "";
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data.testimoni, function (index, item) {
+
+                        	row += "<div class='testimonial testimonial-common'><div class='customer-img text-center'><img class='img-auto' src=" + (imageurl+item.PersonImage) +" /></div><div class='testimonial-body'><div class='author-name text-center'><h5>"+item.PersonName+"</h5></div><div class='testimonial-disc'><p>"+item.TestimComments+"</p></div></div></div>"
+                            //row += "<div class='testimonial'><p class='customer-review-disc'>" + item.TestimComments + " </p><img src='images/testimonial-bottom-img.png' class='img-auto img-responsive'/><div class='customer-pic'><img class='img-auto' src=" + item.PersonImage + "></div><h3 class='customer-name text-center'>" + item.PersonName + "</h3></div>"
+                          })
+                        $("#testimonial-slider").html(row);
+                        $('#testimonial-slider').owlCarousel({
+                        	loop: true,
+                        	margin: 30,
+                        	nav: true,
+                        	autoplay: false,
+                        	autoplayTimeout: 1500,
+                        	autoplayHoverPause: true,
+                        	responsive: {
+                        		0: {
+                        			items: 1
+                        		},
+                        		600: {
+                        			items: 1
+                        		},
+                        		1000: {
+                        			items: 2
+                        		}
+                        	}
+                        });
+                        
+
+                      }
+                      else {
+                      	$("#testimonial-slider").html("");
+                      }
+                    },
+                    fail: function (msg) {
+                    	alert(msg);
+                    }
+                  })
+    	}
+
+    </script>
+<!--     <script>
+	$(document).ready(function(){
+	     
+	   $(".menu-listing > li").click(function(){
+			 $(".dropdown-products").toggleClass("active");
+			 
+			 if($(".dropdown-products").hasClass('active'))
+			 {
+			    
+	            $(".dropdown-products").css({ "display": "block"});
+			 } else {
+			    $(".dropdown-products").css({ "display": "none"});
+			 }
+	      });
+	});
+</script> -->
+
+}

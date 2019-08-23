@@ -1,0 +1,398 @@
+﻿
+@{
+    ViewBag.Title = "careers";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<!-- Career Banner Section Starts -->
+    <!-- <div class="container-fluid bg-slider">
+        <div class="row">
+            <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" id="slider_image">
+                    <img class="img-responsive img-auto" alt="" id="image_banner" />
+                </div>
+            </div>
+        </div>
+    </div> -->
+@*<div class="container-fluid bg-career-banner-div" style="display:none">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 animated wow fadeInUp" data-wow-duration="2s">
+                    <div class="support-career-caption text-center">
+                        <h1>Success Is Achieved When Creative People Contribute Together.</h1>
+                            <p>Join Our Ever-Growing & Award-Winning Team, Today! </p>
+                        <h1 id="CarrersTitle"></h1>
+                        <p id="SubTitle"></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 animated wow fadeInDown" data-wow-duration="2s">
+                    <div class="support-career-img">
+                        <img  class="img-responsive img-auto" id="image_banner" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+  <div class="container-fluid bg-career-banner-div">
+    <div class="row">
+      <div class="col-xs-12">
+        <img  class="img-responsive" id="image_banner" alt="" />
+      </div>
+    </div>
+  </div>
+<!-- Career Banner Section Ends -->
+<!-- Career Bg Starts -->
+  <div class="container-fluid bg-career-img">
+    <div class="row">
+<!-- Career Second Section Starts -->
+<div class="container-fluid bg-career-section">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="career-heading text-center">
+                        <h2>Career</h2>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="panel-group" id="accordion">
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Career Second Section Ends -->
+<!-- Career at Diamtrade Section Starts -->
+<div class="container-fluid bg-career-form">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="career-form-heading text-center">
+                <h2>Career At Diamtrade, Be A Part of our Team</h2>
+            </div>
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                <form class="career-form">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="prefix" class="asterisk-field">Prefix</label>
+                                <select name="prefix" id="ddlpre" class="form-control">
+                                    <option value="0">Please Select</option>
+                                    <option value="mr">Mr.</option>
+                                    <option value="mrs">Mrs.</option>
+                                    <option value="ms">Ms.</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="name" class="asterisk-field">Name</label>
+                                <input type="text" class="form-control" placeholder="" id="txtname" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="email" class="asterisk-field">Email</label>
+                                <input type="email" class="form-control" placeholder="" id="txtemail" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="phone" class="asterisk-field">Phone</label>
+                                <input type="Phone" class="form-control" placeholder="" id="txtphone" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="edu" class="asterisk-field">Education</label>
+                                <input type="text" class="form-control" placeholder="" id="txteducation" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="designation" class="asterisk-field">Designation</label>
+                                <input type="text" class="form-control" placeholder="" id="txtdesignation" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="core-expertise" class="asterisk-field">Core Expertise</label>
+                                <input type="text" class="form-control" placeholder="" id="txtcorexperience" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="experience" class="asterisk-field">Experience</label>
+                                <input type="text" class="form-control" placeholder="" id="txtexperience" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="previous-companies" class="asterisk-field">Previous Companies </label>
+                                <input type="text" class="form-control" placeholder="" id="txtprecompany" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="current-company">Current Company </label>
+                                <input type="text" class="form-control" placeholder="" id="txtcurcompany" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="current-salary" class="asterisk-field">Current Salary</label>
+                                <input type="text" class="form-control" placeholder="" id="txtcursalary" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="expected-salary" class="asterisk-field">Expected Salary</label>
+                                <input type="text" class="form-control" placeholder="" id="txtexpsalary" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="reference">Reference If Any</label>
+                                <input type="text" class="form-control" placeholder="" id="txtrefany" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="file" class="asterisk-field">Attach Document</label>
+                                <input type="file" class="form-control" name="Choose Document" id="document" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea class="form-control" placeholder="" id="txtaddress"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>Passport Size Photo</label>
+                                <input type="file" class="form-control" name="Choose Document" id="photo" />
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <button type="button" class="btn-send" onclick="SendCarrer()">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Career at Diamtrade Section Ends -->
+    </div>
+  </div>
+  <!-- Career Bg Ends -->
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            EditCareerInfo();
+            BindCareerMulti();
+        });
+
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+        
+        function EditCareerInfo() {
+             $.ajax({
+                type: "GET",
+                 url: "@Url.Action("EditCareerInfo", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.success == true) {
+                        $.each(data.careerinfo, function (index, item) {
+                            $("#CarrersTitle").html(item.CarrersTitle).trigger('change');
+                            $("#SubTitle").html(item.SubTitle).trigger('change');
+                            $("#image_banner").attr('src',imageurl+item.Image_Banner)
+                        })
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+         function BindCareerMulti() {
+            $.ajax({
+                type: "GET",
+                 url: "@Url.Action("BindCareer", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    if (data.success == true) {
+                        //  alert(JSON.stringify(data));
+                        var row = "";
+                        var i = 0;
+                        $.each(data.careers, function (index, item) {
+                            i = i + 1;
+                            if (i == 1) {
+                                row += "<div class='panel panel-career'><a data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "' aria-expanded='true'><div class='panel-heading'><h4 class='panel-title'>" + item.Subject + "</h4><h5>Experience: " + item.Expe + " | Job Location: " + item.Location + "</h5></div></a><div id='collapse" + i + "' class='panel-collapse collapse in'><div class='panel-body'>" + item.CareerDesc + "</div></div></div>";
+                            }
+                            else {
+                                row += "<div class='panel panel-career'><a data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "'><div class='panel-heading'><h4 class='panel-title'>" + item.Subject + "</h4><h5>Experience: " + item.Expe + " | Job Location: " + item.Location + "</h5></div></a><div id='collapse" + i + "' class='panel-collapse collapse'><div class='panel-body'>" + item.CareerDesc + "</div></div></div>";
+                            }
+                        });
+                        $("#accordion").html(row);
+
+
+                        $(".panel-body ul").addClass("job-role-list");
+                    }
+                    else {
+                        $("#accordion").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+
+
+            function BindCareer() {
+            $.ajax({
+                type: "GET",
+                 url: "@Url.Action("BindCareer", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.success == true) {
+                        var row = "";
+                        var statusdisp = "";
+                        $('#sample_1').DataTable().clear().destroy();
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data.careers, function (index, item) {
+                          //  //debugger;
+                            if (item.IsActive == "True") {
+
+
+                                //row += " <tr><td class='table-checkbox'><input type='checkbox'  class='group-checkable' value='1' /></td><td>" + item.ServiceTypeID + "</td><td>" + item.ServiceType + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return OPenConf(this);'><i class='fa fa-edit' style='color:green;font-size:larger;' data-toggle='modal' data-target='#portlet-config'>Edit</i></td></tr>"
+                                row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkcareer' class='group-checkable' value= " + item.CareerMultiID + " /></td><td>" + item.CareerMultiID + "</td><td>" + item.Subject + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return OPenConf(this);'><i class='fa fa-edit btn default btn-xs green'>Edit</i></td></tr>"
+
+                            }
+                            //row += " <tr><td class='table-checkbox'><input type='checkbox'  class='group-checkable' value='1' />" + "</td><td>" + item.ServiceTypeID + "</td><td>" + item.ServiceType + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return OPenConf(this);><i class='fa fa-edit' data-toggle='modal' data-target='#portlet-config'>Edit</i>" + "</td></tr>"
+                        })
+                        $("#TBService").html(row);
+
+                        $('#sample_1').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#TBService").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+
+    function SendCarrer() {
+             var image_1 = ($("#document"))[0].files[0];
+        var image_2 = ($("#photo"))[0].files[0];
+        if (image_1 != null && image_2 != null && $("#txtemail").val()!="") {
+            var data = JSON.stringify({
+                'Prefix': $("#ddlpre option:selected").text(),
+                'Name': $("#txtname").val(),
+                'Email': $("#txtemail").val(),
+                'MobileNo': $("#txtphone").val(),
+                'Educations': $("#txteducation").val(),
+                'Designation': $("#txtdesignation").val(),
+                'CoreExpert': $("#txtcorexperience").val(),
+                'Exper': $("#txtexperience").val(),
+                'PrevCompany': $("#txtprecompany").val(),
+                'CurrentCompany': $("#txtcurcompany").val(),
+                'CurrentSalary': $("#txtcursalary").val(),
+                'ExpectedSalary': $("#txtexpsalary").val(),
+                'Reference': $("#txtrefany").val(),
+                'Address': $("#txtaddress").val(),
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("InsertCareerSend", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+
+
+                        var fileData = new FormData();
+                        fileData.append(image_1.name, image_1);
+                        fileData.append(image_2.name, image_2);
+                        fileData.append('Id', response);
+                        $.ajax({
+                            url: "@Url.Action("UploadCareer", "admin")",
+                            type: "POST",
+                            contentType: false, // Not to set any content header
+                            processData: false, // Not to process data
+                            data: fileData,
+                            success: function (result) {
+                                alert("Successfully send your message!");
+                                ClearControll();
+                            }
+                        })
+
+
+                    }
+                    else {
+
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+        }
+        else {
+            alert("Please fill form details carefully!");
+        }
+        }
+
+
+
+    
+     function ClearControll() {
+        $("#ddlpre").val("0");
+        $("#txtname").val("");
+       $("#txtemail").val("");
+         $("#txtphone").val("");
+         $("#txteducation").val("");
+         $("#txtdesignation").val("");
+         $("#txtcorexperience").val("");
+         $("#txtexperience").val("");
+         $("#txtprecompany").val("");
+         $("#txtcurcompany").val("");
+         $("#txtcursalary").val("");
+         $("#txtexpsalary").val("");
+         $("#txtrefany").val("");
+         $("#txtaddress").val("");
+         $("#document").val("");
+         $("#photo").val("");
+    }
+
+    </script>
+}
+

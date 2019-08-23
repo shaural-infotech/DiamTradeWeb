@@ -1,0 +1,576 @@
+﻿
+@{
+    ViewBag.Title = "Support";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            Support Page Info
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+
+                <li>
+                    <a href='@Url.Action("Support","admin")'>Support</a>
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- END PAGE HEADER-->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN EXTRAS PORTLET-->
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Edit Support Page Info
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="#" class="form-horizontal form-bordered">
+                            @*START Contact Us*@
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Banner Image<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="slider1_image" onchange="validatesilder1image()" accept="image/*">
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="sld1_img" style="width:80px" class="img-auto" alt="">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content 1<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" id="TxtContent1" name="TxtContent1"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content 2<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" id="TxtContent2" name="TxtContent2"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Title 1<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="Title1" id="Title1">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Sub Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="SubTitle" id="SubTitle">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Phone<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="TxtPhone" id="TxtPhone" onkeypress="return IsNumeric(event);"
+                                               ondrop="return false;">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Support<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="TxtSupport" id="TxtSupport">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Email<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="TxtEmail" id="TxtEmail">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content 3<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" id="TxtContent3" name="TxtContent3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Title 2<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="Title2" id="Title2">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content 4<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" id="TxtContent4" name="TxtContent4"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            @*END Contact Us?*@
+
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        @*<button type="submit" class="btn green" onclick="return UpdateContact UsUs();"><i class="fa fa-check"></i> Submit</button>*@
+                                        <button type="button" class="btn green" onclick="return validateform();"><i class="fa fa-check"></i> Submit</button>
+                                        <button type="button" class="btn default" onclick="return CancelData();">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+                <!-- END EXTRAS PORTLET-->
+            </div>
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    <script>
+        var SupportID = 1;
+        EditSupport();
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+        function EditSupport() {
+
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditContact UsUs",
+                url: "@Url.Action("EditSupport", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    CKEDITOR.instances['TxtContent1'].setData(response.support[0].Content1);
+                    CKEDITOR.instances['TxtContent2'].setData(response.support[0].Content2);
+
+                    //$("#TxtContent1").val(response.support[0].Content1).trigger('change');
+                    //$("#TxtContent2").val(response.support[0].Content2).trigger('change');
+                    $("#Title1").val(response.support[0].Title1).trigger('change');
+                    $("#Title2").val(response.support[0].Title2).trigger('change');
+                    $("#SubTitle").val(response.support[0].SubTitle).trigger('change');
+                    $("#TxtPhone").val(response.support[0].MobileNo).trigger('change');
+                    $("#TxtSupport").val(response.support[0].SupportName).trigger('change');
+                    $("#TxtEmail").val(response.support[0].EmailID).trigger('change');
+
+                    CKEDITOR.instances['TxtContent3'].setData(response.support[0].Content3);
+                    CKEDITOR.instances['TxtContent4'].setData(response.support[0].Content4);
+
+                    $("#sld1_img").attr('src', imageurl+response.support[0].Image_Banner);
+                    //$("#TxtContent3").val(response.support[0].Content3).trigger('change');
+                    //$("#TxtContent4").val(response.support[0].Content4).trigger('change');
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+
+
+        function validateform() {
+            if (CKEDITOR.instances['TxtContent1'].getData() == null || CKEDITOR.instances['TxtContent1'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Content 1 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtContent1'].focus();
+                            //$("#TxtContent1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['TxtContent2'].getData() == null || CKEDITOR.instances['TxtContent2'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Short Content can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtContent2'].focus();
+                            //$("#TxtContent1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#Title1").val() == null || $("#Title1").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Title 1 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#Title1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#SubTitle").val() == null || $("#SubTitle").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Sub Title can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#SubTitle").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtPhone").val() == null || $("#TxtPhone").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Phone Number can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtPhone").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtSupport").val() == null || $("#TxtSupport").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Support can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtSupport").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#TxtEmail").val() == null || $("#TxtEmail").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Email can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtEmail").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['TxtContent3'].getData() == null || CKEDITOR.instances['TxtContent3'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Content 3 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtContent3'].focus();
+                            //$("#TxtContent1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#Title2").val() == null || $("#Title2").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Title 2 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#Title2").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['TxtContent4'].getData() == null || CKEDITOR.instances['TxtContent4'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Content 4 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            CKEDITOR.instances['TxtContent4'].focus();
+                            //$("#TxtContent1").focus();
+                        }
+                    });
+                return false;
+            }
+           
+            else
+            {
+                UpdateSupport();
+            }
+        }
+
+        function UpdateSupport() {
+                    dataobj = JSON.stringify({
+                        'SupportID': 1,
+                        'Content1': CKEDITOR.instances['TxtContent1'].getData(),
+                        'Content2': CKEDITOR.instances['TxtContent2'].getData(),
+                        'Title1': $("#Title1").val(),
+                        'Title2': $("#Title2").val(),
+                        'mobileNo': $("#TxtPhone").val(),
+                        'SupportName': $("#TxtSupport").val(),
+                        'EmailID': $("#TxtEmail").val(),
+                        'SubTitle': $("#SubTitle").val(),
+                        'Content3': CKEDITOR.instances['TxtContent3'].getData(),
+                        'Content4': CKEDITOR.instances['TxtContent4'].getData()
+                    });
+
+                $.ajax({
+                    type: "POST",
+                    //url: serviceurl + "UpdateContact UsUs",
+                    url: "@Url.Action("UpdateSupport", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.success == "false") {
+                            //alert("hii");
+                            //alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                               var file1 = document.getElementById("slider1_image").files[0];
+
+                            if (file1 != null) {
+                                SaveBanner_image(1);
+                            }
+                            swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+        }
+
+        function CancelData() {
+            EditSupport();
+        }
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+
+        function IsNumeric(e) {
+            var charCode = (e.which) ? e.which : e.keyCode
+            if (charCode != 43 && charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+            }
+
+    
+    function validatesilder1image() {
+            // //debugger;
+
+            var oFReader1 = new FileReader();
+        oFReader1.readAsDataURL(document.getElementById("slider1_image").files[0]);
+
+        oFReader1.onload = function (oFREvent1) {
+            document.getElementById("sld1_img").src = oFREvent1.target.result;
+            };
+
+
+
+            var formData = new FormData();
+
+            var file = document.getElementById("slider1_image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("slider1_image").value = '';
+                    return false;
+                }
+                 if (file.size > 2048000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 2MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("slider1_image").value = '';
+                    return false;
+                }
+                return true;
+            }
+
+            }
+     function SaveBanner_image(id) {
+          var image_1 = ($("#slider1_image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadSupportBanner_image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+            }
+    </script>
+}
+

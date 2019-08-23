@@ -1,0 +1,1836 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "ServiceType";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog" style="width:65%; height:65%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" aria-hidden="true" onclick="OpenFeatureModel()"></button>
+                        <h4 class="modal-title" id="H4PageTitle">Add features</h4>
+                    </div>
+                    @*<div class="modal-body">
+                            Widget settings form goes here
+                        </div>*@
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3"><label for="inputEmail3" class="control-label">Feature Title</label><span style="color:red;"> * </span></div>
+                                <div class="col-md-6"><input type="text" class="form-control" id="TxtfeatureTitle" placeholder="Service Type" autocomplete="off" required></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3"><label for="inputEmail3">Feature Image</label><span style="color:red;"> * </span></div>
+                                <div class="col-md-3">
+                                    <input type="file" class="" id="featureImg" onchange="validateServiceFeatureImage()" accept="image/*">
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="pull-right image">
+                                        <img src="" id="featureimg1" class="img-auto" style="width:100px">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row">
+                                <label class="control-label col-md-1">Feature Contect<span class="required" aria-required="true"> * </span></label>
+                                <div class="col-md-9">
+                                    <textarea class="ckeditor form-control" id="featurecontent" name="featurecontent"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue" id="BtnSaveFeature" onclick="SaveFeatureData();">Save</button>
+                        <button type="button" class="btn default" data-dismiss="modal" onclick="ClearFeatureData();">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            Service Type
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a href='@Url.Action("ServiceType","admin")'>Service Type</a>
+</li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="btn-group pull-right">
+
+                            <button id="sample_editable_1_new" style="margin-right:10px" class="btn red delete_btn" onclick="return DelServiceType();">
+                                <i class="fa fa-trash-o"></i>  Delete
+                            </button>
+
+                            <button id="btnAdd" style="margin-right:23px" class="btn green" data-toggle='modal' onclick="AddServiceTypeSection()">
+                                <i class="fa fa-plus"></i>  Add
+                            </button>
+
+                        </div>
+                        @*<div class="col-md-6">
+                                <div class="clearfix button-float pull-right button-wrap">
+                                    <button id="sample_editable_1_new" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                        <i class="fa fa-plus"></i>  Add
+                                    </button>
+                                </div>
+                            </div>*@
+
+                    </div>
+                </div>
+                <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                <div id="grid_div">
+                    <div class="portlet box grey-cascade">
+
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-globe"></i>View All Service Type
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                <thead>
+                                    <tr>
+                                        <th class="table-checkbox">
+                                            <input type="checkbox" class="checkboxes" data-set="#sample_1 .checkboxes" />
+                                        </th>
+                                        <th>
+                                            Sr No.
+                                        </th>
+                                        <th>
+                                            Service Type
+                                        </th>
+                                        <th>
+                                            Sort Order
+                                        </th>
+                                        <th>
+                                            Status
+                                        </th>
+                                        <th>
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="TBService"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- END EXAMPLE TABLE PORTLET-->
+            </div>
+        </div>
+
+
+        <!-- Start Add Product-->
+        <div id="divserviceadd" style="display:none;">
+            @*<div class="page-bar" id="DivViewHeader2">*@
+            @*<ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href='@Url.Action("dashboard","admin")'>Home</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href='@Url.Action("ServiceType","admin")'>Service Type</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li id="AnchAddTestim">
+                        Add
+                    </li>
+                </ul>*@
+            @*<div class="page-toolbar">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                                Actions <i class="fa fa-angle-down"></i>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li>
+                                    <a href='@Url.Action("ServiceType","admin")'>Back</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>*@
+            <div class="tabbable-custom nav-justified">
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active">
+                        <a href="#tab_1_1_1" data-toggle="tab">
+                            Contents
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab_1_1_2" data-toggle="tab">
+                            Features
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1_1_1">
+                        <div class="portlet box grey-cascade">
+                            <div class="portlet-title">
+                                <div class="caption" id="HeadAddTest">
+                                    <i class="fa fa-globe"></i>Add Service Type
+                                </div>
+                                <div class="tools">
+                                    <a href="javascript:;" class="collapse">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="inputEmail3" class="control-label">Service Type</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6"><input type="text" class="form-control" id="TxtServiceType" placeholder="Service Type" autocomplete="off" required></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="inputEmail3" class="control-label">Sort Order</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="TxtSortOrder" placeholder="Sort Order" autocomplete="off" onkeypress="return IsNumeric(event);"
+                                                   ondrop="return false;" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="inputEmail3">Status</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <select id="DdlStatus" class="form-control" required>
+                                                <option>-- Select --</option>
+                                                <option>Active</option>
+                                                <option>InActive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="inputEmail3">Menu Image</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="" id="menuimage" onchange="validateImage()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="pull-right image">
+                                                <img src="" id="menuimg" class="img-auto" style="width:100px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="inputEmail3">Service Banner Image</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="" id="bannerimage" onchange="validateBannerImage();" accept="image/*">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="pull-right image">
+                                                <img src="" id="bannerimg" class="img-auto" style="width:100px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="inputEmail3" class="control-label">Service Title</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6"><input type="text" class="form-control" id="Txtservicetitle" placeholder="Service Title" autocomplete="off" required></div>
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <div class="row">
+                                        <label class="control-label col-md-1">Service Contect-1<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="txtcontent_1" name="txtcontent_1"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <div class="row">
+                                        <label class="control-label col-md-1">Service Contect-2<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="txtcontent_2" name="txtcontent_2"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="img1">Service Image_1</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="" id="serviceimage_1" onchange="validateImage_1Image()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="pull-right image">
+                                                <img src="" id="serviceimg_1" class="img-auto" style="width:100px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="inputEmail3" class="control-label">Service Product Title- 1</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="TxtServiceproductcontent1" placeholder="Service Title 1" ondrop="return false;" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group last">
+                                    <div class="row">
+                                        <label class="control-label col-md-1">Service Product Contect - 1<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="txtimagecontent_1" name="txtcontent_2"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="img2">Service Image_2</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="" id="serviceimage_2" onchange="validateImage_2Image()" accept="image/*">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="pull-right image">
+                                                <img src="" id="serviceimg_2" class="img-auto" style="width:100px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="ServiceTitle2" class="control-label">Service Product Title- 2</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="TxtServiceproductcontent2" placeholder="Service Title 2" ondrop="return false;" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group last">
+                                    <div class="row">
+                                        <label class="control-label col-md-1">Service Product Contect - 2<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="tximagetcontent_2" name="txtimagecontent_2"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="img3">Service Image_3</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <input type="file" class="" id="serviceimage_3" onchange="validateImage_3Image();" accept="image/*">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="pull-right image">
+                                                <img src="" id="serviceimg_3" class="img-auto" style="width:100px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-3"><label for="ServiceTitle2" class="control-label">Service Product Title- 3</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="TxtServiceproductcontent3" placeholder="Service Title 3" ondrop="return false;" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group last">
+                                    <div class="row">
+                                        <label class="control-label col-md-1">Service Product Contect - 3<span class="required" aria-required="true"> * </span></label>
+                                        <div class="col-md-9">
+                                            <textarea class="ckeditor form-control" id="txtimagecontent_3" name="txtimagecontent_3"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn blue" id="BtnSave" onclick="return validateform();">Save</button>
+                                <button type="button" class="btn default" onclick="return ClearControll();">Cancel</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="tab_1_1_2">
+                        <div class="table-toolbar">
+                            <div class="row">
+                                <div class="btn-group pull-right">
+
+                                    <button id="sample_editable_2_new" style="margin-right:10px" class="btn red delete_btn" onclick="return DelServiceTypeFature();">
+                                        <i class="fa fa-trash-o"></i>  Delete Feature
+                                    </button>
+
+                                    <button id="btnAddfeature" style="margin-right:23px" class="btn green" data-toggle='modal' data-target="#portlet-config">
+                                        <i class="fa fa-plus"></i>  Add Feature
+                                    </button>
+
+                                </div>
+
+                                <table class="table table-striped table-bordered table-hover" id="servicefeature">
+                                    <thead>
+                                        <tr>
+                                            <th class="table-checkbox">
+                                                <input type="checkbox" class="group-checkable" data-set="#servicefeature .checkboxes" />
+                                            </th>
+                                            <th>
+                                                Service Name
+                                            </th>
+                                            <th>
+                                                Feature Title
+                                            </th>
+                                            <th>
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tb_servicefeature"></tbody>
+                                </table>
+                                @*<div class="col-md-6">
+                                        <div class="clearfix button-float pull-right button-wrap">
+                                            <button id="sample_editable_1_new" class="btn green" data-toggle='modal' data-target='#portlet-config'>
+                                                <i class="fa fa-plus"></i>  Add
+                                            </button>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Add Product-->
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            BindServiceType();
+        });
+        var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+        var ServiceTypeID1;
+        function BindServiceType() {
+            $.ajax({
+                type: "GET",
+                 url: "@Url.Action("BindServiceType", "admin")",
+                data: "{}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.success == true) {
+                        var row = "";
+                        var statusdisp = "";
+                        $('#sample_1').DataTable().clear().destroy();
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data.servicetype, function (index, item) {
+                          //  //debugger;
+                            if (item.IsActive == "True") {
+                                statusdisp = "Active";
+                            }
+                            else
+                            {
+                                statusdisp = "InActive";
+                            }
+                            //row += " <tr><td class='table-checkbox'><input type='checkbox'  class='group-checkable' value='1' /></td><td>" + item.ServiceTypeID + "</td><td>" + item.ServiceType + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return OPenConf(this);'><i class='fa fa-edit' style='color:green;font-size:larger;' data-toggle='modal' data-target='#portlet-config'>Edit</i></td></tr>"
+                            row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkproduct'  class='group-checkable' value=" + item.ServiceTypeID + " /></td><td>" + item.ServiceTypeID + "</td><td>" + item.ServiceType + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return EditServiceType(" + item.ServiceTypeID + ");'><i class='fa fa-edit btn default btn-xs green' >Edit</i></td></tr>"
+
+
+                            //row += " <tr><td class='table-checkbox'><input type='checkbox'  class='group-checkable' value='1' />" + "</td><td>" + item.ServiceTypeID + "</td><td>" + item.ServiceType + "</td><td>" + item.SortOrder + "</td><td>" + statusdisp + "</td><td onclick='return OPenConf(this);><i class='fa fa-edit' data-toggle='modal' data-target='#portlet-config'>Edit</i>" + "</td></tr>"
+                        })
+                        $("#TBService").html(row);
+
+                        $('#sample_1').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#TBService").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+        }
+        var serviceid;
+        function AddServiceType() {
+
+            if ($("#BtnSave").html() == "Save") {
+                var ddlstat = $("#DdlStatus").val();
+                if (ddlstat == "Active") {
+                    ddlstat = 1;
+                }
+                else {
+                    ddlstat = 0;
+                }
+                var dataobj = JSON.stringify({
+                    'ServiceType': $("#TxtServiceType").val(),
+                    'SortOrder': $("#TxtSortOrder").val(),
+                    'IsActive': ddlstat,
+                    'Service_Heading': $("#Txtservicetitle").val(),
+                    'Service_title1': $("#TxtServiceproductcontent1").val(),
+                    'Service_title2':$("#TxtServiceproductcontent2").val(),
+                    'Service_title3':$("#TxtServiceproductcontent3").val(),
+                    'Service_Desc1':CKEDITOR.instances['txtcontent_1'].getData(),
+                    'Service_Desc2':CKEDITOR.instances['txtcontent_2'].getData(),
+                    'img1_Content1':CKEDITOR.instances['txtimagecontent_1'].getData(),
+                    'img2_Conrent2':CKEDITOR.instances['tximagetcontent_2'].getData(),
+                    'img3_Content3':CKEDITOR.instances['txtimagecontent_3'].getData()
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("InsertServiceType", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.success == "false") {
+                            //alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            })
+
+                        }
+                        else {
+                            serviceid = response.id;
+                            ServiceTypeID1 = response.id;
+                           
+                            var menuimage = ($("#menuimage"))[0].files[0];
+                            var bannerimage = ($("#bannerimage"))[0].files[0];
+                            var serviceimage_1 = ($("#serviceimage_1"))[0].files[0];
+                            var serviceimage_2 = ($("#serviceimage_2"))[0].files[0];
+                            var serviceimage_3 = ($("#serviceimage_3"))[0].files[0];
+                            if (menuimage != null) { 
+                                SaveServiceMenuImage(response.id);
+                            }
+                            if (bannerimage != null) {
+                                SaveServiceBannerImage(response.id);
+                            }
+                            if (serviceimage_1 != null) {
+                                SaveServiceImage_1Image(response.id);
+                            }
+                            if (serviceimage_2 != null) {
+                                SaveServiceImage_2Image(response.id);
+                            }
+                            if (serviceimage_3 != null) {
+                                SaveServiceImage_3Image(response.id);
+                            }
+                            $("#BtnSave").html("Update");
+                                     swal({
+                                title: "success!",
+                                text: response.msg,
+                                type: "success",
+                                confirmButtonText: "Close",
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                                     });
+                        }
+                        //msgDisplay();
+                        //ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        //alert(response.responseText);
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+            }
+            else {
+                var ddlstat = $("#DdlStatus").val();
+                if (ddlstat == "Active") {
+                    ddlstat = 1;
+                }
+                else {
+                    ddlstat = 0;
+                }
+                var dataobj = JSON.stringify({
+                    'ServiceTypeID': ServiceTypeID1,
+                    'ServiceType': $("#TxtServiceType").val(),
+                    'SortOrder': $("#TxtSortOrder").val(),
+                    'IsActive': ddlstat,
+                    'Service_Heading': $("#Txtservicetitle").val(),
+                    'Service_title1': $("#TxtServiceproductcontent1").val(),
+                    'Service_title2':$("#TxtServiceproductcontent2").val(),
+                    'Service_title3':$("#TxtServiceproductcontent3").val(),
+                    'Service_Desc1':CKEDITOR.instances['txtcontent_1'].getData(),
+                    'Service_Desc2':CKEDITOR.instances['txtcontent_2'].getData(),
+                    'img1_Content1':CKEDITOR.instances['txtimagecontent_1'].getData(),
+                    'img2_Conrent2':CKEDITOR.instances['tximagetcontent_2'].getData(),
+                    'img3_Content3':CKEDITOR.instances['txtimagecontent_3'].getData()
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("UpdateServiceType", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        //alert(JSON.stringify(response))
+                        if (response.success == "false") {
+                            // alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                            //alert(response.msg);
+                              serviceid = response.id;
+                              ServiceTypeID1 = response.id;
+                           
+                            var menuimage = ($("#menuimage"))[0].files[0];
+                            var bannerimage = ($("#bannerimage"))[0].files[0];
+                            var serviceimage_1 = ($("#serviceimage_1"))[0].files[0];
+                            var serviceimage_2 = ($("#serviceimage_2"))[0].files[0];
+                            var serviceimage_3 = ($("#serviceimage_3"))[0].files[0];
+                            if (menuimage != null) { 
+                                SaveServiceMenuImage(response.id);
+                            }
+                            if (bannerimage != null) {
+                                SaveServiceBannerImage(response.id);
+                            }
+                            if (serviceimage_1 != null) {
+                                SaveServiceImage_1Image(response.id);
+                            }
+                            if (serviceimage_2 != null) {
+                                SaveServiceImage_2Image(response.id);
+                            }
+                            if (serviceimage_3 != null) {
+                                SaveServiceImage_3Image(response.id);
+                            }
+                            $("#BtnSave").html("Update");
+                                     swal({
+                                title: "success!",
+                                text: response.msg,
+                                type: "success",
+                                confirmButtonText: "Close",
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                                     });
+                        }
+                        //ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        // alert(response.responseText);
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+            }
+    }
+
+    function SaveServiceMenuImage(id) {
+          var menuimage = ($("#menuimage"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadServiceMenuImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveServiceBannerImage(id) {
+          var bannerimage = ($("#bannerimage"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(bannerimage.name, bannerimage);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadServiceBannerImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveServiceImage_1Image(id) {
+          var image_1 = ($("#serviceimage_1"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadServiceImage_1Image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveServiceImage_2Image(id) {
+          var image_2 = ($("#serviceimage_2"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_2.name, image_2);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadServiceImage_2Image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveServiceImage_3Image(id) {
+          var image_3 = ($("#serviceimage_3"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_3.name, image_3);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadServiceImage_3Image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+
+
+    function AddServiceTypeSection() {
+
+            $("#grid_div").hide();
+            $("#divserviceadd").show();
+
+
+    }
+
+        function ClearData() {
+         $("#TxtServiceType").val('').trigger('change');
+            $("#TxtSortOrder").val('').trigger('change');
+            $("#DdlStatus").val('-- Select --');
+            $("#Txtservicetitle").val('').trigger('change');
+            //$("#TxtSortOrder").val('').trigger('change');
+            //$("#TxtSortOrder").val('').trigger('change');
+            //$("#TxtSortOrder").val('').trigger('change');
+
+            CKEDITOR.instances['txtcontent_1'].setData('');
+            CKEDITOR.instances['txtcontent_2'].setData('');
+            CKEDITOR.instances['txtimagecontent_1'].setData('');
+            CKEDITOR.instances['tximagetcontent_2'].setData('');
+            CKEDITOR.instances['txtimagecontent_3'].setData('');
+
+             $("#menuimg").attr('src', '');
+                    $("#bannerimg").attr('src', '');
+                    $("#serviceimg_1").attr('src', '');
+                    $("#serviceimg_2").attr('src', '');
+                    $("#serviceimg_3").attr('src', '');
+
+         for ( instance in CKEDITOR.instances ){
+        CKEDITOR.instances[instance].updateElement();
+    }
+            $("#BtnSave").html("Save");
+            $("#H4PageTitle").html("Add Service Type Features");
+    }
+
+        function ClearControll() {
+            $("#TxtServiceType").val('').trigger('change');
+            $("#TxtSortOrder").val('').trigger('change');
+            $("#DdlStatus").val('-- Select --');
+            $("#Txtservicetitle").val('').trigger('change');
+            //$("#TxtSortOrder").val('').trigger('change');
+            //$("#TxtSortOrder").val('').trigger('change');
+            //$("#TxtSortOrder").val('').trigger('change');
+
+            CKEDITOR.instances['txtcontent_1'].setData('');
+            CKEDITOR.instances['txtcontent_2'].setData('');
+            CKEDITOR.instances['txtimagecontent_1'].setData('');
+            CKEDITOR.instances['tximagetcontent_2'].setData('');
+            CKEDITOR.instances['txtimagecontent_3'].setData('');
+
+
+                     $("#menuimg").attr('src', '');
+                    $("#bannerimg").attr('src', '');
+                    $("#serviceimg_1").attr('src', '');
+                    $("#serviceimg_2").attr('src', '');
+                    $("#serviceimg_3").attr('src', '');
+            $("#BtnSave").html("Save");
+            $("#H4PageTitle").html("Add Service Type Features");
+            $("#grid_div").show();
+            $("#divserviceadd").hide();
+        }
+
+    function ClearFeatureData() {
+        $("#BtnSaveFeature").html("Save");
+        $("#TxtfeatureTitle").val("");
+        CKEDITOR.instances['featurecontent'].setData('');
+        $("#featureimg1").attr('src', '');
+        ($("#menuimage"))[0].files[0] = null;
+    }
+
+
+        function validateform() {
+
+            var servicetype = $("#TxtServiceType").val();
+            var sortorder = $("#TxtSortOrder").val();
+            var status = $("#DdlStatus").val();
+
+            if (servicetype == null || servicetype == "") {
+
+                swal({
+                    title: "Warning!",
+                    text: "Service Type can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtServiceType").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (sortorder == null || sortorder == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Sort Order can't be blank.",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#TxtSortOrder").focus();
+                        }
+                    });
+                return false;
+            }
+
+            else if (status == null || status == "" || status == "-- Select --" || status == "0") {
+                swal({
+                    title: "Warning!",
+                    text: "Status can't be blank.",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                });
+                return false;
+            }
+            else {
+                AddServiceType();
+            }
+        }
+
+        function OPenConf(ServiceTypeID) {
+            //debugger;
+            var row = $(ServiceTypeID).closest("TR");
+            var ServiceTypeID = $("TD", row).eq(1).html();
+            ServiceTypeID1 = ServiceTypeID;
+            EditServiceType(ServiceTypeID);
+        }
+
+        function EditServiceType(ServiceTypeID) {
+            $.ajax({
+                type: "GET",
+                data: { 'ServiceTypeID': ServiceTypeID },
+                url: "@Url.Action("EditServiceType", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                  // ClearData();
+                    //debugger;
+                    //alert(JSON.stringify(response));
+                    ServiceTypeID1 = ServiceTypeID;
+                    $("#grid_div").hide();
+                    $("#divserviceadd").show();
+                    $("#TxtServiceType").val(response.servicetype[0].ServiceType).trigger('change');
+                    $("#TxtSortOrder").val(response.servicetype[0].SortOrder).trigger('change');
+                    $("#Txtservicetitle").val(response.servicetype[0].Service_Heading).trigger('change');
+                    $("#TxtServiceproductcontent1").val(response.servicetype[0].Service_title1).trigger('change');
+                    $("#TxtServiceproductcontent2").val(response.servicetype[0].Service_title2).trigger('change');
+                    $("#TxtServiceproductcontent3").val(response.servicetype[0].Service_title3).trigger('change');
+                    CKEDITOR.instances['txtcontent_1'].setData(response.servicetype[0].Service_Desc1);
+                    CKEDITOR.instances['txtcontent_2'].setData(response.servicetype[0].Service_Desc2);
+                    CKEDITOR.instances['txtimagecontent_1'].setData(response.servicetype[0].img1_Content1);
+                    CKEDITOR.instances['tximagetcontent_2'].setData(response.servicetype[0].img2_Conrent2);
+                    CKEDITOR.instances['txtimagecontent_3'].setData(response.servicetype[0].img3_Content3);
+
+                    $("#menuimg").attr('src', imageurl+response.servicetype[0].ServiceTypeImage);
+                    $("#bannerimg").attr('src', imageurl+response.servicetype[0].ServiceBanner);
+                    $("#serviceimg_1").attr('src', imageurl+response.servicetype[0].Service_img1);
+                    $("#serviceimg_2").attr('src', imageurl+response.servicetype[0].Service_img2);
+                    $("#serviceimg_3").attr('src', imageurl+response.servicetype[0].Service_ing3);
+                 
+                    if (response.servicetype[0].IsActive == "True") {
+                        $("#DdlStatus").val('Active').trigger('change');
+                    }
+                    else {
+                        $("#DdlStatus").val('InActive').trigger('change');
+                    }
+                    BindServiceFeature(ServiceTypeID)
+                    $("#BtnSave").html("Update");
+                    $("#H4PageTitle").html("Edit Service Type Features");
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+
+
+        function DelServiceTypeF(DelServiceTypeID) {
+            var dataobj = JSON.stringify({
+                'ServiceTypeID': DelServiceTypeID
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteServiceType", "admin")",
+                data: dataobj,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == "false") {
+                        //alert(response.msg);
+                        swal({
+                            title: "Warning!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "warning",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "warning",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                    else {
+                        //alert(response.msg);
+                        swal({
+                            title: "success!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "success",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "success",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                        $("#modal-default").modal('hide');
+                        BindServiceType();
+                        ClearControll();
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+        function DelServiceType() {
+            swal({
+                title: "Are you sure you want to delete this Record?",
+                text: "Once deleted, you will not be able to recover this Record!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                closeOnConfirm: false, //It does close the popup when I click on close button
+                closeOnCancel: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#sample_1').find('input[type="checkbox"]:checked').each(function () {
+                            var DelServiceTypeID = $(this).val();
+                            DelServiceTypeF(DelServiceTypeID);
+                            //this is the current checkbox
+                            //var DelCareerID = $(this).val();
+                        });
+
+                    } else {
+                        swal("Your Record is safe!");
+                    }
+                });
+        }
+
+        var specialKeys = new Array();
+        specialKeys.push(8); //Backspace
+
+        function IsNumeric(e) {
+            var keyCode = e.which ? e.which : e.keyCode
+            var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+            //document.getElementById("error").style.display = ret ? "none" : "inline";
+            return ret;
+        }
+
+    function validateImage() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("menuimage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("menuimg").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("menuimage").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("menuimage").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("menuimage").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateBannerImage() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("bannerimage").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("bannerimg").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("bannerimage").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("bannerimage").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("bannerimage").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_1Image() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("serviceimage_1").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("serviceimg_1").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("serviceimage_1").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("serviceimage_1").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("serviceimage_1").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_2Image() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("serviceimage_2").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("serviceimg_2").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("serviceimage_2").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("serviceimage_2").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("serviceimage_2").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_3Image() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("serviceimage_3").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("serviceimg_3").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("serviceimage_3").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("serviceimage_3").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("serviceimage_3").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateServiceFeatureImage() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("featureImg").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("featureimg1").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("featureImg").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("featureImg").value = '';
+                    return false;
+                }
+                return true;
+            }
+        }
+
+
+        function SaveFeatureData() {
+        if ($("#BtnSaveFeature").html() == "Save") {
+            var data = JSON.stringify({
+                'ServiceType_Id': ServiceTypeID1,
+                'Service_Feature_Title': $("#TxtfeatureTitle").val(),
+                'Service_Feature_Desc': CKEDITOR.instances['featurecontent'].getData()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("InsertServiceTypeFeature", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                            $.ajax({
+                                url: "@Url.Action("UploadServiceFeatureImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                    BindServiceFeature(ServiceTypeID1);
+                                    $("#portlet-config").modal('hide');
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                    BindServiceFeature(ServiceTypeID1);
+                                    $("#portlet-config").modal('hide');
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+        else {
+            var data = JSON.stringify({
+                'Service_Features_Id':servicefeatureid,
+                'ServiceType_Id': ServiceTypeID1,
+                'Service_Feature_Title': $("#TxtfeatureTitle").val(),
+                'Service_Feature_Desc': CKEDITOR.instances['featurecontent'].getData()
+            })
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("UpdateServiceTypeFeature", "admin")",
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response > 0) {
+                        var menuimage = ($("#featureImg"))[0].files[0];
+                        if (menuimage != null) {
+                            var fileData = new FormData();
+                            fileData.append(menuimage.name, menuimage);
+                            fileData.append('Id', response);
+                            $.ajax({
+                                url: "@Url.Action("UploadServiceFeatureImage", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                success: function (result) {
+                                    swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                    BindServiceFeature(ServiceTypeID1);
+                                    $("#portlet-config").modal('hide');
+
+                                }
+                            })
+                        }
+                        else {
+                             swal({
+                                        title: "success!",
+                                        text: response.msg,
+                                        type: "success",
+                                        confirmButtonText: "Close",
+                                        icon: "success",
+                                        closeOnConfirm: false, //It does close the popup when I click on close button
+                                        closeOnCancel: false,
+                                        closeOnClickOutside: false,
+                                        closeOnEsc: false
+                                    });
+                                    BindServiceFeature(ServiceTypeID1);
+                                    $("#portlet-config").modal('hide');
+                        }
+                    }
+                    else {
+                        swal({
+                            title: "error!",
+                            text: "Please check your inputs",
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+       }
+
+        function BindServiceFeature(id) {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("BindServiceTypeFeature", "admin")",
+            data: { 'id': id },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //  alert(JSON.stringify(data));
+                    if (data.success == true) {
+                        var row = "";
+                        var statusdisp = "";
+                        $('#servicefeature').DataTable().clear().destroy();
+                        //alert(JSON.stringify(data.depart))
+                        $.each(data.servicefeauretype, function (index, item) {
+                            //debugger;
+                            row += " <tr><td class='table-checkbox'><input type='checkbox' id='chkproduct'  class='group-checkable' value=" + item.Service_Features_Id + " /></td><td>" + item.ServiceFeatureName + "</td><td>" + item.Service_Feature_Title + "</td><td onclick='return EditServiceTypeFeature(" + item.Service_Features_Id + ");'><i class='fa fa-edit btn default btn-xs green'>Edit</i></td></tr>"
+                        })
+                        $("#tb_servicefeature").html(row);
+
+                        $('#servicefeature').DataTable({
+                            'paging': true,
+                            'lengthChange': true,
+                            'searching': true,
+                            'ordering': true,
+                            'info': true,
+                            'autoWidth': false
+                        })
+                    }
+                    else {
+                        $("#tb_servicefeature").html("");
+                    }
+                },
+                fail: function (msg) {
+                    alert(msg);
+                }
+            })
+            }
+        function EditServiceTypeFeature(id) {
+         $.ajax({
+                type: "GET",
+                data: { 'ServiceTypeFeatureID': id },
+                url: "@Url.Action("EditServiceTypeFeature", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //ClearData();
+                    //alert(JSON.stringify(response));
+
+                    $("#portlet-config").modal('show');
+                    servicefeatureid = response.servicetype[0].Service_Features_Id;
+                    ServiceTypeID1 = response.servicetype[0].ServiceType_Id;
+                    $("#TxtfeatureTitle").val(response.servicetype[0].Service_Feature_Title);
+                    CKEDITOR.instances['featurecontent'].setData(response.servicetype[0].Service_Feature_Desc);
+
+                    $("#featureimg1").attr('src', imageurl+response.servicetype[0].Service_Freature_img);
+
+                    $("#BtnSaveFeature").html("Update");
+
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+    }
+
+
+    function OpenFeatureModel() {
+        $("#portlet-config").modal('show');
+        ClearFeatureData();
+    }
+
+
+
+
+     function DelServiceTypeFeature(servicefeatureid) {
+            var dataobj = JSON.stringify({
+                'Service_Features_Id': servicefeatureid
+            });
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("DeleteServiceTypeFeature", "admin")",
+                data: dataobj,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    if (response.success == "false") {
+                        //alert(response.msg);
+                        swal({
+                            title: "Warning!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "warning",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "warning",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                    else {
+                        //alert(response.msg);
+                        swal({
+                            title: "success!",
+                            text: response.msg,
+                            //text: "Please enter Department!",
+                            type: "success",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "success",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                        $("#modal-default").modal('hide');
+                        BindServiceFeature(ServiceTypeID1);
+                        
+                    }
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                    swal({
+                        title: "error!",
+                        text: response.responseText,
+                        //text: "Please enter Department!",
+                        type: "error",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "error",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                }
+            });
+        }
+        function DelServiceTypeFature() {
+            swal({
+                title: "Are you sure you want to delete this Record?",
+                text: "Once deleted, you will not be able to recover this Record!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                closeOnConfirm: false, //It does close the popup when I click on close button
+                closeOnCancel: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $('#servicefeature').find('input[type="checkbox"]:checked').each(function () {
+                            var servicefeatureid = $(this).val();
+                            DelServiceTypeFeature(servicefeatureid);
+                            //this is the current checkbox
+                            //var DelCareerID = $(this).val();
+                        });
+
+                    } else {
+                        swal("Your Record is safe!");
+                    }
+                });
+        }
+    </script>
+}
+
+
+

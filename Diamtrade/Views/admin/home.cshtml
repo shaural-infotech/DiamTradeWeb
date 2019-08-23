@@ -1,0 +1,772 @@
+﻿
+@{
+    ViewBag.Title = "home";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        Widget settings form goes here
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue">Save changes</button>
+                        <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+           Home Page
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- END PAGE HEADER-->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN EXTRAS PORTLET-->
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Edit Home Page Info
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            @*<a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                                <a href="javascript:;" class="reload">
+                                </a>
+                                <a href="javascript:;" class="remove">
+                                </a>*@
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="#" class="form-horizontal form-bordered">
+                            @*START About US*@
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtabouttitle" id="txtabouttitle">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Sub Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtsubtitle" id="txtsubtitle">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" id="txtaboutcont" name="txtaboutcont"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            @*END About US?*@
+
+                            @*START  WHO WE ARE?*@
+                            <hr> <h3>
+    Diamtrade Cloud
+</h3>
+                            <hr />
+
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <div class="row">
+                                        <div class="col-md-2"><label for="inputEmail3">Image</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="image_1" onchange="validateImage_1()" accept="image/*">
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="img_1" class="img-auto" style="width:80px" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtabouttitle1" id="txtabouttitle1">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" name="txtaboutcont1" id="txtaboutcont1" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            @*END  WHO WE ARE?*@
+
+                            @*START Business Solutions*@
+                            <hr> <h3>
+    Diamtrade Desktop
+</h3>
+                            <hr />
+
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <div class="row">
+                                        <div class="col-md-2"><label for="inputEmail3">Image</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="image_2" onchange="validateImage_2()" accept="image/*">
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="img_2" class="img-auto" style="width:80px" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtabouttitle2" id="txtabouttitle2">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" name="txtaboutcont2" id="txtaboutcont2" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>   
+                            <hr> <h3>
+    Diamtrade DaimX
+</h3>
+                            <hr />
+
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <div class="row">
+                                        <div class="col-md-2"><label for="inputEmail3">Image</label><span style="color:red;"> * </span></div>
+                                        <div class="col-md-3">
+                                            <input type="file" class="form-control" id="image_3" onchange="validateImage_3()" accept="image/*">
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <img src="" id="img_3" class="img-auto" style="width:80px" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtabouttitle3" id="txtabouttitle3">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" name="txtaboutcont3" id="txtaboutcont3" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            @*END Business Solutions*@
+
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        @*<button type="submit" class="btn green" onclick="return UpdateAboutUs();"><i class="fa fa-check"></i> Submit</button>*@
+                                        <button type="button" class="btn green" onclick="return validateform();"><i class="fa fa-check"></i> Submit</button>
+                                        <button type="button" class="btn default" onclick="return CancelData();">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+                <!-- END EXTRAS PORTLET-->
+            </div>
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    <script>
+        var HomePageID = 1;
+       EditHomePageInfo();
+         var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+
+        //$(document).ready(function () {
+        //    EditAboutUs();
+        //});
+        function EditHomePageInfo() {
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditAboutUs",
+                url: "@Url.Action("EditHomePageInfo", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    $("#txtabouttitle").val(response.aboutus[0].Title1).trigger('change');
+                    $("#txtsubtitle").val(response.aboutus[0].SubTitle1).trigger('change');
+                    CKEDITOR.instances['txtaboutcont'].setData(response.aboutus[0].Content1);
+                    //$("#txtaboutcont").val(response.aboutus[0].Content1).trigger('change');
+                    $("#txtabouttitle1").val(response.aboutus[0].Title2).trigger('change');
+                    CKEDITOR.instances['txtaboutcont1'].setData(response.aboutus[0].Content2);
+                    //$("#txtaboutcont1").val(response.aboutus[0].Content2).trigger('change');
+                    $("#txtabouttitle2").val(response.aboutus[0].Title3).trigger('change');
+                    CKEDITOR.instances['txtaboutcont2'].setData(response.aboutus[0].Content3);
+
+                    $("#txtabouttitle3").val(response.aboutus[0].Title4).trigger('change');
+                    CKEDITOR.instances['txtaboutcont3'].setData(response.aboutus[0].Content4);
+                    //$("#txtaboutcont2").val(response.aboutus[0].Content3).trigger('change');
+
+                    $("#img_1").attr('src', imageurl+response.aboutus[0].Image_1);
+                    $("#img_2").attr('src', imageurl+response.aboutus[0].Image_2);
+                    $("#img_3").attr('src', imageurl+response.aboutus[0].Image_4);
+
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+
+
+        function validateform() {
+            if ($("#txtabouttitle").val() == null || $("#txtabouttitle").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Title can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtabouttitle").focus();
+                        }
+                    });
+                return false;
+            }
+            if ($("#txtsubtitle").val() == null || $("#txtsubtitle").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Sub Title can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtsubtitle").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['txtaboutcont'].getData() == null || CKEDITOR.instances['txtaboutcont'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Content can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtaboutcont").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#txtabouttitle1").val() == null || $("#txtabouttitle1").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Diamtrade Cloud Title can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtabouttitle1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['txtaboutcont1'].getData() == null || CKEDITOR.instances['txtaboutcont1'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Diamtrade Cloud Content can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtaboutcont1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#txtabouttitle2").val() == null || $("#txtabouttitle2").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Diamtrade Desktop Title can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtabouttitle2").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['txtaboutcont2'].getData() == null || CKEDITOR.instances['txtaboutcont2'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Diamtrade Desktop Content can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtaboutcont2").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#txtabouttitle3").val() == null || $("#txtabouttitle3").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Diamtrade Diamx Title can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtabouttitle3").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['txtaboutcont3'].getData() == null || CKEDITOR.instances['txtaboutcont3'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Diamtrade Diamx Content can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtaboutcont3").focus();
+                        }
+                    });
+                return false;
+            }
+            else {
+                UpdateHomePageInfo();
+            }
+        }
+
+        function UpdateHomePageInfo() {
+            ////debugger;
+            //var desc = CKEDITOR.instances['txtaboutcont'].getData();
+           // alert(desc);
+                    dataobj = JSON.stringify({
+                        'HomePageID': 1,
+                        'Title1': $("#txtabouttitle").val(),
+                        'SubTitle1': $("#txtsubtitle").val(),
+                        'Content1': CKEDITOR.instances['txtaboutcont'].getData(),
+                        'Title2': $("#txtabouttitle1").val(),
+                        'Content2': CKEDITOR.instances['txtaboutcont1'].getData(),
+                        'Title3': $("#txtabouttitle2").val(),
+                        'Content3': CKEDITOR.instances['txtaboutcont2'].getData(),
+                        'Title4': $("#txtabouttitle3").val(),
+                        'Content4': CKEDITOR.instances['txtaboutcont3'].getData()
+                    });
+
+                $.ajax({
+                    type: "POST",
+                    //url: serviceurl + "UpdateAboutUs",
+                    url: "@Url.Action("UpdateHomePageInfo", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.success == "false") {
+                           
+                            //alert("hii");
+                            //alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                            var file = document.getElementById("image_1").files[0];
+                            var file1 = document.getElementById("image_2").files[0];
+                            var file3 = document.getElementById("image_3").files[0];
+                            if (file != null) {
+                                SaveImage_1(1);
+                            }
+                            if (file1 != null) {
+                                SaveImage_2(1);
+                            }
+                            if (file3 != null) {
+                                SaveImage_3(1);
+                                }
+
+                            swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                            $("#modal-default").modal('hide');
+                            //GetAllUser();
+                            //ClearControll();
+                        }
+                        //msgDisplay();
+                        //ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+        }
+
+        function CancelData() {
+            EditHomePageInfo();
+            }
+      function SaveImage_1(id) {
+          var image_1 = ($("#image_1"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadHomeImage_1", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_2(id) {
+          var image_2 = ($("#image_2"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_2.name, image_2);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadHomeImage_2", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_3(id) {
+          var image_3 = ($("#image_3"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_3.name, image_3);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadHomeImage_3", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+
+
+    function validateImage_1() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image_1").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img_1").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_1").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_1").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_1").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_2() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image_2").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img_2").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_2").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_2").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_2").value = '';
+                    return false;
+                }
+                return true;
+            }
+    }
+    function validateImage_3() {
+            // //debugger;
+
+              var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("image_3").files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("img_3").src = oFREvent.target.result;
+            };
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_3").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_3").value = '';
+                    return false;
+                }
+                if (file.size > 1024000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 1MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_3").value = '';
+                    return false;
+                }
+                return true;
+            }
+            }
+
+
+    </script>
+}
+<!-- END CONTENT -->

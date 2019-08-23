@@ -1,0 +1,779 @@
+﻿
+@{
+    ViewBag.Title = "about";
+    Layout = "~/Views/Shared/_MasterLayoutAdmin.cshtml";
+}
+
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <div class="page-content">
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        Widget settings form goes here
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn blue">Save changes</button>
+                        <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            About US
+        </h3>
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href='@Url.Action("dashboard","admin")'>Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+
+                <li>
+                    <a href='@Url.Action("about","admin")'>About Us</a>
+                </li>
+            </ul>
+            <div class="page-toolbar">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-fit-height grey-salt dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true">
+                        Actions <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li>
+                            <a href='@Url.Action("dashboard","admin")'>Back</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE HEADER-->
+        <!-- END PAGE HEADER-->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN EXTRAS PORTLET-->
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Edit About Info
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            @*<a href="#portlet-config" data-toggle="modal" class="config">
+                                </a>
+                                <a href="javascript:;" class="reload">
+                                </a>
+                                <a href="javascript:;" class="remove">
+                                </a>*@
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="#" class="form-horizontal form-bordered">
+                            @*START About US*@
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Banner Image<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="slider1_image" onchange="validatesilder1image()" accept="image/*">
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="sld1_img" style="width:80px" class="img-auto" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            @*END About US?*@
+
+                            @*START  WHO WE ARE?*@
+                            <hr> <h3>
+                                WHO WE ARE?
+                            </h3>
+                            <hr />
+
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtabouttitle" id="txtabouttitle">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" name="txtaboutcont" id="txtaboutcont" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            @*END  WHO WE ARE?*@
+
+                            @*START Business Solutions*@
+                            <hr> <h3>
+                                Information
+                            </h3>
+                            <hr />
+
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Image<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_1" onchange="validateimage_1()" accept="image/*">
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_1" style="width:80px" class="img-auto" alt="">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Name<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtabouttitle2" id="txtabouttitle1">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Designation<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtabouttitle3" id="txtabouttitle2">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Discriprion<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" name="txtaboutcont1" id="txtaboutcont1" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            @*END Business Solutions*@
+
+
+                            @*START Access*@
+                            @*<hr> <h3>
+                                Access
+                            </h3>
+                            <hr />
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Image<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_2" onchange="validateimage_2()" accept="image/*">
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_2" style="width:80px" class="img-auto" alt="">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtabouttitle3" id="txtabouttitle3">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" name="txtaboutcont3" id="txtaboutcont3" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>*@
+                            @*END Access*@
+
+                            @*START Safest*@
+                            @*<div class="portlet-title">
+                                <hr> <h3>
+                                    Safest and fastest
+                                </h3>
+                                <hr />
+                            </div>
+
+                            <div class="form-body">
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Image<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-3">
+                                        <input type="file" class="form-control" id="image_3" onchange="validateimage_3()" accept="image/*">
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="" id="img_3" style="width:80px" class="img-auto" alt="">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Title<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" name="txtabouttitle4" id="txtabouttitle4">
+                                    </div>
+                                </div>
+                                <div class="form-group last">
+                                    <label class="control-label col-md-3">Content<span class="required" aria-required="true"> * </span></label>
+                                    <div class="col-md-9">
+                                        <textarea class="ckeditor form-control" name="txtaboutcont4" id="txtaboutcont4" rows="6"></textarea>
+                                    </div>
+                                </div>
+                            </div>*@
+                            @*END Safest*@
+
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        @*<button type="submit" class="btn green" onclick="return UpdateAboutUs();"><i class="fa fa-check"></i> Submit</button>*@
+                                        <button type="button" class="btn green" onclick="return validateform();"><i class="fa fa-check"></i> Submit</button>
+                                        <button type="button" class="btn default">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+                <!-- END EXTRAS PORTLET-->
+            </div>
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    <script>
+        var AboutID = 1;
+       
+
+var imageurl = '@System.Configuration.ConfigurationManager.AppSettings["onlineimagelink"]';
+       EditAboutUs();
+
+        //$(document).ready(function () {
+        //    EditAboutUs();
+        //});
+        function EditAboutUs() {
+
+            $.ajax({
+                type: "GET",
+                data: "{}",
+                //url: serviceurl + "EditAboutUs",
+                url: "@Url.Action("EditAboutUs", "admin")",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    //alert("hi" + JSON.stringify(response));
+                    $("#txtabouttitle").val(response.aboutus[0].AboutTitle).trigger('change');
+                    CKEDITOR.instances['txtaboutcont'].setData(response.aboutus[0].AboutContent);
+                    //$("#txtaboutcont").val(response.aboutus[0].AboutContent).trigger('change');
+                    $("#txtabouttitle1").val(response.aboutus[0].AboutTitle1).trigger('change');
+                    CKEDITOR.instances['txtaboutcont1'].setData(response.aboutus[0].AboutContent1);
+
+                    //$("#txtaboutcont1").val(response.aboutus[0].AboutContent1).trigger('change');
+                    $("#txtabouttitle2").val(response.aboutus[0].AboutTitle2).trigger('change');
+                    //CKEDITOR.instances['txtaboutcont2'].setData(response.aboutus[0].AboutContent2);
+
+                    //$("#txtaboutcont2").val(response.aboutus[0].AboutContent2).trigger('change');
+                    //$("#txtabouttitle3").val(response.aboutus[0].AboutTitle3).trigger('change');
+                    //CKEDITOR.instances['txtaboutcont3'].setData(response.aboutus[0].AboutContent3);
+
+                    ////$("#txtaboutcont3").val(response.aboutus[0].AboutContent3).trigger('change');
+                    //$("#txtabouttitle4").val(response.aboutus[0].AboutTitle4).trigger('change');
+                    //CKEDITOR.instances['txtaboutcont4'].setData(response.aboutus[0].AboutContent4);
+
+                    //$("#txtaboutcont4").val(response.aboutus[0].AboutContent4).trigger('change');
+                    $("#sld1_img").attr('src', imageurl+response.aboutus[0].Image_Banner);
+                     $("#img_1").attr('src', imageurl+response.aboutus[0].Image_Business);
+                    //$("#img_2").attr('src', response.aboutus[0].Image_Access);
+                    //$("#img_3").attr('src', response.aboutus[0].Image_Safest_Fastest);
+                },
+                failure: function (response) {
+                    //alert(response.responseText);
+                },
+                error: function (response) {
+                    //alert(response.responseText);
+                }
+            });
+        }
+
+
+        function validateform() {
+            
+             if (CKEDITOR.instances['txtaboutcont'].getData() == null || CKEDITOR.instances['txtaboutcont'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Content can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtaboutcont").focus();
+                        }
+                    });
+                return false;
+            }
+             else if ($("#txtabouttitle1").val() == null || $("#txtabouttitle1").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Title 2 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtabouttitle1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if (CKEDITOR.instances['txtaboutcont1'].getData() == null || CKEDITOR.instances['txtaboutcont1'].getData() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Content can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtaboutcont1").focus();
+                        }
+                    });
+                return false;
+            }
+            else if ($("#txtabouttitle2").val() == null || $("#txtabouttitle2").val() == "") {
+                swal({
+                    title: "Warning!",
+                    text: "Title 3 can't be blank",
+                    type: "warning",
+                    confirmButtonText: "Close",
+                    icon: "warning",
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                    closeOnClickOutside: false,
+                    closeOnEsc: false
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            $("#txtabouttitle2").focus();
+                        }
+                    });
+                return false;
+            }
+            else {
+                UpdateAboutUs();
+            }
+        }
+
+        function UpdateAboutUs() {
+            ////debugger;
+            //var desc = CKEDITOR.instances['txtaboutcont'].getData();
+           // alert(desc);
+                    dataobj = JSON.stringify({
+                        'AboutID': 1,
+                        'AboutTitle': $("#txtabouttitle").val(),
+                        'AboutContent': CKEDITOR.instances['txtaboutcont'].getData(),
+                        'AboutTitle1': $("#txtabouttitle1").val(),
+                        'AboutContent1': CKEDITOR.instances['txtaboutcont1'].getData(),
+                        'AboutTitle2': $("#txtabouttitle2").val() 
+                    });
+
+                $.ajax({
+                    type: "POST",
+                    //url: serviceurl + "UpdateAboutUs",
+                    url: "@Url.Action("UpdateAboutUs", "admin")",
+                    data: dataobj,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.success == "false") {
+                            //alert("hii");
+                            //alert(response.msg);
+                            swal({
+                                title: "Warning!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "warning",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "warning",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                        }
+                        else {
+                             var file1 = document.getElementById("slider1_image").files[0];
+                             var file2 = document.getElementById("image_1").files[0];
+
+                            if (file1 != null) {
+                                SaveBanner_image(1);
+                            }
+                            if (file2 != null) {
+                                SaveImage_1(1);
+                            }
+                            swal({
+                                title: "success!",
+                                text: response.msg,
+                                //text: "Please enter Department!",
+                                type: "success",
+                                confirmButtonText: "Close",
+                                //html: true,
+                                icon: "success",
+                                closeOnConfirm: false, //It does close the popup when I click on close button
+                                closeOnCancel: false,
+                                closeOnClickOutside: false,
+                                closeOnEsc: false
+                            });
+                            $("#modal-default").modal('hide');
+                            //GetAllUser();
+                            //ClearControll();
+                        }
+                        //msgDisplay();
+                        //ClearControll();
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        swal({
+                            title: "error!",
+                            text: response.responseText,
+                            //text: "Please enter Department!",
+                            type: "error",
+                            confirmButtonText: "Close",
+                            //html: true,
+                            icon: "error",
+                            closeOnConfirm: false, //It does close the popup when I click on close button
+                            closeOnCancel: false,
+                            closeOnClickOutside: false,
+                            closeOnEsc: false
+                        });
+                    }
+                });
+        }
+
+    function validatesilder1image() {
+            // //debugger;
+
+            var oFReader1 = new FileReader();
+        oFReader1.readAsDataURL(document.getElementById("slider1_image").files[0]);
+
+        oFReader1.onload = function (oFREvent1) {
+            document.getElementById("sld1_img").src = oFREvent1.target.result;
+            };
+
+
+
+            var formData = new FormData();
+
+            var file = document.getElementById("slider1_image").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("slider1_image").value = '';
+                    return false;
+                }
+                 if (file.size > 2048000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 2MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("slider1_image").value = '';
+                    return false;
+                }
+                return true;
+            }
+
+    }
+    function validateimage_1() {
+            // //debugger;
+
+            var oFReader1 = new FileReader();
+        oFReader1.readAsDataURL(document.getElementById("image_1").files[0]);
+
+        oFReader1.onload = function (oFREvent1) {
+            document.getElementById("img_1").src = oFREvent1.target.result;
+            };
+
+
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_1").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_1").value = '';
+                    return false;
+                }
+                 if (file.size > 2048000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 2MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_1").value = '';
+                    return false;
+                }
+                return true;
+            }
+
+    }
+    function validateimage_2() {
+            // //debugger;
+
+            var oFReader1 = new FileReader();
+        oFReader1.readAsDataURL(document.getElementById("image_2").files[0]);
+
+        oFReader1.onload = function (oFREvent1) {
+            document.getElementById("img_2").src = oFREvent1.target.result;
+            };
+
+
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_2").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_2").value = '';
+                    return false;
+                }
+                 if (file.size > 2048000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 2MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_2").value = '';
+                    return false;
+                }
+                return true;
+            }
+
+    }
+    function validateimage_3() {
+            // //debugger;
+
+            var oFReader1 = new FileReader();
+        oFReader1.readAsDataURL(document.getElementById("image_3").files[0]);
+
+        oFReader1.onload = function (oFREvent1) {
+            document.getElementById("img_3").src = oFREvent1.target.result;
+            };
+
+
+
+            var formData = new FormData();
+
+            var file = document.getElementById("image_3").files[0];
+
+            if (file != "" && file != undefined) {
+                formData.append("Filedata", file);
+                var t = file.type.split('/').pop().toLowerCase();
+                if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                    //alert('Please select a valid image file');
+                    swal({
+                        title: "Warning!",
+                        text: "Please select a valid image file!",
+                        //text: "Please select a valid image file!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_3").value = '';
+                    return false;
+                }
+                 if (file.size > 2048000) {
+                    //alert('Max Upload size is 1MB only');
+                    swal({
+                        title: "Warning!",
+                        text: "Max Upload size is 2MB only!",
+                        //text: "Max Upload size is 1MB only!",
+                        type: "warning",
+                        confirmButtonText: "Close",
+                        //html: true,
+                        icon: "warning",
+                        closeOnConfirm: false, //It does close the popup when I click on close button
+                        closeOnCancel: false,
+                        closeOnClickOutside: false,
+                        closeOnEsc: false
+                    });
+                    document.getElementById("image_3").value = '';
+                    return false;
+                }
+                return true;
+            }
+
+    }
+
+     function SaveBanner_image(id) {
+          var image_1 = ($("#slider1_image"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadAboutBanner_image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_1(id) {
+          var image_1 = ($("#image_1"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadAboutBusiness_image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+    function SaveImage_2(id) {
+          var image_1 = ($("#image_2"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadAboutAccess_image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+    }
+
+    function SaveImage_3(id) {
+          var image_1 = ($("#image_3"))[0].files[0];
+                            var fileData = new FormData();
+                             fileData.append(image_1.name, image_1);
+                            fileData.append('Id', id);
+                             $.ajax({
+                                url: "@Url.Action("UploadAboutSafest_image", "admin")",
+                                type: "POST",
+                                contentType: false, // Not to set any content header
+                                processData: false, // Not to process data
+                                data: fileData,
+                                 success: function (result) {
+
+                                }
+                            })
+            }
+    </script>
+}
+<!-- END CONTENT -->
