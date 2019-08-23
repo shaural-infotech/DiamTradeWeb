@@ -2965,6 +2965,7 @@ namespace Diamtrade.Controllers
         {
             CareersData sd = new CareersData();
             sd.careers = (from s in db.Mst_CarrerMulti
+                          where s.IsActive == true
                           orderby  s.SortOrder ascending
                           select new CareersClass
                           {
