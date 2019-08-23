@@ -76,6 +76,7 @@
 
 .fancybox-infobar {
     color: #ccc;
+    display:none;
     font-size: 13px;
     -webkit-font-smoothing: subpixel-antialiased;
     height: 44px;
